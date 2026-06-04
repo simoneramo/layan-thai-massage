@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+/* Scan the page templates for class names */
+@source "../*.html";
+
+/* Self-hosted Varela Round (via @fontsource/varela-round) */
+@font-face {
+  font-family: 'Varela Round';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/varela-round-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Varela Round';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/varela-round-latin-ext-400-normal.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+    U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Class-based dark mode (toggled on <html>) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Varela Round', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Varela Round', ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand red scale (vivid, true red) */
+  --color-plum-50: #fef2f2;
+  --color-plum-100: #fde0e0;
+  --color-plum-200: #fbc2c2;
+  --color-plum-300: #f79a9a;
+  --color-plum-400: #f06060;
+  --color-plum-500: #e62e2e;
+  --color-plum-600: #d61b1b;
+  --color-plum-700: #bb1414;
+  --color-plum-800: #9c1313;
+  --color-plum-900: #7d1414;
+
+  /* Warm cream neutral */
+  --color-cream: #fdf7ef;
+}
+
+@layer components {
+  /* Primary CTA — red-800, visually dominant (reserved for Book Now only) */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-red-800
+           px-7 py-3.5 text-base font-semibold text-white shadow-md min-h-[44px]
+           transition duration-200 ease-in-out
+           hover:bg-red-700 hover:brightness-105 hover:scale-[1.02]
+           focus:outline-none focus-visible:ring-4 focus-visible:ring-red-800/30;
+  }
+
+  /* Secondary CTA — ghost/outline, subordinate */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border-2
+           border-plum-300 bg-transparent px-7 py-3.5 text-base font-medium
+           text-plum-700 min-h-[44px] transition duration-200 ease-in-out
+           hover:border-plum-400 hover:bg-plum-50
+           focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40
+           dark:border-plum-400/50 dark:text-plum-200 dark:hover:bg-white/5;
+  }
+
+  /* Level 1 surface */
+  .card {
+    @apply rounded-2xl bg-white shadow-sm ring-1 ring-plum-100
+           transition duration-200 ease-in-out
+           dark:bg-gray-800 dark:ring-white/10;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-plum-700 transition-colors duration-150
+           hover:text-plum-900 focus:outline-none focus-visible:text-plum-900
+           dark:text-gray-300 dark:hover:text-white;
+  }
+
+  .img-frame {
+    @apply relative overflow-hidden rounded-2xl shadow-sm ring-1 ring-plum-100/70
+           dark:ring-white/10;
+  }
+
+  /* Consistent subtle plum overlay on every image */
+  .img-frame::after {
+    content: "";
+    @apply pointer-events-none absolute inset-0 bg-plum-900/10;
+  }
+
+  /* Price pill */
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-plum-100 px-3 py-1
+           text-sm font-semibold text-plum-700 dark:bg-white/10 dark:text-plum-200;
+  }
+
+  /* Jump-to chip (navigation, not a CTA) */
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-plum-200 bg-white/70
+           px-4 py-2 text-sm font-medium text-plum-700 transition duration-150
+           hover:border-plum-400 hover:bg-plum-50 focus:outline-none focus-visible:ring-4
+           focus-visible:ring-plum-300/40 dark:border-white/15 dark:bg-white/5 dark:text-plum-200
+           dark:hover:bg-white/10;
+  }
+
+  /* Form field */
+  .field {
+    @apply w-full rounded-2xl border border-plum-200 bg-cream px-4 py-3 text-plum-900 shadow-sm
+           transition placeholder:text-plum-400 focus:border-plum-400 focus:outline-none
+           focus:ring-4 focus:ring-plum-300/30 dark:border-white/15 dark:bg-gray-800
+           dark:text-gray-100 dark:placeholder:text-gray-500;
+  }
+
+  /* FAQ accordion */
+  .faq-item {
+    @apply overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-plum-100
+           transition duration-200 ease-in-out dark:bg-gray-800 dark:ring-white/10;
+  }
+
+  .faq-btn {
+    @apply flex w-full items-center justify-between gap-4 p-5 text-left
+           focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40;
+  }
+
+  .faq-q {
+    @apply font-heading font-semibold text-plum-800 dark:text-white;
+  }
+
+  .faq-a {
+    @apply px-5 pb-5 leading-relaxed text-plum-700/90 dark:text-gray-300;
+  }
+
+  .faq-chevron {
+    @apply h-5 w-5 shrink-0 text-plum-500 transition-transform duration-200 dark:text-plum-300;
+  }
+}
+
+/* ---- Plain CSS (motion + utilities not generated by Tailwind) ---- */
+
+[id] {
+  scroll-margin-top: 6rem;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .6s ease-out, transform .6s ease-out;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-anim {
+    opacity: 0;
+    animation: heroFadeUp .6s ease-out forwards;
+  }
+
+  .hero-anim.d1 { animation-delay: .1s; }
+  .hero-anim.d2 { animation-delay: .2s; }
+  .hero-anim.d3 { animation-delay: .3s; }
+
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(20px) scale(.985); }
+    to { opacity: 1; transform: none; }
+  }
+}

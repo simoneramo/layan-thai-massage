@@ -1,0 +1,33 @@
+export const site = {
+  name: "Layan Traditional Thai Massage",
+  phoneDisplay: "0451 250 064",
+  phoneTel: "0451250064",
+  email: "info@layanthaimassage.com.au",
+  address: "3/459 Nepean Hwy, Frankston VIC 3199",
+  messenger: "https://m.me/LayanTraditionalThaiMassage",
+  facebook: "https://www.facebook.com/",
+  maps:
+    "https://www.google.com/maps/search/?api=1&query=Layan+Traditional+Thai+Massage+459+Nepean+Hwy+Frankston",
+  mapEmbed:
+    "https://maps.google.com/maps?q=3%2F459%20Nepean%20Hwy%2C%20Frankston%20VIC%203199&output=embed",
+};
+
+export const nav = [
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
+];
+
+export const treatments = [
+  "Traditional Thai Massage",
+  "Essential Oil Massage",
+  "Thai Foot Massage & Reflexology",
+  "Full Back Massage",
+  "Shoulder & Neck Massage",
+  "Shoulder, Neck & Head Massage",
+  "Head Massage",
+  "Not sure yet — please advise",
+];

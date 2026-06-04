@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Layan Traditional Thai Massage, Frankston</title>
+  <meta name="description"
+    content="Common questions about Thai massage at Layan in Frankston — booking and walk-ins, what to wear, what to expect, pricing and opening hours." />
+
+  <!-- Anti-flash theme bootstrap: runs before paint -->
+  <script>
+    (function () {
+      try {
+        var mode = localStorage.getItem('theme') || 'auto';
+        var dark = mode === 'dark' ||
+          (mode === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.classList.toggle('dark', dark);
+      } catch (e) { }
+    })();
+  </script>
+
+  <!-- Varela Round is self-hosted via the compiled stylesheet -->
+
+  <!-- Compiled Tailwind CSS -->
+  <link rel="stylesheet" href="dist/styles.css" />
+
+  <!-- Alpine.js (collapse plugin must load before core) -->
+  <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="bg-cream font-sans text-plum-900 antialiased dark:bg-gray-900 dark:text-gray-200">
+
+  <a href="#main"
+    class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-xl focus:bg-red-800 focus:px-4 focus:py-2 focus:text-white">Skip
+    to content</a>
+
+  <!-- ============================== HEADER / NAV ============================== -->
+  <header x-data="{ open: false }"
+    class="sticky top-0 z-40 border-b border-plum-100/70 bg-cream/85 backdrop-blur-md dark:border-white/10 dark:bg-gray-900/85">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8" aria-label="Primary">
+      <!-- Brand -->
+      <a href="index.html" class="flex items-center gap-2.5 focus:outline-none"
+        aria-label="Layan Traditional Thai Massage — home">
+        <span class="grid h-10 w-10 place-items-center rounded-xl bg-plum-700 text-white shadow-sm dark:bg-plum-600">
+          <i data-lucide="flower-2" class="h-5 w-5"></i>
+        </span>
+        <span class="leading-tight">
+          <span
+            class="block font-heading text-base font-extrabold tracking-tight text-plum-800 dark:text-white">Layan</span>
+          <span
+            class="block text-[11px] font-medium uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Traditional
+            Thai Massage</span>
+        </span>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden items-center gap-8 lg:flex">
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="index.html#gallery" class="nav-link">Gallery</a>
+        <a href="index.html#reviews" class="nav-link">Reviews</a>
+        <a href="faq.html" class="nav-link font-semibold text-plum-900 dark:text-white" aria-current="page">FAQ</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <!-- Right cluster: theme toggle + primary CTA -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- 3-state theme toggle: Light -> Dark -> Auto -->
+        <button x-data="themeToggle()" x-init="init()" @click="cycle()" type="button"
+          class="grid h-10 w-10 place-items-center rounded-xl border border-plum-200 text-plum-700 transition duration-200 hover:bg-plum-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40 dark:border-white/15 dark:text-gray-200 dark:hover:bg-white/5"
+          :aria-label="'Theme: ' + mode + '. Click to change.'" :title="'Theme: ' + mode">
+          <span x-show="mode === 'light'"><i data-lucide="sun" class="h-5 w-5"></i></span>
+          <span x-show="mode === 'dark'" x-cloak><i data-lucide="moon" class="h-5 w-5"></i></span>
+          <span x-show="mode === 'auto'" x-cloak><i data-lucide="monitor" class="h-5 w-5"></i></span>
+        </button>
+
+        <a href="contact.html" class="btn-primary hidden sm:inline-flex">
+          <i data-lucide="calendar-heart" class="h-5 w-5"></i> Book Now
+        </a>
+
+        <!-- Mobile menu toggle -->
+        <button @click="open = !open" type="button"
+          class="grid h-10 w-10 place-items-center rounded-xl border border-plum-200 text-plum-700 transition hover:bg-plum-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40 lg:hidden dark:border-white/15 dark:text-gray-200 dark:hover:bg-white/5"
+          :aria-expanded="open" aria-controls="mobile-menu" aria-label="Toggle menu">
+          <i data-lucide="menu" class="h-5 w-5" x-show="!open"></i>
+          <i data-lucide="x" class="h-5 w-5" x-show="open" x-cloak></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" x-show="open" x-cloak x-collapse
+      class="border-t border-plum-100 bg-cream px-5 pb-6 pt-2 lg:hidden dark:border-white/10 dark:bg-gray-900">
+      <div class="flex flex-col">
+        <a href="services.html" @click="open = false"
+          class="border-b border-plum-100/70 py-3 text-plum-700 dark:border-white/10 dark:text-gray-300">Services</a>
+        <a href="about.html" @click="open = false"
+          class="border-b border-plum-100/70 py-3 text-plum-700 dark:border-white/10 dark:text-gray-300">About</a>
+        <a href="index.html#gallery" @click="open = false"
+          class="border-b border-plum-100/70 py-3 text-plum-700 dark:border-white/10 dark:text-gray-300">Gallery</a>
+        <a href="index.html#reviews" @click="open = false"
+          class="border-b border-plum-100/70 py-3 text-plum-700 dark:border-white/10 dark:text-gray-300">Reviews</a>
+        <a href="faq.html" @click="open = false"
+          class="border-b border-plum-100/70 py-3 font-semibold text-plum-900 dark:border-white/10 dark:text-white">FAQ</a>
+        <a href="contact.html" @click="open = false" class="py-3 text-plum-700 dark:text-gray-300">Contact</a>
+      </div>
+      <div class="mt-5 flex flex-col gap-3">
+        <a href="contact.html" @click="open = false" class="btn-primary w-full">
+          <i data-lucide="calendar-heart" class="h-5 w-5"></i> Book Now
+        </a>
+        <a href="tel:0451250064" @click="open = false" class="btn-secondary w-full">
+          <i data-lucide="phone" class="h-5 w-5"></i> Call Now (0451 250 064)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================================ PAGE HERO ================================ -->
+    <section class="bg-cream dark:bg-gray-900">
+      <div class="mx-auto max-w-6xl px-5 py-16 sm:px-6 md:py-20 lg:px-8">
+        <!-- Breadcrumb -->
+        <nav class="hero-anim text-sm text-plum-500 dark:text-plum-300" aria-label="Breadcrumb">
+          <ol class="flex items-center gap-2">
+            <li><a href="index.html" class="hover:text-plum-700 dark:hover:text-white">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="font-medium text-plum-700 dark:text-plum-200" aria-current="page">FAQ</li>
+          </ol>
+        </nav>
+
+        <div class="mt-6 grid items-end gap-8 lg:grid-cols-12">
+          <div class="lg:col-span-8">
+            <h1
+              class="hero-anim d1 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl dark:text-white">
+              Questions, Gently <span class="text-plum-600 dark:text-plum-300">Answered</span>
+            </h1>
+            <p class="hero-anim d1 mt-5 max-w-2xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
+              New to Thai massage, or just planning your first visit to Layan? Here's everything you might be wondering —
+              and if your question isn't here, we're only a phone call away.
+            </p>
+          </div>
+          <div class="lg:col-span-4">
+            <!-- Category jump chips -->
+            <div class="hero-anim d2 flex flex-wrap gap-2">
+              <a href="#booking-faqs" class="chip"><i data-lucide="calendar-clock" class="h-4 w-4"></i> Booking &amp; visiting</a>
+              <a href="#treatment-faqs" class="chip"><i data-lucide="hand-heart" class="h-4 w-4"></i> Your treatment</a>
+              <a href="#pricing-faqs" class="chip"><i data-lucide="tag" class="h-4 w-4"></i> Pricing</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BOOKING & VISITING ===================== -->
+    <section id="booking-faqs" class="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <div class="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
+        <div class="reveal flex items-center gap-3">
+          <span class="grid h-10 w-10 place-items-center rounded-xl bg-plum-700 text-white dark:bg-plum-600"><i data-lucide="calendar-clock" class="h-5 w-5"></i></span>
+          <h2 class="font-heading text-2xl font-bold tracking-tight text-plum-900 sm:text-3xl dark:text-white">Booking &amp; Visiting</h2>
+        </div>
+
+        <div class="mt-8 flex flex-col gap-4">
+          <div x-data="{ open: true }" class="reveal faq-item">
+            <button @click="open = !open" :aria-expanded="open" class="faq-btn">
+              <span class="faq-q">Do I need to book, or can I walk in?</span>
+              <i data-lucide="chevron-down" class="faq-chevron" :class="open && 'rotate-180'"></i>
+            </button>
+            <div x-show="open" x-collapse>
+              <p class="faq-a">Walk-ins are warmly welcome whenever we have space. To be sure of your preferred time, a quick call to <a href="tel:0451250064" class="font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900 dark:text-plum-200">0451 250 064</a> is the surest way to reserve a spot.</p>
+            </div>
+          </div>
+
+          <div x-data="{ open: false }" class="reveal faq-item">
+            <button @click="open = !open" :aria-expanded="open" class="faq-btn">
+              <span class="faq-q">Where are you located?</span>
+              <i data-lucide="chevron-down" class="faq-chevron" :class="open && 'rotate-180'"></i>
+            </button>
+            <div x-show="open" x-collapse>
+              <p class="faq-a">We're at 3/459 Nepean Hwy, Frankston VIC 3199 — easy to reach on the Mornington Peninsula, with parking close by. You can <a href="https://www.google.com/maps/search/?api=1&query=Layan+Traditional+Thai+Massage+459+Nepean+Hwy+Frankston" target="_blank" rel="noopener" class="font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900 dark:text-plum-200">get directions here</a>.</p>
+            </div>
+          </div>
+
+          <div x-data="{ open: false }" class="reveal faq-item">
+            <button @click="open = !open" :aria-expanded="open" class="faq-btn">
+              <span class="faq-q">What are your opening hours?</span>
+              <i data-lucide="chevron-down" class="faq-chevron" :class="open && 'rotate-180'"></i>
+            </button>
+            <div x-show="open" x-collapse>
+              <p class="faq-a">We're open Monday to Friday 9:30am–6:00pm and Saturday 9:30am–5:00pm. We're closed on Sundays.</p>
+            </div>
+          </div>
+
+          <div x-data="{ open: false }" class="reveal faq-item">
+            <button @click="open = !open" :aria-expanded="open" class="faq-btn">
+              <span class="faq-q">How early should I arrive?</span>
+              <i data-lucide="chevron-down" class="faq-chevron" :class="open && 'rotate-180'"></i>
+            </button>
+            <div x-show="open" x-collapse>
+              <p class="faq-a">A few minutes early is perfect — just enough time to settle in, let us know how you're feeling, and mention any areas you'd like us to focus on.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== YOUR TREATMENT ===================== -->
+    <section id="treatment-faqs" class="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
+      <div class="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
+        <div class="reveal flex items-center gap-3">
+          <span class="grid h-10 w-10 place-items-center rounded-xl bg-plum-700 text-white dark:bg-plum-600"><i data-lucide="hand-heart" class="h-5 w-5"></i></span>
+          <h2 class="font-heading text-2xl font-bold tracking-tight text-plum-900 sm:text-3xl dark:text-white">Your Treatment</h2>
+        </div>
+
+        <div class="mt-8 flex flex-col gap-4">
+          <div x-data="{ open: true }" class="reveal faq-item">
+            <button @click="open = !open" :aria-expanded="open" class="faq-btn">
+              <span class="faq-q">I've never had Thai massage — what happens?</span>
+              <i data-lucide="chevron-down" class="faq-chevron" :class="open && 'rotate-180'"></i>
+            </button>
+            <div x-show="open" x-collapse>
+              <p class="faq-a">There's nothing to prepare. You'll arrive and settle in with a short chat, enjoy an unhurried treatment at a pressure that suits you, then take a moment to rest and rehydrate before easing back into your day.</p>
+            </div>
+          </div>
+
+          <div x-data="{ open: false }" class="reveal faq-item">
+            <button @click="open = !open" :aria-expanded="open" class="faq-btn">
+              <span class="faq-q">What should I wear, and is oil used?</span>
+              <i data-lucide="chevron-down" class="faq-chevron" :class="open && 'rotate-180'"></i>
+            </button>
+            <div x-show="open" x-collapse>
+              <p class="faq-a">Traditional Thai massage is done fully clothed with no oil, so loose, comfortable clothing is ideal. Our Essential Oil and Foot treatments do use warm oils — we'll have everything ready for you.</p>
+            </div>
+          </div>
+
+          <div x-data="{ open: false }" class="reveal faq-item">
+            <button @click="open = !open" :aria-expanded="open" class="faq-btn">
+              <span class="faq-q">Is Thai massage painful?</span>
+              <i data-lucide="chevron-down" class="faq-chevron" :class="open && 'rotate-180'"></i>
+            </button>
+            <div x-show="open" x-collapse>
+              <p class="faq-a">It shouldn't be. Pressure is firm but always guided by your comfort — just let your therapist know any time and they'll adjust. Most guests leave feeling deeply relaxed and refreshed.</p>
+            </div>
+          </div>
+
+          <div x-data="{ open: false }" class="reveal faq-item">
+            <button @click="open = !open" :aria-expanded="open" class="faq-btn">
+              <span class="faq-q">Can Thai massage help with specific aches?</span>
+              <i data-lucide="chevron-down" class="faq-chevron" :class="open && 'rotate-180'"></i>
+            </button>
+            <div x-show="open" x-collapse>
+              <p class="faq-a">Yes — it's a traditional treatment for relieving stress and tension, and for easing back pain, stiff necks, sore shoulders, sciatica and sports-related strain. Tell us where you're holding tension and we'll focus there.</p>
+            </div>
+          </div>
+
+          <div x-data="{ open: false }" class="reveal faq-item">
+            <button @click="open = !open" :aria-expanded="open" class="faq-btn">
+              <span class="faq-q">Which treatment is right for me?</span>
+              <i data-lucide="chevron-down" class="faq-chevron" :class="open && 'rotate-180'"></i>
+            </button>
+            <div x-show="open" x-collapse>
+              <p class="faq-a">If you'd like a full reset, our Traditional Thai or Essential Oil massage is a lovely choice; for one stubborn spot, try a focused back, neck or shoulder session. Browse the full <a href="services.html" class="font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900 dark:text-plum-200">treatments menu</a>, or tell us how you feel and we'll advise.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRICING ===================== -->
+    <section id="pricing-faqs" class="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <div class="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
+        <div class="reveal flex items-center gap-3">
+          <span class="grid h-10 w-10 place-items-center rounded-xl bg-plum-700 text-white dark:bg-plum-600"><i data-lucide="tag" class="h-5 w-5"></i></span>
+          <h2 class="font-heading text-2xl font-bold tracking-tight text-plum-900 sm:text-3xl dark:text-white">Pricing</h2>
+        </div>
+
+        <div class="mt-8 flex flex-col gap-4">
+          <div x-data="{ open: true }" class="reveal faq-item">
+            <button @click="open = !open" :aria-expanded="open" class="faq-btn">
+              <span class="faq-q">How much do treatments cost?</span>
+              <i data-lucide="chevron-down" class="faq-chevron" :class="open && 'rotate-180'"></i>
+            </button>
+            <div x-show="open" x-collapse>
+              <p class="faq-a">Treatments range from a 15-minute head massage at $15 up to a 90-minute traditional session at $110. You'll find every option and price on the <a href="services.html#pricing" class="font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900 dark:text-plum-200">full price list</a>.</p>
+            </div>
+          </div>
+
+          <div x-data="{ open: false }" class="reveal faq-item">
+            <button @click="open = !open" :aria-expanded="open" class="faq-btn">
+              <span class="faq-q">Can I choose how long my session runs?</span>
+              <i data-lucide="chevron-down" class="faq-chevron" :class="open && 'rotate-180'"></i>
+            </button>
+            <div x-show="open" x-collapse>
+              <p class="faq-a">Absolutely. Several treatments come in more than one length — for example, Traditional Thai is available as 60 or 90 minutes, and Foot &amp; Reflexology as 30 or 60. Pick what suits your day, or ask us to recommend a length.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STILL HAVE QUESTIONS CTA ===================== -->
+    <section class="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
+      <div class="mx-auto max-w-4xl px-5 text-center sm:px-6 lg:px-8">
+        <h2 class="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">
+          Still Have a <span class="text-plum-600 dark:text-plum-300">Question?</span>
+        </h2>
+        <p class="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
+          We're happy to help you choose a treatment or find a time. Send a booking request, or give us a call — we'd
+          love to hear from you.
+        </p>
+        <div class="reveal mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <a href="contact.html" class="btn-primary w-full sm:w-auto">
+            <i data-lucide="calendar-heart" class="h-5 w-5"></i> Book Now
+          </a>
+          <a href="tel:0451250064" class="btn-secondary w-full sm:w-auto">
+            <i data-lucide="phone" class="h-5 w-5"></i> Call Now (0451 250 064)
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Floating Messenger chat button (bottom-right) -->
+  <a href="https://m.me/LayanTraditionalThaiMassage" target="_blank" rel="noopener"
+    aria-label="Chat with us on Messenger"
+    class="group fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-plum-700 text-white shadow-lg ring-1 ring-black/5 transition duration-200 ease-in-out hover:scale-105 hover:bg-plum-600 hover:shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/50 dark:bg-plum-600 dark:hover:bg-plum-500 sm:bottom-6 sm:right-6">
+    <svg viewBox="0 0 24 24" class="h-7 w-7" aria-hidden="true">
+      <path class="fill-current"
+        d="M12 2C6.27 2 2 6.16 2 11.7c0 2.9 1.19 5.4 3.13 7.14.16.15.26.35.27.57l.05 1.77c.02.57.6.94 1.12.71l1.98-.87c.17-.08.37-.09.55-.04.9.25 1.86.38 2.83.38 5.73 0 10-4.16 10-9.7C22 6.16 17.73 2 12 2z" />
+      <path class="fill-plum-700 dark:fill-plum-600"
+        d="M5.96 14.54l2.94-4.66c.47-.74 1.47-.92 2.17-.4l2.34 1.75c.21.16.5.16.71 0l3.16-2.4c.42-.32.97.18.69.63l-2.94 4.66c-.47.74-1.47.92-2.17.4l-2.34-1.75a.59.59 0 0 0-.71 0l-3.16 2.4c-.42.32-.97-.18-.69-.63z" />
+    </svg>
+    <span
+      class="pointer-events-none absolute right-[4.25rem] hidden whitespace-nowrap rounded-xl bg-plum-800 px-3 py-1.5 text-sm font-medium text-white opacity-0 shadow-md transition-opacity duration-200 group-hover:opacity-100 dark:bg-gray-800 md:block">Message
+      us</span>
+  </a>
+
+  <!-- ================================= FOOTER ================================= -->
+  <footer class="bg-plum-900 text-plum-200 dark:bg-gray-950">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:px-6 lg:px-8">
+      <div class="grid gap-10 md:grid-cols-12">
+        <!-- Brand -->
+        <div class="md:col-span-5">
+          <div class="flex items-center gap-2.5">
+            <span class="grid h-10 w-10 place-items-center rounded-xl bg-plum-700 text-white"><i data-lucide="flower-2"
+                class="h-5 w-5"></i></span>
+            <span class="leading-tight">
+              <span class="block font-heading text-base font-extrabold tracking-tight text-white">Layan</span>
+              <span class="block text-[11px] font-medium uppercase tracking-[0.18em] text-plum-300">Traditional Thai
+                Massage</span>
+            </span>
+          </div>
+          <p class="mt-5 max-w-sm text-sm leading-relaxed text-plum-300">
+            Authentic, unhurried Thai massage in Frankston — qualified therapists, quiet rooms, and time set aside just
+            for you.
+          </p>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener"
+            class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-white hover:text-plum-200">
+            <i data-lucide="facebook" class="h-5 w-5"></i> Layan Traditional Thai Massage
+          </a>
+        </div>
+
+        <!-- Explore -->
+        <nav class="md:col-span-3" aria-label="Footer">
+          <h3 class="font-heading text-sm font-bold uppercase tracking-wider text-white">Explore</h3>
+          <ul class="mt-4 space-y-2.5 text-sm">
+            <li><a href="services.html" class="text-plum-300 transition-colors hover:text-white">Treatments</a></li>
+            <li><a href="about.html" class="text-plum-300 transition-colors hover:text-white">About</a></li>
+            <li><a href="index.html#gallery" class="text-plum-300 transition-colors hover:text-white">Gallery</a></li>
+            <li><a href="index.html#reviews" class="text-plum-300 transition-colors hover:text-white">Reviews</a></li>
+            <li><a href="faq.html" class="text-plum-300 transition-colors hover:text-white">FAQ</a></li>
+            <li><a href="contact.html" class="text-plum-300 transition-colors hover:text-white">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Visit -->
+        <div class="md:col-span-4">
+          <h3 class="font-heading text-sm font-bold uppercase tracking-wider text-white">Visit us</h3>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li class="flex items-start gap-3"><i data-lucide="map-pin"
+                class="mt-0.5 h-4 w-4 shrink-0 text-plum-400"></i><span>3/459 Nepean Hwy, Frankston VIC 3199</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="phone"
+                class="mt-0.5 h-4 w-4 shrink-0 text-plum-400"></i><a href="tel:0451250064" class="hover:text-white">0451
+                250 064</a></li>
+            <li class="flex items-start gap-3"><i data-lucide="mail"
+                class="mt-0.5 h-4 w-4 shrink-0 text-plum-400"></i><a href="mailto:info@layanthaimassage.com.au"
+                class="break-all hover:text-white">info@layanthaimassage.com.au</a></li>
+            <li class="flex items-start gap-3"><i data-lucide="clock"
+                class="mt-0.5 h-4 w-4 shrink-0 text-plum-400"></i><span>Mon–Fri 9:30–6 · Sat 9:30–5 · Sun closed</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-plum-400 sm:flex-row sm:items-center sm:justify-between">
+        <p>&copy; <span id="year">2026</span> Layan Traditional Thai Massage. All rights reserved.</p>
+        <p>Frankston · Mornington Peninsula · Melbourne</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    // 3-state theme toggle component
+    function themeToggle() {
+      return {
+        mode: localStorage.getItem('theme') || 'auto',
+        media: null,
+        init() {
+          this.media = window.matchMedia('(prefers-color-scheme: dark)');
+          this.media.addEventListener('change', () => { if (this.mode === 'auto') this.apply(); });
+          this.apply();
+        },
+        apply() {
+          const dark = this.mode === 'dark' || (this.mode === 'auto' && this.media.matches);
+          document.documentElement.classList.toggle('dark', dark);
+        },
+        cycle() {
+          this.mode = this.mode === 'light' ? 'dark' : this.mode === 'dark' ? 'auto' : 'light';
+          localStorage.setItem('theme', this.mode);
+          this.apply();
+        }
+      };
+    }
+
+    // Render icons + scroll reveals once DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      const reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && reveals.length) {
+        const io = new IntersectionObserver((entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        reveals.forEach((el) => io.observe(el));
+      } else {
+        reveals.forEach((el) => el.classList.add('is-visible'));
+      }
+    });
+  </script>
+</body>
+
+</html>
