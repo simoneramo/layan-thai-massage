@@ -52,7 +52,7 @@ export default function ServicesPage() {
                 From a full traditional session to a quick neck-and-shoulder reset, every treatment is unhurried, tailored to you, and carried out by qualified therapists. Here's the full menu, with what to expect and clear pricing.
               </p>
               <div className="hero-anim d2 mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link href="/contact" className="btn-primary w-full sm:w-auto"><CalendarHeart className="h-5 w-5" /> Book Now</Link>
+                <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarHeart className="h-5 w-5" /> Book Now</Link>
                 <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto"><Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})</a>
               </div>
             </div>
@@ -233,7 +233,7 @@ export default function ServicesPage() {
           <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Ready When You <span className="text-plum-600 dark:text-plum-300">Are</span></h2>
           <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">Choose your treatment and we'll find a time that suits. Send a request and we'll confirm by phone, or call us directly.</p>
           <div className="reveal mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link href="/contact" className="btn-primary w-full sm:w-auto"><CalendarHeart className="h-5 w-5" /> Book Now</Link>
+            <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarHeart className="h-5 w-5" /> Book Now</Link>
             <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto"><Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})</a>
           </div>
         </div>

@@ -35,7 +35,7 @@ export default function AboutPage() {
                 Layan is a small, welcoming Thai massage studio in the heart of Frankston. We practise an ancient healing art with patience and care — quiet rooms, qualified therapists, and time set aside entirely for you.
               </p>
               <div className="hero-anim d2 mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link href="/contact" className="btn-primary w-full sm:w-auto"><CalendarHeart className="h-5 w-5" /> Book Now</Link>
+                <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarHeart className="h-5 w-5" /> Book Now</Link>
                 <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto"><Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})</a>
               </div>
             </div>
@@ -185,7 +185,7 @@ export default function AboutPage() {
           <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Come and See <span className="text-plum-600 dark:text-plum-300">Us</span></h2>
           <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">Book a treatment and feel the difference an unhurried hour can make. Send a request, or call us directly.</p>
           <div className="reveal mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link href="/contact" className="btn-primary w-full sm:w-auto"><CalendarHeart className="h-5 w-5" /> Book Now</Link>
+            <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarHeart className="h-5 w-5" /> Book Now</Link>
             <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto"><Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})</a>
           </div>
         </div>

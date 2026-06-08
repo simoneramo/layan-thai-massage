@@ -47,7 +47,7 @@ export default function Header() {
         {/* Right cluster */}
         <div className="flex items-center gap-2 sm:gap-3">
           <ThemeToggle />
-          <Link href="/contact" className="btn-primary hidden sm:inline-flex">
+          <Link href="/book" className="btn-primary hidden sm:inline-flex">
             <CalendarHeart className="h-5 w-5" /> Book Now
           </Link>
           <button
@@ -84,7 +84,7 @@ export default function Header() {
             ))}
           </div>
           <div className="mt-5 flex flex-col gap-3">
-            <Link href="/contact" onClick={() => setOpen(false)} className="btn-primary w-full">
+            <Link href="/book" onClick={() => setOpen(false)} className="btn-primary w-full">
               <CalendarHeart className="h-5 w-5" /> Book Now
             </Link>
             <a href={`tel:${site.phoneTel}`} onClick={() => setOpen(false)} className="btn-secondary w-full">

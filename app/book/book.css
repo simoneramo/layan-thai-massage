@@ -1,0 +1,323 @@
+/*
+ * Booking widget styles, ported from the standalone simple-book app.
+ * Every selector is scoped under `.sb` so these generic class names
+ * (.card, .btn, .field, .pill, .note …) can't collide with the site's
+ * Tailwind component classes. Brand accent uses Layan's red scale.
+ */
+.sb {
+  --sb-card: #ffffff;
+  --sb-ink: #16181d;
+  --sb-muted: #6b7280;
+  --sb-line: #e5e7eb;
+  --sb-brand: #bb1414; /* plum-700 */
+  --sb-brand-ink: #ffffff;
+  --sb-ok: #047857;
+  --sb-danger: #b91c1c;
+  --sb-radius: 16px;
+  --sb-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px rgba(16, 24, 40, 0.06);
+}
+
+.sb * {
+  box-sizing: border-box;
+}
+
+.sb .wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+}
+
+.sb .card {
+  background: var(--sb-card);
+  border: 1px solid var(--sb-line);
+  border-radius: var(--sb-radius);
+  box-shadow: var(--sb-shadow);
+  padding: 28px;
+  color: var(--sb-ink);
+}
+
+.sb h1 {
+  font-size: 26px;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+  color: var(--sb-ink);
+}
+
+.sb .sub {
+  color: var(--sb-muted);
+  margin: 0 0 24px;
+}
+
+.sb a {
+  color: var(--sb-brand);
+}
+
+.sb .step-label {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--sb-muted);
+  margin: 24px 0 10px;
+}
+.sb .step-label:first-of-type {
+  margin-top: 0;
+}
+
+.sb .grid {
+  display: grid;
+  gap: 10px;
+}
+.sb .grid.services {
+  grid-template-columns: 1fr 1fr;
+}
+.sb .grid.times {
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+}
+
+.sb .choice {
+  text-align: left;
+  background: var(--sb-card);
+  border: 1px solid var(--sb-line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: border-color 0.12s, box-shadow 0.12s, background 0.12s;
+  font: inherit;
+  color: inherit;
+}
+.sb .choice:hover {
+  border-color: var(--sb-brand);
+}
+.sb .choice.selected {
+  border-color: var(--sb-brand);
+  box-shadow: 0 0 0 3px rgba(187, 20, 20, 0.12);
+}
+.sb .choice .name {
+  font-weight: 600;
+}
+.sb .choice .meta {
+  color: var(--sb-muted);
+  font-size: 14px;
+}
+
+.sb .time {
+  text-align: center;
+  padding: 10px 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.sb .day {
+  border: 1px solid var(--sb-line);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.sb .day-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--sb-card);
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+}
+.sb .day-header:hover {
+  background: rgba(187, 20, 20, 0.04);
+}
+.sb .day-title {
+  font-weight: 600;
+}
+.sb .day-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--sb-muted);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.sb .chevron {
+  display: inline-block;
+  transition: transform 0.15s;
+  font-size: 18px;
+  line-height: 1;
+}
+.sb .day.open .chevron {
+  transform: rotate(90deg);
+}
+.sb .day .grid.times {
+  padding: 0 16px 16px;
+}
+.sb .day.disabled {
+  opacity: 0.45;
+}
+.sb .day.disabled .day-header {
+  cursor: default;
+}
+
+.sb label.field {
+  display: block;
+  margin-bottom: 14px;
+  border: none;
+  background: none;
+  padding: 0;
+}
+.sb label.field span {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.sb input {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid var(--sb-line);
+  border-radius: 10px;
+  font: inherit;
+  background: #fff;
+  color: var(--sb-ink);
+}
+.sb input:focus {
+  outline: none;
+  border-color: var(--sb-brand);
+  box-shadow: 0 0 0 3px rgba(187, 20, 20, 0.12);
+}
+
+.sb .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--sb-brand);
+  color: var(--sb-brand-ink);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: filter 0.12s, opacity 0.12s;
+}
+.sb .btn:hover {
+  filter: brightness(1.05);
+}
+.sb .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.sb .btn.ghost {
+  background: transparent;
+  color: var(--sb-ink);
+  border: 1px solid var(--sb-line);
+}
+.sb .btn.danger {
+  background: var(--sb-danger);
+  color: #fff;
+}
+
+.sb .row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.sb .spacer {
+  flex: 1;
+}
+
+.sb .note {
+  font-size: 14px;
+  color: var(--sb-muted);
+}
+.sb .error {
+  color: var(--sb-danger);
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.sb .pill {
+  display: inline-block;
+  background: rgba(187, 20, 20, 0.1);
+  color: var(--sb-brand);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sb .success-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(4, 120, 87, 0.12);
+  color: var(--sb-ok);
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  margin-bottom: 16px;
+}
+
+/* admin / cancel tables */
+.sb .table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.sb .table th,
+.sb .table td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--sb-line);
+  vertical-align: top;
+}
+.sb .table th {
+  color: var(--sb-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.sb .tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.sb .tag.confirmed {
+  background: rgba(4, 120, 87, 0.12);
+  color: var(--sb-ok);
+}
+.sb .tag.cancelled {
+  background: rgba(107, 114, 128, 0.15);
+  color: var(--sb-muted);
+}
+.sb .linkbtn {
+  background: none;
+  border: none;
+  color: var(--sb-danger);
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
+.sb .topbar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* Dark-mode: the site toggles `.dark` on <html>; keep the booking card readable. */
+.dark .sb {
+  --sb-card: #1f2937;
+  --sb-ink: #f3f4f6;
+  --sb-muted: #9ca3af;
+  --sb-line: rgba(255, 255, 255, 0.12);
+  --sb-brand: #f06060;
+}
+.dark .sb input {
+  background: #111827;
+}

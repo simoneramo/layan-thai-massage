@@ -26,7 +26,7 @@ export default function Home() {
               Authentic Thai massage in the heart of Frankston. Gentle hands, quiet rooms, and time set aside just for you — so tension melts and calm returns.
             </p>
             <div className="hero-anim d2 mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link href="/contact" className="btn-primary w-full sm:w-auto">
+              <Link href="/book" className="btn-primary w-full sm:w-auto">
                 <CalendarHeart className="h-5 w-5" /> Book Now
               </Link>
               <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto">
@@ -157,7 +157,7 @@ export default function Home() {
               ))}
             </ul>
             <div className="mt-9">
-              <Link href="/contact" className="btn-primary w-full sm:w-auto"><CalendarHeart className="h-5 w-5" /> Book Now</Link>
+              <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarHeart className="h-5 w-5" /> Book Now</Link>
             </div>
           </div>
         </div>

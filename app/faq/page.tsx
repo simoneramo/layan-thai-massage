@@ -118,7 +118,7 @@ export default function FaqPage() {
           <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Still Have a <span className="text-plum-600 dark:text-plum-300">Question?</span></h2>
           <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">We're happy to help you choose a treatment or find a time. Send a booking request, or give us a call — we'd love to hear from you.</p>
           <div className="reveal mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link href="/contact" className="btn-primary w-full sm:w-auto">Book Now</Link>
+            <Link href="/book" className="btn-primary w-full sm:w-auto">Book Now</Link>
             <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto">Call Now ({site.phoneDisplay})</a>
           </div>
         </div>

@@ -15,5 +15,8 @@
 .env
 .env*.local
 
+# online booking data (file-backed store)
+/data/*.json
+
 # typescript
 next-env.d.ts
