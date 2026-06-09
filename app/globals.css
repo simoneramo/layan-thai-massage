@@ -19,6 +19,18 @@
   --color-plum-800: #9c1313;
   --color-plum-900: #7d1414;
 
+  /* Calming jade green — success / confirmation accent */
+  --color-jade-50: #ecfdf5;
+  --color-jade-100: #d1fae5;
+  --color-jade-200: #a7f3d0;
+  --color-jade-300: #6ee7b7;
+  --color-jade-400: #34d399;
+  --color-jade-500: #10b981;
+  --color-jade-600: #059669;
+  --color-jade-700: #047857;
+  --color-jade-800: #065f46;
+  --color-jade-900: #064e3b;
+
   /* Warm cream neutral */
   --color-cream: #fdf7ef;
 }
@@ -71,6 +83,41 @@
   .pill {
     @apply inline-flex items-center gap-1.5 rounded-full bg-plum-100 px-3 py-1
            text-sm font-semibold text-plum-700 dark:bg-white/10 dark:text-plum-200;
+  }
+
+  /* Success pill — confirmed selections, jade accent */
+  .pill-success {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-jade-100 px-3 py-1
+           text-sm font-semibold text-jade-700 dark:bg-jade-400/15 dark:text-jade-300;
+  }
+
+  /* Status badge — smaller than a pill, for inline labels */
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5
+           text-xs font-semibold;
+  }
+  .badge-plum {
+    @apply bg-plum-100 text-plum-700 dark:bg-white/10 dark:text-plum-200;
+  }
+  .badge-jade {
+    @apply bg-jade-100 text-jade-700 dark:bg-jade-400/15 dark:text-jade-300;
+  }
+
+  /* Success notice / banner — jade accent */
+  .notice-success {
+    @apply flex items-start gap-3 rounded-2xl border border-jade-200 bg-jade-50
+           p-4 text-sm text-jade-800
+           dark:border-jade-400/20 dark:bg-jade-400/10 dark:text-jade-100;
+  }
+
+  /* Tertiary action — jade ghost, for positive secondary actions */
+  .btn-jade {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border-2
+           border-jade-300 bg-transparent px-7 py-3.5 text-base font-medium
+           text-jade-700 min-h-[44px] transition duration-200 ease-in-out
+           hover:border-jade-400 hover:bg-jade-50
+           focus:outline-none focus-visible:ring-4 focus-visible:ring-jade-300/40
+           dark:border-jade-400/50 dark:text-jade-300 dark:hover:bg-jade-400/10;
   }
 
   /* Jump-to chip (navigation, not a CTA) */

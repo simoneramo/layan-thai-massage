@@ -11,7 +11,7 @@
   --sb-line: #e5e7eb;
   --sb-brand: #bb1414; /* plum-700 */
   --sb-brand-ink: #ffffff;
-  --sb-ok: #047857;
+  --sb-ok: var(--color-jade-700);
   --sb-danger: #b91c1c;
   --sb-radius: 16px;
   --sb-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px rgba(16, 24, 40, 0.06);
@@ -62,6 +62,116 @@
 }
 .sb .step-label:first-of-type {
   margin-top: 0;
+}
+
+/* stepper / progress */
+.sb .steps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+}
+.sb .steps-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--sb-muted);
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 0;
+}
+.sb .steps-item:not(:first-child)::before {
+  content: "";
+  width: 16px;
+  height: 1px;
+  background: var(--sb-line);
+  flex: none;
+}
+.sb .steps-num {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex: none;
+  border-radius: 50%;
+  border: 1px solid var(--sb-line);
+  font-size: 13px;
+  background: var(--sb-card);
+}
+.sb .steps-item.current {
+  color: var(--sb-ink);
+}
+.sb .steps-item.current .steps-num {
+  border-color: var(--sb-brand);
+  color: var(--sb-brand);
+  box-shadow: 0 0 0 3px rgba(187, 20, 20, 0.12);
+}
+.sb .steps-item.done {
+  color: var(--sb-ink);
+}
+.sb .steps-item.done .steps-num {
+  background: var(--sb-brand);
+  border-color: var(--sb-brand);
+  color: var(--sb-brand-ink);
+}
+.sb .steps-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* on narrow screens only show the label for the current step */
+@media (max-width: 520px) {
+  .sb .steps-item:not(.current) .steps-text {
+    display: none;
+  }
+}
+
+/* context bar: back control + running summary */
+.sb .stepbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.sb .back {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex: none;
+  background: none;
+  border: none;
+  padding: 6px 10px 6px 8px;
+  margin: 0 0 0 -8px;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sb-muted);
+  cursor: pointer;
+  transition: color 0.12s, background 0.12s;
+}
+.sb .back:hover {
+  color: var(--sb-ink);
+  background: rgba(0, 0, 0, 0.04);
+}
+.sb .back span {
+  font-size: 18px;
+  line-height: 1;
+}
+.dark .sb .back:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.sb .stepbar .pill {
+  text-align: right;
+  background: color-mix(in srgb, var(--color-jade-500) 14%, transparent);
+  color: var(--color-jade-700);
+}
+.dark .sb .stepbar .pill {
+  background: color-mix(in srgb, var(--color-jade-400) 18%, transparent);
+  color: var(--color-jade-300);
 }
 
 .sb .grid {
@@ -255,7 +365,7 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: rgba(4, 120, 87, 0.12);
+  background: color-mix(in srgb, var(--color-jade-500) 14%, transparent);
   color: var(--sb-ok);
   display: grid;
   place-items: center;
@@ -289,7 +399,7 @@
   border-radius: 999px;
 }
 .sb .tag.confirmed {
-  background: rgba(4, 120, 87, 0.12);
+  background: color-mix(in srgb, var(--color-jade-500) 14%, transparent);
   color: var(--sb-ok);
 }
 .sb .tag.cancelled {
