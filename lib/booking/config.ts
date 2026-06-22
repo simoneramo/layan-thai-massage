@@ -23,12 +23,12 @@ export const services: Service[] = [
 /** Weekly hours (studio local time). day 0=Sun .. 6=Sat. Empty = closed. */
 export const availability: Availability = {
   0: [], // Sun — closed
-  1: [{ start: "09:30", end: "18:00" }], // Mon
-  2: [{ start: "09:30", end: "18:00" }], // Tue
-  3: [{ start: "09:30", end: "18:00" }], // Wed
-  4: [{ start: "09:30", end: "18:00" }], // Thu
-  5: [{ start: "09:30", end: "18:00" }], // Fri
-  6: [{ start: "09:30", end: "17:00" }], // Sat
+  1: [{ start: "09:00", end: "18:00" }], // Mon
+  2: [{ start: "09:00", end: "18:00" }], // Tue
+  3: [{ start: "09:00", end: "18:00" }], // Wed
+  4: [{ start: "09:00", end: "18:00" }], // Thu
+  5: [{ start: "09:00", end: "18:00" }], // Fri
+  6: [{ start: "09:00", end: "17:00" }], // Sat
 };
 
 /** How many days ahead visitors can book. */

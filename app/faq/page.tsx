@@ -58,7 +58,7 @@ export default function FaqPage() {
               We're at 3/459 Nepean Hwy, Frankston VIC 3199 — easy to reach on the Mornington Peninsula, with parking close by. You can <a href={site.maps} target="_blank" rel="noopener" className="font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900 dark:text-plum-200">get directions here</a>.
             </FaqItem>
             <FaqItem question="What are your opening hours?">
-              We're open Monday to Friday 9:30am–6:00pm and Saturday 9:30am–5:00pm. We're closed on Sundays.
+              We're open Monday to Friday 9am–6:00pm and Saturday 9am–5:00pm. We're closed on Sundays.
             </FaqItem>
             <FaqItem question="How early should I arrive?">
               A few minutes early is perfect — just enough time to settle in, let us know how you're feeling, and mention any areas you'd like us to focus on.

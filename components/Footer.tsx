@@ -59,14 +59,19 @@ export default function Footer() {
               <li className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-plum-400" /><span>{site.address}</span></li>
               <li className="flex items-start gap-3"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-plum-400" /><a href={`tel:${site.phoneTel}`} className="hover:text-white">{site.phoneDisplay}</a></li>
               <li className="flex items-start gap-3"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-plum-400" /><a href={`mailto:${site.email}`} className="break-all hover:text-white">{site.email}</a></li>
-              <li className="flex items-start gap-3"><Clock className="mt-0.5 h-4 w-4 shrink-0 text-plum-400" /><span>Mon–Fri 9:30–6 · Sat 9:30–5 · Sun closed</span></li>
+              <li className="flex items-start gap-3"><Clock className="mt-0.5 h-4 w-4 shrink-0 text-plum-400" /><span>Mon–Fri 9–6 · Sat 9–5 · Sun closed</span></li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-plum-400 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} Layan Traditional Thai Massage. All rights reserved.</p>
-          <p>Frankston · Mornington Peninsula · Melbourne</p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <Link href="/privacy" className="transition-colors hover:text-white">Privacy Policy</Link>
+            <Link href="/terms" className="transition-colors hover:text-white">Terms &amp; Conditions</Link>
+            <span className="hidden sm:inline" aria-hidden="true">·</span>
+            <span>Frankston · Melbourne</span>
+          </div>
         </div>
       </div>
     </footer>

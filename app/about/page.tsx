@@ -168,7 +168,7 @@ export default function AboutPage() {
                 </span>
               </li>
               <li className="flex items-start gap-3"><Phone className="mt-0.5 h-5 w-5 shrink-0 text-plum-500 dark:text-plum-300" /><a href={`tel:${site.phoneTel}`} className="font-medium hover:text-plum-600 dark:hover:text-white">{site.phoneDisplay}</a></li>
-              <li className="flex items-start gap-3"><Clock className="mt-0.5 h-5 w-5 shrink-0 text-plum-500 dark:text-plum-300" /><span>Mon–Fri 9:30am–6:00pm · Sat 9:30am–5:00pm · Sun closed</span></li>
+              <li className="flex items-start gap-3"><Clock className="mt-0.5 h-5 w-5 shrink-0 text-plum-500 dark:text-plum-300" /><span>Mon–Fri 9am–6:00pm · Sat 9am–5:00pm · Sun closed</span></li>
             </ul>
           </div>
           <div className="reveal lg:col-span-5">

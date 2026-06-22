@@ -8,10 +8,12 @@ import {
 import { site } from "@/lib/site";
 import FaqItem from "@/components/FaqItem";
 import ContactForm from "@/components/ContactForm";
+import StructuredData from "@/components/StructuredData";
 
 export default function Home() {
   return (
     <>
+      <StructuredData />
       {/* ===== HERO ===== */}
       <section id="home" className="relative overflow-hidden bg-cream dark:bg-gray-900">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 sm:px-6 md:py-28 lg:grid-cols-12 lg:gap-10 lg:px-8">
@@ -297,7 +299,7 @@ export default function Home() {
               Treatments run from a 15-minute head massage ($15) to a 90-minute traditional session ($110). Full pricing is on the <Link href="/services" className="font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900 dark:text-plum-200">treatments page</Link>.
             </FaqItem>
             <FaqItem question="Where are you, and when are you open?">
-              You'll find us at 3/459 Nepean Hwy, Frankston VIC 3199. We're open Mon–Fri 9:30am–6:00pm and Sat 9:30am–5:00pm; closed Sundays.
+              You'll find us at 3/459 Nepean Hwy, Frankston VIC 3199. We're open Mon–Fri 9am–6:00pm and Sat 9am–5:00pm; closed Sundays.
             </FaqItem>
           </div>
         </div>
@@ -334,8 +336,8 @@ export default function Home() {
                   <li className="flex items-start gap-3">
                     <Clock className="mt-0.5 h-5 w-5 shrink-0 text-plum-300" />
                     <span className="space-y-0.5">
-                      <span className="flex justify-between gap-6"><span>Mon – Fri</span><span className="text-white">9:30am – 6:00pm</span></span>
-                      <span className="flex justify-between gap-6"><span>Saturday</span><span className="text-white">9:30am – 5:00pm</span></span>
+                      <span className="flex justify-between gap-6"><span>Mon – Fri</span><span className="text-white">9am – 6:00pm</span></span>
+                      <span className="flex justify-between gap-6"><span>Saturday</span><span className="text-white">9am – 5:00pm</span></span>
                       <span className="flex justify-between gap-6"><span>Sunday</span><span className="text-white">Closed</span></span>
                     </span>
                   </li>

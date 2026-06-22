@@ -4,8 +4,8 @@ export const site = {
   phoneTel: "0451250064",
   email: "info@layanthaimassage.com.au",
   address: "3/459 Nepean Hwy, Frankston VIC 3199",
-  messenger: "https://m.me/LayanTraditionalThaiMassage",
-  facebook: "https://www.facebook.com/",
+  messenger: "https://m.me/312223395466568",
+  facebook: "https://www.facebook.com/profile.php?id=100064629971926",
   maps:
     "https://www.google.com/maps/search/?api=1&query=Layan+Traditional+Thai+Massage+459+Nepean+Hwy+Frankston",
   mapEmbed:

@@ -27,11 +27,13 @@ export async function POST(req: NextRequest) {
   const service = services.find((s) => s.id === serviceId);
   if (!service) return NextResponse.json({ error: "Unknown service." }, { status: 400 });
 
-  // All three contact fields are mandatory.
-  if (!name) return NextResponse.json({ error: "Full name is required." }, { status: 400 });
-  if (!emailRe.test(email))
+  // All three contact fields are mandatory, with sane upper bounds so a public
+  // endpoint can't be used to store or email oversized payloads.
+  if (!name || name.length > 100)
+    return NextResponse.json({ error: "Full name is required." }, { status: 400 });
+  if (!emailRe.test(email) || email.length > 200)
     return NextResponse.json({ error: "A valid email is required." }, { status: 400 });
-  if (phone.replace(/\D/g, "").length < 7)
+  if (phone.replace(/\D/g, "").length < 7 || phone.length > 40)
     return NextResponse.json({ error: "A valid phone number is required." }, { status: 400 });
 
   const cancelToken = randomBytes(16).toString("hex");
