@@ -26,7 +26,7 @@ export default function FaqPage() {
           <div className="mt-6 grid items-end gap-8 lg:grid-cols-12">
             <div className="lg:col-span-8">
               <h1 className="hero-anim d1 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl dark:text-white">
-                Questions, Gently <span className="text-plum-600 dark:text-plum-300">Answered</span>
+                Questions, Gently Answered
               </h1>
               <p className="hero-anim d1 mt-5 max-w-2xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
                 New to Thai massage, or just planning your first visit to Layan? Here's everything you might be wondering — and if your question isn't here, we're only a phone call away.
@@ -115,7 +115,7 @@ export default function FaqPage() {
       {/* CTA */}
       <section className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-6 lg:px-8">
-          <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Still Have a <span className="text-plum-600 dark:text-plum-300">Question?</span></h2>
+          <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Still Have a Question?</h2>
           <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">We're happy to help you choose a treatment or find a time. Send a booking request, or give us a call — we'd love to hear from you.</p>
           <div className="reveal mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link href="/book" className="btn-primary w-full sm:w-auto">Book Now</Link>

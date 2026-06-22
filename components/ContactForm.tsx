@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useEffect, useRef, useState } from "react";
-import { CalendarHeart, Check, Phone, RotateCcw } from "lucide-react";
+import { CalendarPlus, Check, Phone, RotateCcw } from "lucide-react";
 import { sendBooking, type BookingState } from "@/app/actions";
 import { treatments, site } from "@/lib/site";
 
@@ -98,7 +98,7 @@ function ContactFormInner({ onReset }: { onReset: () => void }) {
       )}
 
       <button type="submit" disabled={pending} className="btn-primary mt-6 w-full disabled:cursor-not-allowed disabled:opacity-70">
-        <CalendarHeart className="h-5 w-5" /> {pending ? "Sending…" : "Book Now"}
+        <CalendarPlus className="h-5 w-5" /> {pending ? "Sending…" : "Book Now"}
       </button>
       <p className="mt-3 text-center text-xs text-plum-500 dark:text-gray-400">We&apos;ll call to confirm your appointment. Walk-ins welcome too.</p>
     </form>

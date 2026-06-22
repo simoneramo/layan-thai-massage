@@ -275,3 +275,110 @@ Jim Y
 7 years ago
 Aor Srikueaklin
 9 years ago
+
+---
+
+## Online booking — production persistence (Neon Postgres)
+
+_Added 2026-06-09. Done and deployed to production (verified live)._
+
+### Problem
+
+The online booking feature (`/book`, `/admin`, `/cancel/[token]`) persisted to a
+JSON file on disk (`data/bookings.json`) via `lib/booking/store.ts`. That cannot
+work on Vercel: serverless filesystems are ephemeral and read-only outside
+`/tmp`, instances aren't shared, and the in-process mutex only serialised calls
+within a single instance — so writes would fail and concurrent requests could
+double-book. This is an architecture issue, not a plan-tier one (Pro doesn't
+change it).
+
+### What was done
+
+Swapped the file store for **Neon Postgres**, keeping a zero-config local
+fallback. The rest of the app is unchanged — every caller still imports the same
+store functions.
+
+- **`lib/booking/schema.sql`** — `bookings` table. Times stored as naive
+  `timestamp` (the app works in one fixed studio wall-clock). A generated
+  half-open `tsrange` column `during`, plus the key guard:
+  `CONSTRAINT bookings_no_overlap EXCLUDE USING gist (during WITH &&) WHERE (status = 'confirmed')`.
+  The **database itself** now refuses any overlapping confirmed booking — this
+  replaces the fragile in-process lock and holds across multiple serverless
+  instances. A conflicting insert raises SQLSTATE `23P01`, mapped to a 409.
+- **`lib/booking/store-types.ts`** — shared `BookingStore` interface.
+- **`lib/booking/store-pg.ts`** — Postgres backend via `@neondatabase/serverless`
+  (`sql.query(text, params)`), lazily connected so importing it without
+  `DATABASE_URL` never throws. Maps rows back to the app's `Booking` shape and
+  formats timestamps back to `"YYYY-MM-DDTHH:mm"`.
+- **`lib/booking/store-file.ts`** — the original JSON-file logic, unchanged
+  behaviour, kept for local dev.
+- **`lib/booking/store.ts`** — now a selector: Postgres when `DATABASE_URL` is
+  set (prod/preview), else the JSON file. The local file-store fallback means dev
+  keeps working with zero setup whenever `DATABASE_URL` is unset.
+- **`scripts/migrate.mjs`** + `npm run db:migrate` — applies the schema
+  (idempotent); `npm run db:migrate -- --import` optionally imports
+  `data/bookings.json`.
+- **`.env.example`** — documented `DATABASE_URL` (use the pooled Neon string).
+- Added dependency `@neondatabase/serverless` (`^1.1.0`).
+
+### Provisioning (done)
+
+- Neon project `layan-thai-massage`, region AWS Sydney (`ap-southeast-2`),
+  account `wemakesmall+layan-thai-massage@gmail.com`.
+- Pooled connection string set as `DATABASE_URL` locally and in Vercel
+  (Production + Preview), alongside the existing `RESEND_API_KEY`,
+  `BOOKING_FROM_EMAIL` (verified domain), `BOOKING_TO_EMAIL`, `ADMIN_PASSWORD`.
+- `npm run db:migrate` applied the schema to Neon (table + constraint + indexes
+  verified present).
+
+### Verification (booking persistence)
+
+- Typecheck + production build green.
+- **Live double-booking test:** two concurrent POSTs to `/api/bookings` for the
+  same slot returned one `200 {ok:true}` and one `409 "That time was just
+  taken."`; exactly one row was written (the loser never inserted). Test rows
+  then deleted. **Overlapping bookings are now physically impossible** even
+  across concurrent serverless instances.
+- Production deploy smoke-tested — confirmed working.
+
+### Optional follow-up (not scheduled)
+
+- **`NEXT_PUBLIC_BASE_URL`** — cancel links currently use the live request
+  origin, which is fine. If a custom domain is later put in front, set this to
+  the canonical URL so cancel links always point at the primary domain. Not
+  urgent; set it whenever the domain lands.
+
+---
+
+## Pre-launch — what's needed from the client
+
+_Added 2026-06-09. Site + online booking are built and live on a temporary
+Vercel URL. These are the blockers before public launch — most need client
+input rather than dev work._
+
+### Needs client input
+
+1. **Domain** — confirm ownership of `layanthaimassage.com.au` (or chosen
+   address) and get DNS access to point it at Vercel. Until then the site is on
+   the temporary `*.vercel.app` URL. After the domain lands, also set
+   `NEXT_PUBLIC_BASE_URL` (see above) so cancel links use the canonical host.
+2. **Real photos** — replace Unsplash placeholders with: shop front / signage,
+   treatment rooms + reception, and (optional) the team. Phone photos are fine.
+3. **Facebook page link** — get the real page URL. `site.facebook` in
+   [lib/site.ts](lib/site.ts) is still the placeholder `https://www.facebook.com/`.
+4. **Confirm details** — services / durations / prices
+   ([lib/booking/config.ts](lib/booking/config.ts)), opening hours, phone
+   `0451 250 064`, address `3/459 Nepean Hwy, Frankston VIC 3199`.
+5. **Booking inbox** — confirm `BOOKING_TO_EMAIL` (currently
+   `info@layanthaimassage.com.au`) is the right destination.
+6. **Admin password** — client picks a password (or we set a secure one and
+   share it) for `ADMIN_PASSWORD` / the `/admin` bookings dashboard.
+
+### Dev tasks gated on the above
+
+- Set real `facebook` URL in [lib/site.ts](lib/site.ts) once provided.
+- Swap stock images for client photos.
+- Set production `ADMIN_PASSWORD` (not `change-me`) in Vercel env.
+- Confirm `BOOKING_FROM_EMAIL` uses the verified domain sender (not the
+  `onboarding@resend.dev` fallback).
+- Connect domain in Vercel + set `NEXT_PUBLIC_BASE_URL`.

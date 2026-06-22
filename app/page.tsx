@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  MapPin, CalendarHeart, Phone, Leaf, Clock, HeartHandshake, List,
+  MapPin, CalendarPlus, Phone, Leaf, Clock, HeartHandshake, List,
   CheckCircle2, Waves, HeartPulse, Move, Activity, MoonStar, Sparkles,
-  Star, StarHalf, Quote, ArrowRight, ArrowUpRight, Mail,
+  Star, StarHalf, ArrowRight, ArrowUpRight, Mail,
 } from "lucide-react";
 import { site } from "@/lib/site";
 import FaqItem from "@/components/FaqItem";
@@ -22,14 +22,14 @@ export default function Home() {
               <MapPin className="h-4 w-4" /> Frankston, Melbourne 3199
             </span>
             <h1 className="hero-anim d1 mt-6 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl dark:text-white">
-              Unwind, Restore, <span className="text-plum-600 dark:text-plum-300">Breathe</span> Again
+              Unwind, Restore, Breathe Again
             </h1>
             <p className="hero-anim d1 mt-5 max-w-xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
               Authentic Thai massage in the heart of Frankston. Gentle hands, quiet rooms, and time set aside just for you — so tension melts and calm returns.
             </p>
             <div className="hero-anim d2 mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link href="/book" className="btn-primary w-full sm:w-auto">
-                <CalendarHeart className="h-5 w-5" /> Book Now
+                <CalendarPlus className="h-5 w-5" /> Book Now
               </Link>
               <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto">
                 <Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})
@@ -79,7 +79,7 @@ export default function Home() {
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Our treatments</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 dark:text-white sm:text-4xl">
-              Massage Therapies for Every <span className="text-plum-600 dark:text-plum-300">Need</span>
+              Massage Therapies for Every Need
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
               Traditional techniques, unhurried and tailored to you. Choose a signature treatment below, or pick a focused session for a specific ache.
@@ -145,7 +145,7 @@ export default function Home() {
           <div className="reveal order-1 lg:order-2 lg:col-span-7">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Our practice</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">
-              Rooted in an Ancient Healing <span className="text-plum-600 dark:text-plum-300">Art</span>
+              Rooted in an Ancient Healing Art
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
               Traditional Thai massage draws on yoga, Ayurvedic medicine and Buddhist practice — rhythmic pressure, gentle stretching and quiet breath that bring body, mind and spirit back into balance.
@@ -159,7 +159,7 @@ export default function Home() {
               ))}
             </ul>
             <div className="mt-9">
-              <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarHeart className="h-5 w-5" /> Book Now</Link>
+              <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Now</Link>
             </div>
           </div>
         </div>
@@ -171,7 +171,7 @@ export default function Home() {
           <div className="reveal mx-auto max-w-2xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">The benefits</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">
-              How Thai Massage <span className="text-plum-600 dark:text-plum-300">Helps</span> You
+              How Thai Massage Helps You
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
               More than muscle relief — Thai massage works on circulation and energy lines to support how your whole body feels.
@@ -202,7 +202,7 @@ export default function Home() {
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-300">Our space</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              A Calm, Quiet <span className="text-plum-300">Retreat</span>
+              A Calm, Quiet Retreat
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-200/90">
               Soft light, warm towels and the gentle scent of essential oils — a small escape in the middle of Frankston.
@@ -235,7 +235,7 @@ export default function Home() {
             <div className="max-w-xl">
               <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Kind words</span>
               <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">
-                Loved by <span className="text-plum-600 dark:text-plum-300">Frankston</span> Locals
+                Loved by Frankston Locals
               </h2>
             </div>
             <div className="flex items-center gap-3 rounded-2xl bg-white px-5 py-3 shadow-sm ring-1 ring-plum-100 dark:bg-gray-800 dark:ring-white/10">
@@ -258,8 +258,7 @@ export default function Home() {
               { initials: "SW", name: "Shae Wheeler", meta: "Local Guide · recent visit", quote: "Brilliant, relaxing and technically talented." },
             ].map((r) => (
               <figure key={r.name} className="reveal card flex flex-col p-6 hover:-translate-y-1 hover:shadow-lg">
-                <Quote className="h-7 w-7 text-plum-300 dark:text-plum-400" />
-                <blockquote className="mt-3 flex-1 leading-relaxed text-plum-800 dark:text-gray-200">{r.quote}</blockquote>
+                <blockquote className="flex-1 leading-relaxed text-plum-800 dark:text-gray-200">{r.quote}</blockquote>
                 <figcaption className="mt-5 flex items-center gap-3">
                   <span className="grid h-11 w-11 place-items-center rounded-full bg-plum-700 text-sm font-bold text-white dark:bg-plum-600">{r.initials}</span>
                   <span>
@@ -279,7 +278,7 @@ export default function Home() {
           <div className="reveal lg:col-span-4">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Good to know</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">
-              Your Questions, <span className="text-plum-600 dark:text-plum-300">Answered</span>
+              Your Questions, Answered
             </h2>
             <p className="mt-4 leading-relaxed text-plum-700/90 dark:text-gray-300">
               New to Thai massage? Here's what to expect. For anything else, just give us a call — or see the <Link href="/faq" className="font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900 dark:text-plum-200">full FAQ</Link>.
@@ -311,7 +310,7 @@ export default function Home() {
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Book your visit</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">
-              Ready to <span className="text-plum-600 dark:text-plum-300">Unwind?</span>
+              Ready to Unwind?
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
               Send a booking request and we'll confirm your time by phone, or call us directly — we'd love to look after you.

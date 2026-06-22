@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { CalendarHeart, Phone, Clock, Check, List } from "lucide-react";
+import { CalendarPlus, Phone, Clock, Check, List } from "lucide-react";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -46,13 +46,13 @@ export default function ServicesPage() {
           <div className="mt-6 grid items-end gap-8 lg:grid-cols-12">
             <div className="lg:col-span-8">
               <h1 className="hero-anim d1 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl dark:text-white">
-                Treatments That Bring You Back to <span className="text-plum-600 dark:text-plum-300">Calm</span>
+                Treatments That Bring You Back to Calm
               </h1>
               <p className="hero-anim d1 mt-5 max-w-2xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
                 From a full traditional session to a quick neck-and-shoulder reset, every treatment is unhurried, tailored to you, and carried out by qualified therapists. Here's the full menu, with what to expect and clear pricing.
               </p>
               <div className="hero-anim d2 mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarHeart className="h-5 w-5" /> Book Now</Link>
+                <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Now</Link>
                 <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto"><Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})</a>
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function ServicesPage() {
           </div>
           <div className="reveal order-1 lg:order-2">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Signature treatment</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Traditional Thai <span className="text-plum-600 dark:text-plum-300">Massage</span></h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Traditional Thai Massage</h2>
             <div className="mt-4 flex flex-wrap gap-2">
               <span className="pill"><Clock className="h-4 w-4" /> 60 min · $70</span>
               <span className="pill"><Clock className="h-4 w-4" /> 90 min · $110</span>
@@ -98,7 +98,7 @@ export default function ServicesPage() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
           <div className="reveal">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Signature treatment</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Essential Oil <span className="text-plum-600 dark:text-plum-300">Massage</span></h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Essential Oil Massage</h2>
             <div className="mt-4 flex flex-wrap gap-2"><span className="pill"><Clock className="h-4 w-4" /> 60 min · $70</span></div>
             <p className="mt-5 leading-relaxed text-plum-700/90 dark:text-gray-300">
               An ancient Thai remedy that pairs the healing power of warm essential oils with flowing massage to stimulate blood flow. It relieves sore, tired muscles and leaves your whole body feeling calm and relaxed.
@@ -124,7 +124,7 @@ export default function ServicesPage() {
           </div>
           <div className="reveal order-1 lg:order-2">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Signature treatment</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Thai Foot Massage &amp; <span className="text-plum-600 dark:text-plum-300">Reflexology</span></h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Thai Foot Massage &amp; Reflexology</h2>
             <div className="mt-4 flex flex-wrap gap-2">
               <span className="pill"><Clock className="h-4 w-4" /> 30 min · $35</span>
               <span className="pill"><Clock className="h-4 w-4" /> 60 min · $60</span>
@@ -147,7 +147,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-300">Focused relief</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">Back, Neck, Shoulder &amp; <span className="text-plum-300">Head</span></h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">Back, Neck, Shoulder &amp; Head</h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-200/90">Short on time, or carrying tension in one spot? These focused sessions zero in on exactly where you need it.</p>
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2">
@@ -174,7 +174,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal mx-auto max-w-2xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Your visit</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">How a Session <span className="text-plum-600 dark:text-plum-300">Flows</span></h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">How a Session Flows</h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">First time with us? There's nothing to prepare — here's the gentle rhythm of a visit.</p>
           </div>
           <ol className="mt-14 grid gap-8 md:grid-cols-3">
@@ -200,7 +200,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">At a glance</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Full Price <span className="text-plum-600 dark:text-plum-300">List</span></h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Full Price List</h2>
           </div>
           <div className="reveal mt-10 overflow-hidden rounded-2xl ring-1 ring-plum-100 dark:ring-white/10">
             <table className="w-full text-left">
@@ -230,10 +230,10 @@ export default function ServicesPage() {
       {/* BOOKING CTA */}
       <section className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-6 lg:px-8">
-          <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Ready When You <span className="text-plum-600 dark:text-plum-300">Are</span></h2>
+          <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Ready When You Are</h2>
           <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">Choose your treatment and we'll find a time that suits. Send a request and we'll confirm by phone, or call us directly.</p>
           <div className="reveal mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarHeart className="h-5 w-5" /> Book Now</Link>
+            <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Now</Link>
             <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto"><Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})</a>
           </div>
         </div>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  CalendarHeart, Phone, Heart, HandHeart, Smile, Scale, CheckCircle2,
+  CalendarPlus, Phone, Heart, HandHeart, Smile, Scale, CheckCircle2,
   Shirt, MessageCircle, CalendarCheck, MapPin, Clock, ArrowUpRight,
 } from "lucide-react";
 import { site } from "@/lib/site";
@@ -29,13 +29,13 @@ export default function AboutPage() {
           <div className="mt-6 grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-7">
               <h1 className="hero-anim d1 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl dark:text-white">
-                Calm, Considered, Genuinely <span className="text-plum-600 dark:text-plum-300">Thai</span>
+                Calm, Considered, Genuinely Thai
               </h1>
               <p className="hero-anim d1 mt-5 max-w-2xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
                 Layan is a small, welcoming Thai massage studio in the heart of Frankston. We practise an ancient healing art with patience and care — quiet rooms, qualified therapists, and time set aside entirely for you.
               </p>
               <div className="hero-anim d2 mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarHeart className="h-5 w-5" /> Book Now</Link>
+                <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Now</Link>
                 <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto"><Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})</a>
               </div>
             </div>
@@ -56,7 +56,7 @@ export default function AboutPage() {
           </div>
           <div className="reveal order-1 lg:order-2">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Our roots</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">An Ancient Healing <span className="text-plum-600 dark:text-plum-300">Art</span></h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">An Ancient Healing Art</h2>
             <p className="mt-5 leading-relaxed text-plum-700/90 dark:text-gray-300">
               Traditional Thai massage has its roots in yoga, Ayurvedic medicine and Buddhist spiritual practice. It weaves together rhythmic massage, acupressure, gentle twisting, deep stretching and meditation to release tension, increase vitality, and bring a wholeness of mind, body and spirit.
             </p>
@@ -72,7 +72,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Our philosophy</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Care That Begins Before the First <span className="text-plum-600 dark:text-plum-300">Touch</span></h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Care That Begins Before the First Touch</h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
               Each session opens with a quiet moment of centering and connection — a chance to be mindful of breath and energy, and to give you our full, unhurried attention. It's guided by four simple intentions.
             </p>
@@ -99,7 +99,7 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-12 lg:gap-14 lg:px-8">
           <div className="reveal lg:col-span-6">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">How we work</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Traditional Technique, <span className="text-plum-600 dark:text-plum-300">Tailored</span> to You</h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Traditional Technique, Tailored to You</h2>
             <p className="mt-5 leading-relaxed text-plum-700/90 dark:text-gray-300">
               Traditional Thai massage is an interactive therapy — passive stretching and gentle, firm pressure applied with the palms and thumbs along the body's energy lines. It works the skin, muscles, joints and deeper structures, encouraging blood and lymph circulation so you leave feeling relaxed and invigorated.
             </p>
@@ -156,7 +156,7 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-12 lg:gap-14 lg:px-8">
           <div className="reveal lg:col-span-7">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Find us</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">A Quiet Retreat in <span className="text-plum-600 dark:text-plum-300">Frankston</span></h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">A Quiet Retreat in Frankston</h2>
             <p className="mt-5 leading-relaxed text-plum-700/90 dark:text-gray-300">
               You'll find us on Nepean Highway, an easy stop on the Mornington Peninsula. Pop in for a treatment between errands, after work, or whenever you need to slow down for an hour.
             </p>
@@ -182,10 +182,10 @@ export default function AboutPage() {
       {/* BOOKING CTA */}
       <section className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-6 lg:px-8">
-          <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Come and See <span className="text-plum-600 dark:text-plum-300">Us</span></h2>
+          <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Come and See Us</h2>
           <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">Book a treatment and feel the difference an unhurried hour can make. Send a request, or call us directly.</p>
           <div className="reveal mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarHeart className="h-5 w-5" /> Book Now</Link>
+            <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Now</Link>
             <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto"><Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})</a>
           </div>
         </div>

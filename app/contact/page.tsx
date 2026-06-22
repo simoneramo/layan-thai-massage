@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CalendarHeart, Phone, Mail, MessageCircle, MapPin, Clock, ArrowUpRight } from "lucide-react";
+import { CalendarPlus, Phone, Mail, MessageCircle, MapPin, Clock, ArrowUpRight } from "lucide-react";
 import { site } from "@/lib/site";
 import ContactForm from "@/components/ContactForm";
 
@@ -25,13 +25,13 @@ export default function ContactPage() {
           </nav>
           <div className="mt-6 max-w-2xl">
             <h1 className="hero-anim d1 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl dark:text-white">
-              Let's Get You Booked <span className="text-plum-600 dark:text-plum-300">In</span>
+              Let's Get You Booked In
             </h1>
             <p className="hero-anim d1 mt-5 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
               Call for the quickest response, send a booking request below, or simply drop by — walk-ins are welcome whenever we have space. We'd love to help you unwind.
             </p>
             <div className="hero-anim d2 mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#booking" className="btn-primary w-full sm:w-auto"><CalendarHeart className="h-5 w-5" /> Book Now</a>
+              <a href="#booking" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Now</a>
               <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto"><Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})</a>
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Booking request</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Send Us a <span className="text-plum-600 dark:text-plum-300">Message</span></h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Send Us a Message</h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">Tell us what you'd like and when suits you. We'll call back to confirm your appointment.</p>
           </div>
           <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:gap-10">
@@ -113,7 +113,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Find us</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">On Nepean <span className="text-plum-600 dark:text-plum-300">Highway</span></h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">On Nepean Highway</h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">Easy to reach on the Mornington Peninsula, with parking close by.</p>
           </div>
           <div className="reveal mt-10 overflow-hidden rounded-2xl shadow-sm ring-1 ring-plum-100 dark:ring-white/10">

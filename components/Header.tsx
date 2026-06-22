@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Flower2, CalendarHeart, Phone, Menu, X } from "lucide-react";
+import { Flower2, CalendarPlus, Phone, Menu, X } from "lucide-react";
 import { nav, site } from "@/lib/site";
 import ThemeToggle from "./ThemeToggle";
 
@@ -48,7 +48,7 @@ export default function Header() {
         <div className="flex items-center gap-2 sm:gap-3">
           <ThemeToggle />
           <Link href="/book" className="btn-primary hidden sm:inline-flex">
-            <CalendarHeart className="h-5 w-5" /> Book Now
+            <CalendarPlus className="h-5 w-5" /> Book Now
           </Link>
           <button
             type="button"
@@ -85,7 +85,7 @@ export default function Header() {
           </div>
           <div className="mt-5 flex flex-col gap-3">
             <Link href="/book" onClick={() => setOpen(false)} className="btn-primary w-full">
-              <CalendarHeart className="h-5 w-5" /> Book Now
+              <CalendarPlus className="h-5 w-5" /> Book Now
             </Link>
             <a href={`tel:${site.phoneTel}`} onClick={() => setOpen(false)} className="btn-secondary w-full">
               <Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})

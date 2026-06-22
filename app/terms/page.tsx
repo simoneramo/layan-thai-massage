@@ -24,7 +24,7 @@ export default function TermsPage() {
             </ol>
           </nav>
           <h1 className="hero-anim d1 mt-6 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl dark:text-white">
-            Terms &amp; <span className="text-plum-600 dark:text-plum-300">Conditions</span>
+            Terms &amp; Conditions
           </h1>
           <p className="hero-anim d1 mt-5 max-w-2xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
             These terms apply to bookings made and treatments received at {site.name}. By booking with us or using this website, you agree to them.
