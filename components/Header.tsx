@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Flower2, CalendarPlus, Phone, Menu, X } from "lucide-react";
+import { CalendarPlus, Phone, Menu, X } from "lucide-react";
 import { nav, site } from "@/lib/site";
 import ThemeToggle from "./ThemeToggle";
 
@@ -16,14 +17,15 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-plum-100/70 bg-cream/85 backdrop-blur-md dark:border-white/10 dark:bg-gray-900/85">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8" aria-label="Primary">
         {/* Brand */}
-        <Link href="/" className="flex items-center gap-2.5 focus:outline-none" aria-label="Layan Traditional Thai Massage — home">
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-plum-700 text-white shadow-sm dark:bg-plum-600">
-            <Flower2 className="h-5 w-5" />
-          </span>
-          <span className="leading-tight">
-            <span className="block font-heading text-base font-extrabold tracking-tight text-plum-800 dark:text-white">Layan</span>
-            <span className="block text-[11px] font-medium uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Traditional Thai Massage</span>
-          </span>
+        <Link href="/home" className="flex items-center rounded-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40" aria-label="Layan Traditional Thai Massage — home">
+          <Image
+            src="/layan-logo.jpg"
+            alt="Layan Traditional Thai Massage"
+            width={630}
+            height={320}
+            priority
+            className="h-12 w-auto rounded-lg bg-cream p-1.5"
+          />
         </Link>
 
         {/* Desktop links */}

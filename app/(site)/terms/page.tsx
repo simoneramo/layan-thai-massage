@@ -18,7 +18,7 @@ export default function TermsPage() {
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 md:py-20 lg:px-8">
           <nav className="hero-anim text-sm text-plum-500 dark:text-plum-300" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2">
-              <li><Link href="/" className="hover:text-plum-700 dark:hover:text-white">Home</Link></li>
+              <li><Link href="/home" className="hover:text-plum-700 dark:hover:text-white">Home</Link></li>
               <li aria-hidden="true">/</li>
               <li className="font-medium text-plum-700 dark:text-plum-200" aria-current="page">Terms &amp; Conditions</li>
             </ol>

@@ -5,22 +5,15 @@ const baseUrl =
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const routes = [
-    "",
-    "/services",
-    "/about",
-    "/faq",
-    "/contact",
-    "/book",
-    "/privacy",
-    "/terms",
-  ];
-  const legal = ["/privacy", "/terms"];
+  // Holding-page mode: only the root (holding page) is public. The full site
+  // under /home is noindexed, so it is intentionally left out of the sitemap.
+  // Restore the full route list once /home is promoted back to the root.
+  const routes = [""];
 
   return routes.map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: now,
-    changeFrequency: path === "" ? "weekly" : "monthly",
-    priority: path === "" ? 1 : path === "/book" ? 0.9 : legal.includes(path) ? 0.3 : 0.7,
+    changeFrequency: "weekly",
+    priority: 1,
   }));
 }

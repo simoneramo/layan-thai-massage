@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Flower2, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
@@ -13,8 +14,8 @@ import { site } from "@/lib/site";
 const footerLinks = [
   { label: "Treatments", href: "/services" },
   { label: "About", href: "/about" },
-  { label: "Gallery", href: "/#gallery" },
-  { label: "Reviews", href: "/#reviews" },
+  { label: "Gallery", href: "/home#gallery" },
+  { label: "Reviews", href: "/home#reviews" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];
@@ -25,15 +26,13 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-2.5">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-plum-700 text-white">
-                <Flower2 className="h-5 w-5" />
-              </span>
-              <span className="leading-tight">
-                <span className="block font-heading text-base font-extrabold tracking-tight text-white">Layan</span>
-                <span className="block text-[11px] font-medium uppercase tracking-[0.18em] text-plum-300">Traditional Thai Massage</span>
-              </span>
-            </div>
+            <Image
+              src="/layan-logo.jpg"
+              alt="Layan Traditional Thai Massage"
+              width={630}
+              height={320}
+              className="h-16 w-auto rounded-xl bg-cream p-2"
+            />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-plum-300">
               Authentic, unhurried Thai massage in Frankston — qualified therapists, quiet rooms, and time set aside just for you.
             </p>
