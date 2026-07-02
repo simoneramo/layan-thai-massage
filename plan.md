@@ -371,6 +371,8 @@ input rather than dev work._
    `0451 250 064`, address `3/459 Nepean Hwy, Frankston VIC 3199`.
 5. **Booking inbox** — confirm `BOOKING_TO_EMAIL` (currently
    `info@layanthaimassage.com.au`) is the right destination.
+   _[Superseded 2026-07-01 — see "Go-live" below: client is dropping domain
+   email, so `info@…` will bounce. Booking destination still to be decided.]_
 6. **Admin password** — client picks a password (or we set a secure one and
    share it) for `ADMIN_PASSWORD` / the `/admin` bookings dashboard.
 
@@ -382,3 +384,71 @@ input rather than dev work._
 - Confirm `BOOKING_FROM_EMAIL` uses the verified domain sender (not the
   `onboarding@resend.dev` fallback).
 - Connect domain in Vercel + set `NEXT_PUBLIC_BASE_URL`.
+
+---
+
+## Go-live — holding-page launch (2026-07-01)
+
+_The client wants the domain live now, before the full site is finished, so the
+homepage was swapped for a standalone holding page. The real site stays built
+but hidden until they're ready to reveal it._
+
+### What changed in the code
+
+- **`/` is a standalone "coming soon" holding page** ([app/page.tsx](app/page.tsx)) —
+  no header/footer nav, so visitors can't reach the rest of the site.
+- **Real homepage moved to `/home`** ([app/(site)/home/page.tsx](<app/(site)/home/page.tsx>)),
+  unchanged content.
+- **All site pages live in an `(site)` route group** with its own layout
+  ([app/(site)/layout.tsx](<app/(site)/layout.tsx>)) carrying the Header/Footer
+  chrome. URLs are unchanged (route groups don't affect paths).
+- **Root layout** ([app/layout.tsx](app/layout.tsx)) stripped of chrome so `/`
+  renders standalone.
+- **Full site is `noindex`'d** (robots meta in the `(site)` layout) and the
+  **sitemap trimmed to just `/`** ([app/sitemap.ts](app/sitemap.ts)) — only the
+  holding page is crawlable while in this mode.
+- Internal `/` and `/#…` links repointed to `/home` (Header logo, nav,
+  Footer, breadcrumbs).
+- Committed + pushed to `main` (`a21e6d9`) → Vercel auto-deploys production.
+
+### Go-live steps (mechanical)
+
+1. ✅ Code on `main`, pushed → Vercel builds production automatically.
+2. ✅ Domain (`layanthaimassage.com.au` + `www`) added in the Vercel project.
+3. 🔄 **Point DNS at Vercel** — the VentraIP zone already holds the correct
+   records (`A @ = 216.198.79.1`, `CNAME www = 20912264852fcddb.vercel-dns-017.com`,
+   **no MX** since email is being dropped). Switch the domain's nameservers **at
+   the registrar** to `ns1/ns2/ns3.nameserver.net.au`.
+4. ⏳ Wait for propagation — Vercel flips "Invalid Configuration" → "Valid" on
+   its own (minutes to a few hours).
+5. ⬜ Verify: `https://layanthaimassage.com.au` loads the holding page and `www`
+   redirects to it. Check with `dig +short layanthaimassage.com.au NS` (should
+   show `nameserver.net.au`) and `... A` (should show `216.198.79.1`).
+
+### Email decision (2026-07-01)
+
+- Client is **dropping domain email entirely** — no mailbox, no MX record.
+- Old email was self-hosted on the previous host (`supercp.com` nameservers,
+  `68.66.216.29`); switching nameservers away ends it. Save any wanted mail
+  from the old host first.
+- ⚠️ **Booking-form trap:** the contact/booking form ([app/actions.ts](app/actions.ts))
+  sends via Resend to `BOOKING_TO_EMAIL` (defaults to `info@…`). With no MX
+  that address bounces, but the customer still sees "success" → **requests are
+  lost silently.** Before/at nameserver switch, either (a) point
+  `BOOKING_TO_EMAIL` at an inbox the client checks (a personal Gmail is fine —
+  no domain mailbox needed), or (b) flip the form to "please call us" mode so
+  nothing is silently lost. **Decision deferred by client ("do later").**
+
+### When ready to reveal the full site (reverse the holding page)
+
+- Remove the `robots: { index: false }` metadata from
+  [app/(site)/layout.tsx](<app/(site)/layout.tsx>).
+- Restore the full route list in [app/sitemap.ts](app/sitemap.ts).
+- Promote `/home` back to `/` and repoint the `/home` links back to `/`.
+- Resolve the booking-form destination (above).
+
+### Minor cleanup (non-blocking)
+
+- Remove the stray root-level `layan-logo.jpg` duplicate (the served copy is
+  `public/layan-logo.jpg`).
+- Set `NEXT_PUBLIC_BASE_URL` to the canonical domain once live (cancel links).
