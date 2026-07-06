@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
@@ -36,8 +37,8 @@ export default function Footer() {
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-plum-300">
               Authentic, unhurried Thai massage in Frankston — qualified therapists, quiet rooms, and time set aside just for you.
             </p>
-            <a href={site.facebook} target="_blank" rel="noopener" className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-white hover:text-plum-200">
-              <FacebookIcon className="h-5 w-5" /> Layan Traditional Thai Massage
+            <a href={site.facebook} target="_blank" rel="noopener" aria-label="Layan Traditional Thai Massage on Facebook" className="mt-5 inline-flex items-center text-white hover:text-plum-200">
+              <FacebookIcon className="h-5 w-5" />
             </a>
           </div>
 
@@ -69,7 +70,10 @@ export default function Footer() {
             <Link href="/privacy" className="transition-colors hover:text-white">Privacy Policy</Link>
             <Link href="/terms" className="transition-colors hover:text-white">Terms &amp; Conditions</Link>
             <span className="hidden sm:inline" aria-hidden="true">·</span>
-            <span>Frankston · Melbourne</span>
+            <span className="flex items-center gap-2">
+              Theme
+              <ThemeToggle className="grid h-9 w-9 place-items-center rounded-lg border border-white/20 text-plum-200 transition hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40" />
+            </span>
           </div>
         </div>
       </div>

@@ -6,7 +6,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CalendarPlus, Phone, Menu, X } from "lucide-react";
 import { nav, site } from "@/lib/site";
-import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -14,7 +13,7 @@ export default function Header() {
   const isActive = (href: string) => href.startsWith("/") && !href.includes("#") && pathname === href;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-plum-100/70 bg-cream/85 backdrop-blur-md dark:border-white/10 dark:bg-gray-900/85">
+    <header className="sticky top-0 z-40 border-b border-plum-100/70 bg-white/85 backdrop-blur-md dark:border-white/10 dark:bg-gray-900/85">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8" aria-label="Primary">
         {/* Brand */}
         <Link href="/home" className="flex items-center rounded-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40" aria-label="Layan Traditional Thai Massage — home">
@@ -48,9 +47,14 @@ export default function Header() {
 
         {/* Right cluster */}
         <div className="flex items-center gap-2 sm:gap-3">
-          <ThemeToggle />
+          <a
+            href={`tel:${site.phoneTel}`}
+            className="hidden items-center gap-2 text-sm font-semibold text-plum-700 transition-colors hover:text-plum-900 md:inline-flex dark:text-gray-200 dark:hover:text-white"
+          >
+            <Phone className="h-4 w-4" /> {site.phoneDisplay}
+          </a>
           <Link href="/book" className="btn-primary hidden sm:inline-flex">
-            <CalendarPlus className="h-5 w-5" /> Book Now
+            <CalendarPlus className="h-5 w-5" /> Book Online
           </Link>
           <button
             type="button"
@@ -67,7 +71,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div id="mobile-menu" className="border-t border-plum-100 bg-cream px-5 pb-6 pt-2 lg:hidden dark:border-white/10 dark:bg-gray-900">
+        <div id="mobile-menu" className="border-t border-plum-100 bg-white px-5 pb-6 pt-2 lg:hidden dark:border-white/10 dark:bg-gray-900">
           <div className="flex flex-col">
             {nav.map((item, i) => (
               <Link
@@ -87,7 +91,7 @@ export default function Header() {
           </div>
           <div className="mt-5 flex flex-col gap-3">
             <Link href="/book" onClick={() => setOpen(false)} className="btn-primary w-full">
-              <CalendarPlus className="h-5 w-5" /> Book Now
+              <CalendarPlus className="h-5 w-5" /> Book Online
             </Link>
             <a href={`tel:${site.phoneTel}`} onClick={() => setOpen(false)} className="btn-secondary w-full">
               <Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})

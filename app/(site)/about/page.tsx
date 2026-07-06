@@ -17,7 +17,7 @@ export default function AboutPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-cream dark:bg-gray-900">
+      <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 md:py-20 lg:px-8">
           <nav className="hero-anim text-sm text-plum-500 dark:text-plum-300" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2">
@@ -34,35 +34,12 @@ export default function AboutPage() {
               <p className="hero-anim d1 mt-5 max-w-2xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
                 Layan is a small, welcoming Thai massage studio in the heart of Frankston. We practise an ancient healing art with patience and care — quiet rooms, qualified therapists, and time set aside entirely for you.
               </p>
-              <div className="hero-anim d2 mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Now</Link>
-                <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto"><Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})</a>
-              </div>
             </div>
             <div className="hero-anim d2 lg:col-span-5">
               <div className="img-frame aspect-[4/3]">
                 <Image src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=80" alt="A peaceful, tidy massage room at Layan ready to welcome a guest" fill priority sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* OUR ROOTS */}
-      <section id="story" className="bg-white py-20 dark:bg-gray-900 md:py-24">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
-          <div className="reveal img-frame order-2 aspect-[4/5] lg:order-1">
-            <Image src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80" alt="Smooth stones, soft towels and flowers arranged in a serene treatment room" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
-          </div>
-          <div className="reveal order-1 lg:order-2">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Our roots</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">An Ancient Healing Art</h2>
-            <p className="mt-5 leading-relaxed text-plum-700/90 dark:text-gray-300">
-              Traditional Thai massage has its roots in yoga, Ayurvedic medicine and Buddhist spiritual practice. It weaves together rhythmic massage, acupressure, gentle twisting, deep stretching and meditation to release tension, increase vitality, and bring a wholeness of mind, body and spirit.
-            </p>
-            <p className="mt-4 leading-relaxed text-plum-700/80 dark:text-gray-400">
-              Flowing and rhythmical, a complete session is a sequence of unhurried presses, stretches and twists — drawn from more than a hundred traditional techniques. One movement melts into the next, smoothly and harmoniously. There is never a suggestion of haste.
-            </p>
           </div>
         </div>
       </section>
@@ -94,8 +71,27 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* OUR ROOTS */}
+      <section id="story" className="bg-white py-20 dark:bg-gray-900 md:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
+          <div className="reveal img-frame order-2 aspect-[4/5] lg:order-1">
+            <Image src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80" alt="Smooth stones, soft towels and flowers arranged in a serene treatment room" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+          </div>
+          <div className="reveal order-1 lg:order-2">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Our roots</span>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">An Ancient Healing Art</h2>
+            <p className="mt-5 leading-relaxed text-plum-700/90 dark:text-gray-300">
+              Traditional Thai massage has its roots in yoga, Ayurvedic medicine and Buddhist spiritual practice. It weaves together rhythmic massage, acupressure, gentle twisting, deep stretching and meditation to release tension, increase vitality, and bring a wholeness of mind, body and spirit.
+            </p>
+            <p className="mt-4 leading-relaxed text-plum-700/80 dark:text-gray-400">
+              Flowing and rhythmical, a complete session is a sequence of unhurried presses, stretches and twists — drawn from more than a hundred traditional techniques. One movement melts into the next, smoothly and harmoniously. There is never a suggestion of haste.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* HOW WE WORK */}
-      <section id="approach" className="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <section id="approach" className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-12 lg:gap-14 lg:px-8">
           <div className="reveal lg:col-span-6">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">How we work</span>
@@ -103,14 +99,14 @@ export default function AboutPage() {
             <p className="mt-5 leading-relaxed text-plum-700/90 dark:text-gray-300">
               Traditional Thai massage is an interactive therapy — passive stretching and gentle, firm pressure applied with the palms and thumbs along the body's energy lines. It works the skin, muscles, joints and deeper structures, encouraging blood and lymph circulation so you leave feeling relaxed and invigorated.
             </p>
-            <ul className="mt-7 grid gap-3 sm:grid-cols-2">
+            <ul className="mt-7 grid gap-3">
               {["Increases flexibility", "Relieves muscular & joint tension", "Improves circulation", "Helps balance the body's energy"].map((t) => (
-                <li key={t} className="flex items-start gap-3 text-plum-800 dark:text-gray-200"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-plum-500 dark:text-plum-300" /> {t}</li>
+                <li key={t} className="flex items-start gap-3 text-plum-800 dark:text-gray-200"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500 dark:text-emerald-400" /> {t}</li>
               ))}
             </ul>
           </div>
           <div className="reveal lg:col-span-6">
-            <div className="rounded-2xl bg-plum-50 p-7 ring-1 ring-plum-100 dark:bg-gray-800 dark:ring-white/10 sm:p-9">
+            <div className="rounded-2xl bg-white p-7 ring-1 ring-plum-100 dark:bg-gray-900 dark:ring-white/10 sm:p-9">
               <h3 className="font-heading text-xl font-bold text-plum-800 dark:text-white">What to know before you arrive</h3>
               <dl className="mt-6 space-y-5">
                 {[
@@ -132,25 +128,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* TRUST STRIP */}
-      <section className="bg-plum-900 dark:bg-gray-950">
-        <div className="mx-auto max-w-6xl px-5 py-12 sm:px-6 md:py-16 lg:px-8">
-          <div className="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
-            {[
-              ["4.5", "★", "Average Google rating"],
-              ["24", "", "Google reviews"],
-              ["6", " days", "Open Mon to Sat"],
-              ["100", "%", "Qualified therapists"],
-            ].map(([n, sym, label]) => (
-              <div key={label} className="reveal">
-                <p className="font-heading text-3xl font-extrabold text-white sm:text-4xl">{n}<span className="text-plum-300">{sym}</span></p>
-                <p className="mt-1 text-sm text-plum-200">{label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* VISIT US */}
       <section id="visit" className="bg-white py-20 dark:bg-gray-900 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-12 lg:gap-14 lg:px-8">
@@ -163,9 +140,10 @@ export default function AboutPage() {
             <ul className="mt-7 space-y-4 text-plum-800 dark:text-gray-200">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-plum-500 dark:text-plum-300" />
-                <span>3/459 Nepean Hwy, Frankston VIC 3199
-                  <a href={site.maps} target="_blank" rel="noopener" className="mt-1 inline-flex items-center gap-1 text-sm font-medium text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900 dark:text-plum-200 dark:hover:text-white">Get directions <ArrowUpRight className="h-3.5 w-3.5" /></a>
-                </span>
+                <a href={site.maps} target="_blank" rel="noopener" className="inline-flex items-center gap-1 font-medium text-plum-700 hover:text-plum-900 dark:text-plum-200 dark:hover:text-white">
+                  <span className="underline decoration-plum-300 underline-offset-2">3/459 Nepean Hwy, Frankston VIC 3199</span>
+                  <ArrowUpRight className="h-3.5 w-3.5 shrink-0" />
+                </a>
               </li>
               <li className="flex items-start gap-3"><Phone className="mt-0.5 h-5 w-5 shrink-0 text-plum-500 dark:text-plum-300" /><a href={`tel:${site.phoneTel}`} className="font-medium hover:text-plum-600 dark:hover:text-white">{site.phoneDisplay}</a></li>
               <li className="flex items-start gap-3"><Clock className="mt-0.5 h-5 w-5 shrink-0 text-plum-500 dark:text-plum-300" /><span>Mon–Fri 9am–6:00pm · Sat 9am–5:00pm · Sun closed</span></li>
@@ -185,7 +163,7 @@ export default function AboutPage() {
           <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Come and See Us</h2>
           <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">Book a treatment and feel the difference an unhurried hour can make. Send a request, or call us directly.</p>
           <div className="reveal mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Now</Link>
+            <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Online</Link>
             <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto"><Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})</a>
           </div>
         </div>

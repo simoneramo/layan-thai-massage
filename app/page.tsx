@@ -11,12 +11,9 @@ export const metadata: Metadata = {
 
 export default function HoldingPage() {
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-cream px-6 py-16 text-center dark:bg-gray-900">
-      {/* soft background accents */}
-      <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-plum-100/60 blur-3xl dark:bg-white/5" aria-hidden="true" />
-      <div className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-rose-100/70 blur-3xl dark:bg-white/5" aria-hidden="true" />
+    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-cream px-6 py-16 text-center dark:bg-neutral-900">
 
-      <div className="relative flex w-full max-w-xl flex-col items-center">
+      <div className="relative flex w-full max-w-3xl flex-col items-center">
         <Image
           src="/layan-logo.jpg"
           alt="Layan Traditional Thai Massage"
@@ -34,7 +31,7 @@ export default function HoldingPage() {
           Our new website is on its way
         </h1>
 
-        <p className="mt-5 max-w-md text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
+        <p className="mt-5 max-w-lg text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
           Authentic, unhurried Thai massage in the heart of Frankston. We&apos;re
           putting the finishing touches on our new site — in the meantime,
           we&apos;d love to welcome you in.

@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CalendarPlus, Phone, Mail, MessageCircle, MapPin, Clock, ArrowUpRight } from "lucide-react";
+import { Send, CalendarPlus, Phone, Mail, MessageCircle, MapPin, Clock, ArrowUpRight } from "lucide-react";
 import { site } from "@/lib/site";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact & Book",
   description:
-    "Book your Thai massage at Layan in Frankston. Call 0451 250 064, send a booking request, or visit us at 3/459 Nepean Hwy. Open Mon–Sat.",
+    "Get in touch with Layan Traditional Thai Massage in Frankston. Call 0451 250 064 to book, send us a message, or visit 3/459 Nepean Hwy. Open Mon–Sat.",
 };
 
 export default function ContactPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-cream dark:bg-gray-900">
+      <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 md:py-20 lg:px-8">
           <nav className="hero-anim text-sm text-plum-500 dark:text-plum-300" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2">
@@ -25,14 +25,14 @@ export default function ContactPage() {
           </nav>
           <div className="mt-6 max-w-2xl">
             <h1 className="hero-anim d1 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl dark:text-white">
-              Let's Get You Booked In
+              Get in Touch
             </h1>
             <p className="hero-anim d1 mt-5 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
-              Call for the quickest response, send a booking request below, or simply drop by — walk-ins are welcome whenever we have space. We'd love to help you unwind.
+              Call us for the quickest response — especially to book a treatment — send a message below, or simply drop by. Walk-ins are welcome whenever we have space, and we'd love to help you unwind.
             </p>
             <div className="hero-anim d2 mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#booking" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Now</a>
-              <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto"><Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})</a>
+              <a href="#booking" className="btn-primary w-full sm:w-auto"><Send className="h-5 w-5" /> Send a Message</a>
+              <Link href="/book" className="btn-secondary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Online</Link>
             </div>
           </div>
         </div>
@@ -42,23 +42,23 @@ export default function ContactPage() {
       <section className="bg-plum-50 py-16 dark:bg-gray-800 md:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            <a href={`tel:${site.phoneTel}`} className="reveal card flex flex-col gap-3 p-6 hover:-translate-y-1 hover:shadow-lg">
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-plum-100 text-plum-700 dark:bg-white/10 dark:text-plum-200"><Phone className="h-5 w-5" /></span>
+            <a href={`tel:${site.phoneTel}`} className="group reveal card flex flex-col gap-3 p-6 hover:-translate-y-0.5 hover:shadow-md">
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-plum-100 text-plum-700 transition-transform duration-200 ease-out group-hover:scale-110 group-hover:-rotate-6 dark:bg-white/10 dark:text-plum-200"><Phone className="h-5 w-5" /></span>
               <span className="font-heading font-bold text-plum-800 dark:text-white">Call us</span>
               <span className="text-sm text-plum-700/90 dark:text-gray-300">{site.phoneDisplay}</span>
             </a>
-            <a href={`mailto:${site.email}`} className="reveal card flex flex-col gap-3 p-6 hover:-translate-y-1 hover:shadow-lg">
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-plum-100 text-plum-700 dark:bg-white/10 dark:text-plum-200"><Mail className="h-5 w-5" /></span>
+            <a href={`mailto:${site.email}`} className="group reveal card flex flex-col gap-3 p-6 hover:-translate-y-0.5 hover:shadow-md">
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-plum-100 text-plum-700 transition-transform duration-200 ease-out group-hover:scale-110 group-hover:-rotate-6 dark:bg-white/10 dark:text-plum-200"><Mail className="h-5 w-5" /></span>
               <span className="font-heading font-bold text-plum-800 dark:text-white">Email us</span>
               <span className="break-all text-sm text-plum-700/90 dark:text-gray-300">{site.email}</span>
             </a>
-            <a href={site.messenger} target="_blank" rel="noopener" className="reveal card flex flex-col gap-3 p-6 hover:-translate-y-1 hover:shadow-lg">
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-plum-100 text-plum-700 dark:bg-white/10 dark:text-plum-200"><MessageCircle className="h-5 w-5" /></span>
+            <a href={site.messenger} target="_blank" rel="noopener" className="group reveal card flex flex-col gap-3 p-6 hover:-translate-y-0.5 hover:shadow-md">
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-plum-100 text-plum-700 transition-transform duration-200 ease-out group-hover:scale-110 group-hover:-rotate-6 dark:bg-white/10 dark:text-plum-200"><MessageCircle className="h-5 w-5" /></span>
               <span className="font-heading font-bold text-plum-800 dark:text-white">Message us</span>
               <span className="text-sm text-plum-700/90 dark:text-gray-300">Chat on Messenger</span>
             </a>
-            <a href={site.maps} target="_blank" rel="noopener" className="reveal card flex flex-col gap-3 p-6 hover:-translate-y-1 hover:shadow-lg">
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-plum-100 text-plum-700 dark:bg-white/10 dark:text-plum-200"><MapPin className="h-5 w-5" /></span>
+            <a href={site.maps} target="_blank" rel="noopener" className="group reveal card flex flex-col gap-3 p-6 hover:-translate-y-0.5 hover:shadow-md">
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-plum-100 text-plum-700 transition-transform duration-200 ease-out group-hover:scale-110 group-hover:-rotate-6 dark:bg-white/10 dark:text-plum-200"><MapPin className="h-5 w-5" /></span>
               <span className="font-heading font-bold text-plum-800 dark:text-white">Visit us</span>
               <span className="text-sm text-plum-700/90 dark:text-gray-300">3/459 Nepean Hwy, Frankston</span>
             </a>
@@ -70,9 +70,9 @@ export default function ContactPage() {
       <section id="booking" className="bg-white py-20 dark:bg-gray-900 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Booking request</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Send a message</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Send Us a Message</h2>
-            <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">Tell us what you'd like and when suits you. We'll call back to confirm your appointment.</p>
+            <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">Have a question or want to know more? Send us a message and we'll get back to you as soon as we can.</p>
           </div>
           <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:gap-10">
             <div className="lg:col-span-7">
@@ -84,9 +84,10 @@ export default function ContactPage() {
                 <ul className="flex flex-col gap-5 text-sm">
                   <li className="flex items-start gap-3">
                     <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-plum-300" />
-                    <span>3/459 Nepean Hwy<br />Frankston VIC 3199
-                      <a href={site.maps} target="_blank" rel="noopener" className="mt-1 inline-flex items-center gap-1 font-medium text-white underline decoration-plum-400 underline-offset-2 hover:text-plum-200">Get directions <ArrowUpRight className="h-3.5 w-3.5" /></a>
-                    </span>
+                    <a href={site.maps} target="_blank" rel="noopener" className="inline-flex items-center gap-1 font-medium text-white hover:text-plum-200">
+                      <span className="underline decoration-plum-400 underline-offset-2">3/459 Nepean Hwy, Frankston VIC 3199</span>
+                      <ArrowUpRight className="h-3.5 w-3.5 shrink-0" />
+                    </a>
                   </li>
                   <li className="flex items-start gap-3"><Phone className="mt-0.5 h-5 w-5 shrink-0 text-plum-300" /><a href={`tel:${site.phoneTel}`} className="font-medium text-white hover:text-plum-200">{site.phoneDisplay}</a></li>
                   <li className="flex items-start gap-3"><Mail className="mt-0.5 h-5 w-5 shrink-0 text-plum-300" /><a href={`mailto:${site.email}`} className="font-medium text-white hover:text-plum-200">{site.email}</a></li>
@@ -114,7 +115,7 @@ export default function ContactPage() {
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Find us</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">On Nepean Highway</h2>
-            <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">Easy to reach on the Mornington Peninsula, with parking close by.</p>
+            <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">Easy to reach on the Mornington Peninsula, with lots of parking close by.</p>
           </div>
           <div className="reveal mt-10 overflow-hidden rounded-2xl shadow-sm ring-1 ring-plum-100 dark:ring-white/10">
             <iframe

@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="bg-cream font-sans text-plum-900 antialiased dark:bg-gray-900 dark:text-gray-200">
+      <body className="bg-white font-sans text-plum-900 antialiased dark:bg-gray-900 dark:text-gray-200">
         {children}
       </body>
     </html>

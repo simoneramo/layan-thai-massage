@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ArrowRight } from "lucide-react";
 import type { Service } from "@/lib/booking/types";
 
 type Slot = { start: string; end: string; label: string };
@@ -22,6 +23,21 @@ function prettyDate(date: string): string {
   });
 }
 
+type DetailField = "name" | "email" | "phone";
+const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Returns an error message for a details field, or "" when it's valid.
+function validateDetail(field: DetailField, value: string): string {
+  const v = value.trim();
+  if (field === "name") return v ? "" : "Please enter your name.";
+  if (field === "email") {
+    if (!v) return "Please enter your email.";
+    return emailRe.test(v) ? "" : "Please enter a valid email address.";
+  }
+  if (!v) return "Please enter your phone number.";
+  return v.replace(/\D/g, "").length >= 8 ? "" : "Please enter a valid phone number.";
+}
+
 export default function Booker({ services }: { services: Service[] }) {
   const [step, setStep] = useState<Step>(1);
   const [service, setService] = useState<Service | null>(null);
@@ -33,6 +49,24 @@ export default function Booker({ services }: { services: Service[] }) {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [done, setDone] = useState<{ cancelUrl: string } | null>(null);
+  const [touched, setTouched] = useState({ name: false, email: false, phone: false });
+
+  const detailErrors: Record<DetailField, string> = {
+    name: touched.name ? validateDetail("name", form.name) : "",
+    email: touched.email ? validateDetail("email", form.email) : "",
+    phone: touched.phone ? validateDetail("phone", form.phone) : "",
+  };
+  const detailsInvalid =
+    !!validateDetail("name", form.name) ||
+    !!validateDetail("email", form.email) ||
+    !!validateDetail("phone", form.phone);
+
+  // Same red-invalid / green-valid feedback as the site contact form.
+  function inputClass(field: DetailField): string {
+    const err = detailErrors[field];
+    const ok = touched[field] && !err && form[field].trim() !== "";
+    return err ? "invalid" : ok ? "valid" : "";
+  }
 
   // load slots whenever the service changes
   useEffect(() => {
@@ -59,12 +93,10 @@ export default function Booker({ services }: { services: Service[] }) {
 
   function chooseService(s: Service) {
     setService(s);
-    setStep(2);
   }
 
   function chooseSlot(s: Slot) {
     setSlot(s);
-    setStep(3);
   }
 
   function reset() {
@@ -74,6 +106,7 @@ export default function Booker({ services }: { services: Service[] }) {
     setSlot(null);
     setOpenDays(new Set());
     setForm({ name: "", email: "", phone: "" });
+    setTouched({ name: false, email: false, phone: false });
     setError("");
     setDone(null);
   }
@@ -81,6 +114,8 @@ export default function Booker({ services }: { services: Service[] }) {
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     if (!service || !slot) return;
+    setTouched({ name: true, email: true, phone: true });
+    if (detailsInvalid) return;
     setError("");
     setSubmitting(true);
     try {
@@ -156,21 +191,31 @@ export default function Booker({ services }: { services: Service[] }) {
         ))}
       </ol>
 
-      {/* context bar: back + running summary (steps 2–3) */}
+      {/* running summary of the current selection (steps 2–3) */}
       {step > 1 && service && (
-        <div className="stepbar">
-          <button
-            type="button"
-            className="back"
-            onClick={() => setStep((step - 1) as Step)}
-          >
-            <span aria-hidden="true">‹</span> Back
-          </button>
-          <span className="pill">
-            {step === 3 && slot
-              ? `${service.name} · ${prettyDate(slot.start.split("T")[0])} · ${slot.label}`
-              : service.name}
-          </span>
+        <div className="summary">
+          <div className="summary-row">
+            <span className="summary-label">Service:</span>{" "}
+            <span className="summary-value">{service.name}</span>
+          </div>
+          <div className="summary-row">
+            <span className="summary-label">Time:</span>{" "}
+            <span className="summary-value">{service.durationMin}min</span>
+          </div>
+          {service.description?.match(/\$\d+/) && (
+            <div className="summary-row">
+              <span className="summary-label">Price:</span>{" "}
+              <span className="summary-value">{service.description.match(/\$\d+/)![0]}</span>
+            </div>
+          )}
+          {slot && (
+            <div className="summary-row">
+              <span className="summary-label">Date and time:</span>{" "}
+              <span className="summary-value">
+                {prettyDate(slot.start.split("T")[0])} at {slot.label}
+              </span>
+            </div>
+          )}
         </div>
       )}
 
@@ -191,6 +236,16 @@ export default function Booker({ services }: { services: Service[] }) {
                 </div>
               </button>
             ))}
+          </div>
+          <div className="row" style={{ marginTop: 20, justifyContent: "flex-end" }}>
+            <button
+              type="button"
+              className="btn"
+              disabled={!service}
+              onClick={() => setStep(2)}
+            >
+              Continue <ArrowRight size={18} />
+            </button>
           </div>
         </>
       )}
@@ -245,20 +300,36 @@ export default function Booker({ services }: { services: Service[] }) {
                 </div>
               );
             })}
+          <div className="row" style={{ marginTop: 20, justifyContent: "space-between" }}>
+            <button type="button" className="back" onClick={() => setStep(1)}>
+              <span aria-hidden="true">‹</span> Back
+            </button>
+            <button
+              type="button"
+              className="btn"
+              disabled={!slot}
+              onClick={() => setStep(3)}
+            >
+              Continue <ArrowRight size={18} />
+            </button>
+          </div>
         </>
       )}
 
       {/* step 3: details */}
       {step === 3 && service && slot && (
-        <form onSubmit={submit}>
+        <form onSubmit={submit} noValidate>
           <label className="field">
             <span>Full name *</span>
             <input
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              required
+              onBlur={() => setTouched((t) => ({ ...t, name: true }))}
+              aria-invalid={!!detailErrors.name}
+              className={inputClass("name")}
               autoComplete="name"
             />
+            {detailErrors.name && <p className="field-error">{detailErrors.name}</p>}
           </label>
           <label className="field">
             <span>Email *</span>
@@ -266,9 +337,12 @@ export default function Booker({ services }: { services: Service[] }) {
               type="email"
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              required
+              onBlur={() => setTouched((t) => ({ ...t, email: true }))}
+              aria-invalid={!!detailErrors.email}
+              className={inputClass("email")}
               autoComplete="email"
             />
+            {detailErrors.email && <p className="field-error">{detailErrors.email}</p>}
           </label>
           <label className="field">
             <span>Phone *</span>
@@ -276,16 +350,26 @@ export default function Booker({ services }: { services: Service[] }) {
               type="tel"
               value={form.phone}
               onChange={(e) => setForm({ ...form, phone: e.target.value })}
-              required
+              onBlur={() => setTouched((t) => ({ ...t, phone: true }))}
+              aria-invalid={!!detailErrors.phone}
+              className={inputClass("phone")}
               autoComplete="tel"
             />
+            {detailErrors.phone && <p className="field-error">{detailErrors.phone}</p>}
           </label>
           <p className="note">
             Phone is required so we can reach you if anything changes.
           </p>
           {error && <p className="error">{error}</p>}
-          <div className="row" style={{ marginTop: 16 }}>
-            <button className="btn" type="submit" disabled={submitting}>
+          <div className="row" style={{ marginTop: 16, justifyContent: "space-between" }}>
+            <button type="button" className="back" onClick={() => setStep(2)}>
+              <span aria-hidden="true">‹</span> Back
+            </button>
+            <button
+              className="btn"
+              type="submit"
+              disabled={submitting || detailsInvalid}
+            >
               {submitting ? "Booking…" : "Confirm booking"}
             </button>
           </div>

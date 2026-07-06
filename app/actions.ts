@@ -15,18 +15,18 @@ export async function sendBooking(
   const name = String(formData.get("name") || "").trim();
   const email = String(formData.get("email") || "").trim();
   const phone = String(formData.get("phone") || "").trim();
-  const service = String(formData.get("service") || "").trim();
+  const subject = String(formData.get("subject") || "").trim();
   const message = String(formData.get("message") || "").trim();
 
   if (!name || !email || !phone) {
-    return { status: "error", message: "Please add your name, phone and email so we can confirm." };
+    return { status: "error", message: "Please add your name, phone and email so we can get back to you." };
   }
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     return {
       status: "error",
-      message: "Online booking isn't set up yet — please call us on 0451 250 064.",
+      message: "The contact form isn't available right now — please call us on 0451 250 064.",
     };
   }
 
@@ -39,12 +39,12 @@ export async function sendBooking(
       from,
       to: [to],
       replyTo: email,
-      subject: `New booking request — ${name}`,
+      subject: `New enquiry${subject ? ` — ${subject}` : ""} — ${name}`,
       text: [
         `Name: ${name}`,
         `Phone: ${phone}`,
         `Email: ${email}`,
-        `Preferred treatment: ${service || "—"}`,
+        `Subject: ${subject || "—"}`,
         "",
         "Message:",
         message || "(none)",
@@ -52,10 +52,10 @@ export async function sendBooking(
     });
 
     if (error) {
-      return { status: "error", message: "Something went wrong sending your request. Please call us on 0451 250 064." };
+      return { status: "error", message: "Something went wrong sending your message. Please call us on 0451 250 064." };
     }
     return { status: "success", name };
   } catch {
-    return { status: "error", message: "Something went wrong sending your request. Please call us on 0451 250 064." };
+    return { status: "error", message: "Something went wrong sending your message. Please call us on 0451 250 064." };
   }
 }

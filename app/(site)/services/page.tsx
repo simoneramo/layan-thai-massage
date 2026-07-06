@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { CalendarPlus, Phone, Clock, Check, List } from "lucide-react";
+import { CalendarPlus, Phone, Clock, CheckCircle2, List, PersonStanding, Bone, Waves, Brain } from "lucide-react";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -19,22 +19,22 @@ const chips = [
 ];
 
 const priceRows = [
-  ["Traditional Thai Massage", "60 min", "$70"],
-  ["Traditional Thai Massage", "90 min", "$110"],
-  ["Essential Oil Massage", "60 min", "$70"],
-  ["Thai Foot Massage & Reflexology", "30 min", "$35"],
-  ["Thai Foot Massage & Reflexology", "60 min", "$60"],
-  ["Full Back Massage", "30 min", "$40"],
-  ["Shoulder & Neck Massage", "30 min", "$35"],
-  ["Shoulder, Neck & Head Massage", "45 min", "$50"],
-  ["Head Massage", "15 min", "$15"],
+  ["Traditional Thai Massage", "60 min", "$75"],
+  ["Traditional Thai Massage", "90 min", "$115"],
+  ["Essential Oil Massage", "60 min", "$75"],
+  ["Thai Foot Massage & Reflexology", "30 min", "$40"],
+  ["Thai Foot Massage & Reflexology", "60 min", "$65"],
+  ["Full Back Massage", "30 min", "$45"],
+  ["Shoulder & Neck Massage", "30 min", "$40"],
+  ["Shoulder, Neck & Head Massage", "45 min", "$55"],
+  ["Head Massage", "15 min", "$20"],
 ];
 
 export default function ServicesPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-cream dark:bg-gray-900">
+      <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 md:py-20 lg:px-8">
           <nav className="hero-anim text-sm text-plum-500 dark:text-plum-300" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2">
@@ -43,21 +43,16 @@ export default function ServicesPage() {
               <li className="font-medium text-plum-700 dark:text-plum-200" aria-current="page">Treatments</li>
             </ol>
           </nav>
-          <div className="mt-6 grid items-end gap-8 lg:grid-cols-12">
-            <div className="lg:col-span-8">
-              <h1 className="hero-anim d1 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl dark:text-white">
-                Treatments That Bring You Back to Calm
-              </h1>
-              <p className="hero-anim d1 mt-5 max-w-2xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
-                From a full traditional session to a quick neck-and-shoulder reset, every treatment is unhurried, tailored to you, and carried out by qualified therapists. Here's the full menu, with what to expect and clear pricing.
-              </p>
-              <div className="hero-anim d2 mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Now</Link>
-                <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto"><Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})</a>
-              </div>
-            </div>
-            <div className="lg:col-span-4">
-              <div className="hero-anim d3 flex flex-wrap gap-2">
+          <div className="mt-6 max-w-3xl">
+            <h1 className="hero-anim d1 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl dark:text-white">
+              Find Your Perfect Treatment
+            </h1>
+            <p className="hero-anim d1 mt-5 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
+              From a full traditional session to a quick neck-and-shoulder reset, every treatment is unhurried, tailored to you, and carried out by qualified therapists. Here's the full menu, with what to expect and clear pricing.
+            </p>
+            <div className="hero-anim d2 mt-8">
+              <span className="block text-xs font-semibold uppercase tracking-[0.18em] text-plum-900 dark:text-gray-400">Massage types</span>
+              <div className="mt-3 flex flex-wrap gap-2">
                 {chips.map(([label, href]) => (
                   <a key={href} href={href} className="chip">{label}</a>
                 ))}
@@ -68,7 +63,7 @@ export default function ServicesPage() {
       </section>
 
       {/* TRADITIONAL THAI */}
-      <section id="traditional-thai" className="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <section id="traditional-thai" className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
           <div className="reveal img-frame order-2 aspect-[4/3] lg:order-1">
             <Image src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=900&q=80" alt="Therapist guiding a clothed traditional Thai massage stretch" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
@@ -77,16 +72,16 @@ export default function ServicesPage() {
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Signature treatment</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Traditional Thai Massage</h2>
             <div className="mt-4 flex flex-wrap gap-2">
-              <span className="pill"><Clock className="h-4 w-4" /> 60 min · $70</span>
-              <span className="pill"><Clock className="h-4 w-4" /> 90 min · $110</span>
+              <span className="pill"><Clock className="h-4 w-4" /> 60 min · $75</span>
+              <span className="pill"><Clock className="h-4 w-4" /> 90 min · $115</span>
             </div>
             <p className="mt-5 leading-relaxed text-plum-700/90 dark:text-gray-300">
               The ancient art of applying pressure to specific areas of the body. Performed fully clothed with no oil, it works on the tendons to relax the muscles, improves blood circulation and, combined with gentle assisted stretching, lifts your energy levels.
             </p>
             <h3 className="mt-6 font-heading text-sm font-bold uppercase tracking-wider text-plum-800 dark:text-gray-100">What to expect</h3>
-            <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
+            <ul className="mt-3 grid gap-2.5">
               {["Fully clothed, no oil", "Firm palm & thumb pressure", "Yoga-like assisted stretches", "Especially good for sport & work pain"].map((t) => (
-                <li key={t} className="flex items-start gap-2.5 text-plum-700 dark:text-gray-300"><Check className="mt-0.5 h-5 w-5 shrink-0 text-plum-500 dark:text-plum-300" /> {t}</li>
+                <li key={t} className="flex items-start gap-2.5 text-plum-700 dark:text-gray-300"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500 dark:text-emerald-400" /> {t}</li>
               ))}
             </ul>
           </div>
@@ -94,19 +89,19 @@ export default function ServicesPage() {
       </section>
 
       {/* ESSENTIAL OIL */}
-      <section id="essential-oil" className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
+      <section id="essential-oil" className="bg-white py-20 dark:bg-gray-900 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
           <div className="reveal">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Signature treatment</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Essential Oil Massage</h2>
-            <div className="mt-4 flex flex-wrap gap-2"><span className="pill"><Clock className="h-4 w-4" /> 60 min · $70</span></div>
+            <div className="mt-4 flex flex-wrap gap-2"><span className="pill"><Clock className="h-4 w-4" /> 60 min · $75</span></div>
             <p className="mt-5 leading-relaxed text-plum-700/90 dark:text-gray-300">
               An ancient Thai remedy that pairs the healing power of warm essential oils with flowing massage to stimulate blood flow. It relieves sore, tired muscles and leaves your whole body feeling calm and relaxed.
             </p>
             <h3 className="mt-6 font-heading text-sm font-bold uppercase tracking-wider text-plum-800 dark:text-gray-100">Lovely for</h3>
-            <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
+            <ul className="mt-3 grid gap-2.5">
               {["Deep relaxation & unwinding", "Sore, tired muscles", "Improving circulation", "A gentle, soothing experience"].map((t) => (
-                <li key={t} className="flex items-start gap-2.5 text-plum-700 dark:text-gray-300"><Check className="mt-0.5 h-5 w-5 shrink-0 text-plum-500 dark:text-plum-300" /> {t}</li>
+                <li key={t} className="flex items-start gap-2.5 text-plum-700 dark:text-gray-300"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500 dark:text-emerald-400" /> {t}</li>
               ))}
             </ul>
           </div>
@@ -117,7 +112,7 @@ export default function ServicesPage() {
       </section>
 
       {/* FOOT & REFLEXOLOGY */}
-      <section id="foot-reflexology" className="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <section id="foot-reflexology" className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
           <div className="reveal img-frame order-2 aspect-[4/3] lg:order-1">
             <Image src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80" alt="Relaxing Thai foot massage and reflexology treatment" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
@@ -126,16 +121,16 @@ export default function ServicesPage() {
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Signature treatment</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Thai Foot Massage &amp; Reflexology</h2>
             <div className="mt-4 flex flex-wrap gap-2">
-              <span className="pill"><Clock className="h-4 w-4" /> 30 min · $35</span>
-              <span className="pill"><Clock className="h-4 w-4" /> 60 min · $60</span>
+              <span className="pill"><Clock className="h-4 w-4" /> 30 min · $40</span>
+              <span className="pill"><Clock className="h-4 w-4" /> 60 min · $65</span>
             </div>
             <p className="mt-5 leading-relaxed text-plum-700/90 dark:text-gray-300">
               The traditional art of applying pressure to specific points across your feet and lower legs. It improves blood circulation and releases the tension you carry with every step — grounding, restorative and deeply comforting.
             </p>
             <h3 className="mt-6 font-heading text-sm font-bold uppercase tracking-wider text-plum-800 dark:text-gray-100">What to expect</h3>
-            <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
+            <ul className="mt-3 grid gap-2.5">
               {["Stay relaxed in a reclined chair", "Pressure points on feet & lower legs", "Great after long days on your feet", "Eases tension & aids circulation"].map((t) => (
-                <li key={t} className="flex items-start gap-2.5 text-plum-700 dark:text-gray-300"><Check className="mt-0.5 h-5 w-5 shrink-0 text-plum-500 dark:text-plum-300" /> {t}</li>
+                <li key={t} className="flex items-start gap-2.5 text-plum-700 dark:text-gray-300"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500 dark:text-emerald-400" /> {t}</li>
               ))}
             </ul>
           </div>
@@ -150,19 +145,18 @@ export default function ServicesPage() {
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">Back, Neck, Shoulder &amp; Head</h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-200/90">Short on time, or carrying tension in one spot? These focused sessions zero in on exactly where you need it.</p>
           </div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              ["Full Back Massage", "30 min · $40", "Traditional Thai work concentrated on the back, from the neck down — ideal for lower-back and neck pain, including sciatica."],
-              ["Shoulder & Neck Massage", "30 min · $35", "For tension and stiffness through the shoulders and neck — focused pressure-point work to ease soreness and relax tight muscles."],
-              ["Shoulder, Neck & Head", "45 min · $50", "Everything in the shoulder & neck session, extended across the head and face to relieve built-up tension and headaches."],
-              ["Head Massage", "15 min · $15", "A focused 15 minutes on the head, neck and face — pressure points to relieve tension and head pain and refresh circulation."],
-            ].map(([title, price, desc]) => (
+              { icon: PersonStanding, title: "Full Back Massage", price: "30 min · $45", desc: "Traditional Thai work concentrated on the back, from the neck down — ideal for lower-back and neck pain, including sciatica." },
+              { icon: Bone, title: "Shoulder & Neck Massage", price: "30 min · $40", desc: "For tension and stiffness through the shoulders and neck — focused pressure-point work to ease soreness and relax tight muscles." },
+              { icon: Waves, title: "Shoulder, Neck & Head", price: "45 min · $55", desc: "Everything in the shoulder & neck session, extended across the head and face to relieve built-up tension and headaches." },
+              { icon: Brain, title: "Head Massage", price: "15 min · $20", desc: "A focused 15 minutes on the head, neck and face — pressure points to relieve tension and head pain and refresh circulation." },
+            ].map(({ icon: Icon, title, price, desc }) => (
               <article key={title} className="reveal rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 transition duration-200 hover:bg-white/10">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="font-heading text-lg font-bold text-white">{title}</h3>
-                  <span className="shrink-0 rounded-full bg-white/10 px-3 py-1 text-sm font-semibold text-white">{price}</span>
-                </div>
-                <p className="mt-2 text-sm leading-relaxed text-plum-200/90">{desc}</p>
+                <Icon className="h-6 w-6 text-white" />
+                <h3 className="mt-4 font-heading text-lg font-bold text-white">{title}</h3>
+                <span className="mt-2 inline-block rounded-full bg-white/10 px-3 py-1 text-sm font-semibold text-white">{price}</span>
+                <p className="mt-3 text-sm leading-relaxed text-plum-200/90">{desc}</p>
               </article>
             ))}
           </div>
@@ -223,7 +217,7 @@ export default function ServicesPage() {
               </tbody>
             </table>
           </div>
-          <p className="reveal mt-4 text-sm text-plum-500 dark:text-gray-400">Prices are per session. Please call to book — walk-ins are welcome when space allows.</p>
+          <p className="reveal mt-4 text-sm text-plum-900 dark:text-gray-400">Prices are per session. Please call to book — walk-ins are welcome when space allows.</p>
         </div>
       </section>
 
@@ -233,7 +227,7 @@ export default function ServicesPage() {
           <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Ready When You Are</h2>
           <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">Choose your treatment and we'll find a time that suits. Send a request and we'll confirm by phone, or call us directly.</p>
           <div className="reveal mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Now</Link>
+            <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Online</Link>
             <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto"><Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})</a>
           </div>
         </div>

@@ -6,8 +6,7 @@ export const site = {
   address: "3/459 Nepean Hwy, Frankston VIC 3199",
   messenger: "https://m.me/312223395466568",
   facebook: "https://www.facebook.com/profile.php?id=100064629971926",
-  maps:
-    "https://www.google.com/maps/search/?api=1&query=Layan+Traditional+Thai+Massage+459+Nepean+Hwy+Frankston",
+  maps: "https://maps.app.goo.gl/SACuBkwifAn8G5qn9",
   mapEmbed:
     "https://maps.google.com/maps?q=3%2F459%20Nepean%20Hwy%2C%20Frankston%20VIC%203199&output=embed",
 };

@@ -17,7 +17,7 @@ export default function StructuredData() {
     url: baseUrl,
     telephone: site.phoneDisplay,
     email: site.email,
-    priceRange: "$15–$110",
+    priceRange: "$20–$115",
     currenciesAccepted: "AUD",
     sameAs: [site.facebook],
     address: {

@@ -16,10 +16,10 @@ export default function FaqItem({
 
   return (
     <div className="reveal faq-item">
-      <button type="button" onClick={() => setOpen((v) => !v)} aria-expanded={open} className="faq-btn">
+      <button type="button" onClick={() => setOpen((v) => !v)} aria-expanded={open} className="faq-btn cursor-pointer">
         <span className="faq-q">{question}</span>
         <ChevronDown
-          className={`h-5 w-5 shrink-0 text-plum-500 transition-transform duration-200 dark:text-plum-300 ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 shrink-0 text-plum-800 transition-transform duration-200 dark:text-white ${open ? "rotate-180" : ""}`}
         />
       </button>
       <div className={`grid transition-all duration-200 ease-in-out ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>

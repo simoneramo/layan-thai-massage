@@ -131,10 +131,18 @@
 
   /* Form field */
   .field {
-    @apply w-full rounded-2xl border border-plum-200 bg-cream px-4 py-3 text-plum-900 shadow-sm
-           transition placeholder:text-plum-400 focus:border-plum-400 focus:outline-none
-           focus:ring-4 focus:ring-plum-300/30 dark:border-white/15 dark:bg-gray-800
+    @apply w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-plum-900
+           transition placeholder:text-gray-400 focus:border-gray-500 focus:outline-none
+           focus:ring-4 focus:ring-gray-400/30 dark:border-white/15 dark:bg-gray-800
            dark:text-gray-100 dark:placeholder:text-gray-500;
+  }
+
+  /* Native select: hide the browser arrow and draw a consistent brand chevron */
+  select.field {
+    @apply appearance-none bg-no-repeat pr-11;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23bb1414' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-position: right 1rem center;
+    background-size: 1rem;
   }
 
   /* FAQ accordion */

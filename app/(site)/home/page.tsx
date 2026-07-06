@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  MapPin, CalendarPlus, Phone, Leaf, Clock, HeartHandshake, List,
+  MapPin, CalendarPlus, Phone, Leaf, Clock, HeartHandshake,
   CheckCircle2, Waves, HeartPulse, Move, Activity, MoonStar, Sparkles,
   Star, StarHalf, ArrowRight, ArrowUpRight, Mail,
 } from "lucide-react";
@@ -15,10 +15,10 @@ export default function Home() {
     <>
       <StructuredData />
       {/* ===== HERO ===== */}
-      <section id="home" className="relative overflow-hidden bg-cream dark:bg-gray-900">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 sm:px-6 md:py-28 lg:grid-cols-12 lg:gap-10 lg:px-8">
+      <section id="home" className="relative overflow-hidden bg-white dark:bg-gray-900">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-14 sm:px-6 md:py-20 lg:grid-cols-12 lg:gap-10 lg:px-8">
           <div className="lg:col-span-7">
-            <span className="hero-anim inline-flex items-center gap-2 rounded-full bg-plum-100 px-4 py-1.5 text-sm font-medium text-plum-700 dark:bg-white/10 dark:text-plum-200">
+            <span className="hero-anim inline-flex items-center gap-2 text-sm font-medium text-plum-700 dark:text-plum-200">
               <MapPin className="h-4 w-4" /> Frankston, Melbourne 3199
             </span>
             <h1 className="hero-anim d1 mt-6 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl dark:text-white">
@@ -29,16 +29,19 @@ export default function Home() {
             </p>
             <div className="hero-anim d2 mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link href="/book" className="btn-primary w-full sm:w-auto">
-                <CalendarPlus className="h-5 w-5" /> Book Now
+                <CalendarPlus className="h-5 w-5" /> Book Online
               </Link>
-              <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto">
-                <Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})
-              </a>
+            </div>
+            <div className="hero-anim d2 mt-6 flex items-center gap-2.5">
+              <span className="flex text-amber-400" aria-hidden="true">
+                <Star className="h-5 w-5 fill-current" /><Star className="h-5 w-5 fill-current" /><Star className="h-5 w-5 fill-current" /><Star className="h-5 w-5 fill-current" /><StarHalf className="h-5 w-5 fill-current" />
+              </span>
+              <span className="text-sm text-plum-700 dark:text-gray-300"><span className="font-bold text-plum-900 dark:text-white">4.5</span> · 24 Google reviews</span>
             </div>
             <ul className="hero-anim d3 mt-9 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-plum-700 dark:text-gray-400">
-              <li className="flex items-center gap-2"><Leaf className="h-4 w-4 text-plum-500 dark:text-plum-300" /> Qualified therapists</li>
-              <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-plum-500 dark:text-plum-300" /> Open six days</li>
-              <li className="flex items-center gap-2"><HeartHandshake className="h-4 w-4 text-plum-500 dark:text-plum-300" /> Walk-ins welcome</li>
+              <li className="flex items-center gap-2"><Leaf className="h-4 w-4 text-emerald-500 dark:text-emerald-400" /> Qualified therapists</li>
+              <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-amber-500 dark:text-amber-400" /> Open six days</li>
+              <li className="flex items-center gap-2"><HeartHandshake className="h-4 w-4 text-sky-500 dark:text-sky-400" /> Walk-ins welcome</li>
             </ul>
           </div>
           <div className="hero-anim d2 lg:col-span-5">
@@ -91,9 +94,9 @@ export default function Home() {
 
           <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { title: "Traditional Thai Massage", img: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=800&q=80", alt: "Therapist performing a traditional clothed Thai massage stretch", desc: "Fully clothed, no oil. Firm palm-and-thumb pressure with assisted stretching to relax muscles, improve circulation and lift your energy. Ideal for sport or work-related pain.", prices: ["60 min · $70", "90 min · $110"], wide: false },
-              { title: "Essential Oil Massage", img: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80", alt: "Warm essential oils and a lit candle in a calm massage room", desc: "An ancient Thai remedy using the healing warmth of essential oils to stimulate blood flow, soothe sore and tired muscles, and leave the whole body calm and relaxed.", prices: ["60 min · $70"], wide: false },
-              { title: "Thai Foot Massage & Reflexology", img: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80", alt: "Relaxing foot massage and reflexology treatment", desc: "Gentle, precise pressure on points across the feet and lower legs to improve circulation and release the tension you carry with every step.", prices: ["30 min · $35", "60 min · $60"], wide: true },
+              { title: "Traditional Thai Massage", img: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=800&q=80", alt: "Therapist performing a traditional clothed Thai massage stretch", desc: "Fully clothed, no oil. Firm palm-and-thumb pressure with assisted stretching to relax muscles, improve circulation and lift your energy. Ideal for sport or work-related pain.", prices: ["60 min · $75", "90 min · $115"], wide: false },
+              { title: "Essential Oil Massage", img: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80", alt: "Warm essential oils and a lit candle in a calm massage room", desc: "An ancient Thai remedy using the healing warmth of essential oils to stimulate blood flow, soothe sore and tired muscles, and leave the whole body calm and relaxed.", prices: ["60 min · $75"], wide: false },
+              { title: "Thai Foot Massage & Reflexology", img: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80", alt: "Relaxing foot massage and reflexology treatment", desc: "Gentle, precise pressure on points across the feet and lower legs to improve circulation and release the tension you carry with every step.", prices: ["30 min · $40", "60 min · $65"], wide: true },
             ].map((s) => (
               <article key={s.title} className={`reveal card flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-lg ${s.wide ? "sm:col-span-2 lg:col-span-1" : ""}`}>
                 <div className="img-frame aspect-[4/3] rounded-none rounded-t-2xl ring-0">
@@ -112,17 +115,14 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="reveal mt-10 rounded-2xl bg-plum-50 p-7 ring-1 ring-plum-100 dark:bg-gray-800 dark:ring-white/10 sm:p-9">
-            <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-plum-700 text-white dark:bg-plum-600"><List className="h-5 w-5" /></span>
-              <h3 className="font-heading text-xl font-bold text-plum-800 dark:text-white">Focused &amp; express treatments</h3>
-            </div>
+          <div className="reveal mt-10 rounded-2xl bg-cream p-7 ring-1 ring-[#ece1d0] dark:bg-gray-800 dark:ring-white/10 sm:p-9">
+            <h3 className="font-heading text-xl font-bold text-plum-800 dark:text-white">Focused &amp; express treatments</h3>
             <dl className="mt-6 divide-y divide-plum-100 dark:divide-white/10">
               {[
-                ["Full Back Massage", "lower back & neck, incl. sciatica", "30 min · $40"],
-                ["Shoulder & Neck Massage", "ease stiffness & soreness", "30 min · $35"],
-                ["Shoulder, Neck & Head Massage", "relieve tension headaches", "45 min · $50"],
-                ["Head Massage", "head, neck & face pressure points", "15 min · $15"],
+                ["Full Back Massage", "lower back & neck, incl. sciatica", "30 min · $45"],
+                ["Shoulder & Neck Massage", "ease stiffness & soreness", "30 min · $40"],
+                ["Shoulder, Neck & Head Massage", "relieve tension headaches", "45 min · $55"],
+                ["Head Massage", "head, neck & face pressure points", "15 min · $20"],
               ].map(([t, sub, price]) => (
                 <div key={t} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-3.5">
                   <dt className="text-base font-semibold text-plum-800 dark:text-gray-100">{t} <span className="font-normal text-plum-500 dark:text-gray-400">— {sub}</span></dt>
@@ -153,13 +153,13 @@ export default function Home() {
             <p className="mt-4 leading-relaxed text-plum-700/80 dark:text-gray-400">
               Every session begins with a moment of calm and care. There is never a suggestion of haste — one movement melts into the next, and time is set aside entirely for you.
             </p>
-            <ul className="mt-7 grid gap-3 sm:grid-cols-2">
+            <ul className="mt-7 grid gap-3">
               {["Qualified, caring therapists", "Quiet, private treatment rooms", "Natural oils & warm towels", "Tailored to your body, every time"].map((t) => (
-                <li key={t} className="flex items-start gap-3 text-plum-800 dark:text-gray-200"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-plum-500 dark:text-plum-300" /> {t}</li>
+                <li key={t} className="flex items-start gap-3 text-plum-800 dark:text-gray-200"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500 dark:text-emerald-400" /> {t}</li>
               ))}
             </ul>
             <div className="mt-9">
-              <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Now</Link>
+              <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Online</Link>
             </div>
           </div>
         </div>
@@ -177,7 +177,7 @@ export default function Home() {
               More than muscle relief — Thai massage works on circulation and energy lines to support how your whole body feels.
             </p>
           </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { Icon: Waves, title: "Eases Stress & Tension", desc: "Slow, rhythmic pressure quiets a busy mind and lets tight muscles soften and let go." },
               { Icon: HeartPulse, title: "Improves Circulation", desc: "Pressure-point work and stretching encourage healthy blood flow and help clear tired tissues." },
@@ -257,7 +257,10 @@ export default function Home() {
               { initials: "SD", name: "Steven Davey", meta: "Local Guide", quote: "Best Thai massage on the Peninsula. Very welcoming and professional staff." },
               { initials: "SW", name: "Shae Wheeler", meta: "Local Guide · recent visit", quote: "Brilliant, relaxing and technically talented." },
             ].map((r) => (
-              <figure key={r.name} className="reveal card flex flex-col p-6 hover:-translate-y-1 hover:shadow-lg">
+              <figure key={r.name} className="reveal card flex flex-col p-6">
+                <span className="mb-4 flex text-amber-400" aria-label="Rated 5 out of 5 stars">
+                  <Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" />
+                </span>
                 <blockquote className="flex-1 leading-relaxed text-plum-800 dark:text-gray-200">{r.quote}</blockquote>
                 <figcaption className="mt-5 flex items-center gap-3">
                   <span className="grid h-11 w-11 place-items-center rounded-full bg-plum-700 text-sm font-bold text-white dark:bg-plum-600">{r.initials}</span>
@@ -295,7 +298,7 @@ export default function Home() {
               It shouldn't be. Pressure is firm but always guided by your comfort — just let your therapist know, and they'll adjust. Most guests leave feeling deeply relaxed and refreshed.
             </FaqItem>
             <FaqItem question="How long are sessions, and what do they cost?">
-              Treatments run from a 15-minute head massage ($15) to a 90-minute traditional session ($110). Full pricing is on the <Link href="/services" className="font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900 dark:text-plum-200">treatments page</Link>.
+              Treatments run from a 15-minute head massage ($20) to a 90-minute traditional session ($115). Full pricing is on the <Link href="/services" className="font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900 dark:text-plum-200">treatments page</Link>.
             </FaqItem>
             <FaqItem question="Where are you, and when are you open?">
               You'll find us at 3/459 Nepean Hwy, Frankston VIC 3199. We're open Mon–Fri 9am–6:00pm and Sat 9am–5:00pm; closed Sundays.
@@ -308,18 +311,15 @@ export default function Home() {
       <section id="contact" className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Book your visit</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Get in touch</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">
-              Ready to Unwind?
+              We&apos;d Love to Hear From You
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
-              Send a booking request and we'll confirm your time by phone, or call us directly — we'd love to look after you.
+              Send us a message with any questions and we&apos;ll get back to you soon. To book a treatment, just give us a call.
             </p>
           </div>
           <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:gap-10">
-            <div className="lg:col-span-7">
-              <ContactForm />
-            </div>
             <aside className="reveal lg:col-span-5">
               <div className="flex h-full flex-col gap-6 rounded-2xl bg-plum-800 p-7 text-plum-100 shadow-sm dark:bg-gray-900 sm:p-8">
                 <h3 className="font-heading text-xl font-bold text-white">Visit Layan</h3>
@@ -327,7 +327,7 @@ export default function Home() {
                   <li className="flex items-start gap-3">
                     <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-plum-300" />
                     <span>3/459 Nepean Hwy<br />Frankston VIC 3199
-                      <a href={site.maps} target="_blank" rel="noopener" className="mt-1 inline-flex items-center gap-1 font-medium text-white underline decoration-plum-400 underline-offset-2 hover:text-plum-200">Get directions <ArrowUpRight className="h-3.5 w-3.5" /></a>
+                      <a href={site.maps} target="_blank" rel="noopener" className="mt-1 flex w-fit items-center gap-1 font-medium text-white underline decoration-plum-400 underline-offset-2 hover:text-plum-200">Get directions <ArrowUpRight className="h-3.5 w-3.5" /></a>
                     </span>
                   </li>
                   <li className="flex items-start gap-3"><Phone className="mt-0.5 h-5 w-5 shrink-0 text-plum-300" /><a href={`tel:${site.phoneTel}`} className="font-medium text-white hover:text-plum-200">{site.phoneDisplay}</a></li>
@@ -346,6 +346,9 @@ export default function Home() {
                 </div>
               </div>
             </aside>
+            <div className="lg:col-span-7">
+              <ContactForm />
+            </div>
           </div>
         </div>
       </section>

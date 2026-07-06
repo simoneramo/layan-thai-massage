@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CalendarClock, HandHeart, Tag } from "lucide-react";
+import { CalendarClock, HandHeart, Tag, CalendarPlus, Phone } from "lucide-react";
 import { site } from "@/lib/site";
 import FaqItem from "@/components/FaqItem";
 
@@ -14,7 +14,7 @@ export default function FaqPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-cream dark:bg-gray-900">
+      <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 md:py-20 lg:px-8">
           <nav className="hero-anim text-sm text-plum-500 dark:text-plum-300" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2">
@@ -23,28 +23,24 @@ export default function FaqPage() {
               <li className="font-medium text-plum-700 dark:text-plum-200" aria-current="page">FAQ</li>
             </ol>
           </nav>
-          <div className="mt-6 grid items-end gap-8 lg:grid-cols-12">
-            <div className="lg:col-span-8">
-              <h1 className="hero-anim d1 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl dark:text-white">
-                Questions, Gently Answered
-              </h1>
-              <p className="hero-anim d1 mt-5 max-w-2xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
-                New to Thai massage, or just planning your first visit to Layan? Here's everything you might be wondering — and if your question isn't here, we're only a phone call away.
-              </p>
-            </div>
-            <div className="lg:col-span-4">
-              <div className="hero-anim d2 flex flex-wrap gap-2">
-                <a href="#booking-faqs" className="chip"><CalendarClock className="h-4 w-4" /> Booking &amp; visiting</a>
-                <a href="#treatment-faqs" className="chip"><HandHeart className="h-4 w-4" /> Your treatment</a>
-                <a href="#pricing-faqs" className="chip"><Tag className="h-4 w-4" /> Pricing</a>
-              </div>
+          <div className="mt-6 max-w-3xl">
+            <h1 className="hero-anim d1 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl dark:text-white">
+              Questions, Gently Answered
+            </h1>
+            <p className="hero-anim d1 mt-5 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
+              New to Thai massage, or just planning your first visit to Layan? Here's everything you might be wondering — and if your question isn't here, we're only a phone call away.
+            </p>
+            <div className="hero-anim d2 mt-8 flex flex-wrap gap-2">
+              <a href="#booking-faqs" className="chip"><CalendarClock className="h-4 w-4" /> Booking &amp; visiting</a>
+              <a href="#treatment-faqs" className="chip"><HandHeart className="h-4 w-4" /> Your treatment</a>
+              <a href="#pricing-faqs" className="chip"><Tag className="h-4 w-4" /> Pricing</a>
             </div>
           </div>
         </div>
       </section>
 
       {/* BOOKING & VISITING */}
-      <section id="booking-faqs" className="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <section id="booking-faqs" className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
         <div className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
           <div className="reveal flex items-center gap-3">
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-plum-700 text-white dark:bg-plum-600"><CalendarClock className="h-5 w-5" /></span>
@@ -68,7 +64,7 @@ export default function FaqPage() {
       </section>
 
       {/* YOUR TREATMENT */}
-      <section id="treatment-faqs" className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
+      <section id="treatment-faqs" className="bg-white py-20 dark:bg-gray-900 md:py-24">
         <div className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
           <div className="reveal flex items-center gap-3">
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-plum-700 text-white dark:bg-plum-600"><HandHeart className="h-5 w-5" /></span>
@@ -95,7 +91,7 @@ export default function FaqPage() {
       </section>
 
       {/* PRICING */}
-      <section id="pricing-faqs" className="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <section id="pricing-faqs" className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
         <div className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
           <div className="reveal flex items-center gap-3">
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-plum-700 text-white dark:bg-plum-600"><Tag className="h-5 w-5" /></span>
@@ -113,13 +109,13 @@ export default function FaqPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
+      <section className="bg-white py-20 dark:bg-gray-900 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-6 lg:px-8">
           <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Still Have a Question?</h2>
           <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">We're happy to help you choose a treatment or find a time. Send a booking request, or give us a call — we'd love to hear from you.</p>
           <div className="reveal mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link href="/book" className="btn-primary w-full sm:w-auto">Book Now</Link>
-            <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto">Call Now ({site.phoneDisplay})</a>
+            <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Online</Link>
+            <a href={`tel:${site.phoneTel}`} className="btn-secondary w-full sm:w-auto"><Phone className="h-5 w-5" /> Call Now ({site.phoneDisplay})</a>
           </div>
         </div>
       </section>
