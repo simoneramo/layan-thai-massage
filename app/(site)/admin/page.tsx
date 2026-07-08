@@ -31,7 +31,7 @@ export default async function AdminPage({
 
   if (!(await isAdmin())) {
     return (
-      <div className="sb bg-cream dark:bg-gray-900">
+      <div className="sb bg-cream">
         <div className="wrap">
           <div className="card" style={{ maxWidth: 380, margin: "0 auto" }}>
             <h1>Admin</h1>
@@ -62,7 +62,7 @@ export default async function AdminPage({
     .sort((a, b) => b.start.localeCompare(a.start));
 
   return (
-    <div className="sb bg-cream dark:bg-gray-900">
+    <div className="sb bg-cream">
       <div className="wrap" style={{ maxWidth: 920 }}>
         <div className="card">
           <div className="topbar">

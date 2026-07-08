@@ -61,8 +61,8 @@ function ContactFormInner({ onReset }: { onReset: () => void }) {
   function fieldClass(field: Field): string {
     const err = errors[field];
     const ok = touched[field] && !err && values[field].trim() !== "";
-    if (err) return "field border-red-400 bg-red-50 dark:border-red-500 dark:bg-red-950/20";
-    if (ok) return "field border-green-500 bg-green-50 dark:border-green-500 dark:bg-green-950/20";
+    if (err) return "field border-red-400 bg-red-50";
+    if (ok) return "field border-green-500 bg-green-50";
     return "field";
   }
 
@@ -97,15 +97,15 @@ function ContactFormInner({ onReset }: { onReset: () => void }) {
         tabIndex={-1}
         role="status"
         aria-live="polite"
-        className="rounded-2xl bg-white p-8 text-center shadow-sm ring-1 ring-plum-100 focus:outline-none dark:bg-gray-800 dark:ring-white/10 sm:p-10"
+        className="rounded-2xl bg-white p-8 text-center shadow-sm ring-1 ring-plum-100 focus:outline-none sm:p-10"
       >
-        <span className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-green-100 text-green-600 dark:bg-white/10 dark:text-plum-200">
+        <span className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-green-100 text-green-600">
           <Check className="h-8 w-8" />
         </span>
-        <h3 className="mt-5 font-heading text-2xl font-bold text-plum-900 dark:text-white">
+        <h3 className="mt-5 font-heading text-2xl font-bold text-plum-900">
           {state.name ? `Thank you, ${state.name}!` : "Thank you!"}
         </h3>
-        <p className="mx-auto mt-3 max-w-md leading-relaxed text-plum-700/90 dark:text-gray-300">
+        <p className="mx-auto mt-3 max-w-md leading-relaxed text-plum-700/90">
           Your message is on its way. We&apos;ll get back to you as soon as we can. For bookings or anything urgent, give us a ring.
         </p>
 
@@ -116,7 +116,7 @@ function ContactFormInner({ onReset }: { onReset: () => void }) {
           <button
             type="button"
             onClick={onReset}
-            className="inline-flex items-center justify-center gap-1.5 rounded-2xl px-4 py-2.5 text-sm font-medium text-plum-700 underline decoration-plum-300 underline-offset-4 transition hover:text-plum-900 focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40 dark:text-plum-200 dark:hover:text-white"
+            className="inline-flex items-center justify-center gap-1.5 rounded-2xl px-4 py-2.5 text-sm font-medium text-plum-700 underline decoration-plum-300 underline-offset-4 transition hover:text-plum-900 focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40"
           >
             <RotateCcw className="h-4 w-4" /> Send another request
           </button>
@@ -126,10 +126,10 @@ function ContactFormInner({ onReset }: { onReset: () => void }) {
   }
 
   return (
-    <form noValidate onSubmit={handleSubmit} className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-plum-100 dark:bg-gray-800 dark:ring-white/10 sm:p-8">
+    <form noValidate onSubmit={handleSubmit} className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-plum-100 sm:p-8">
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-plum-800 dark:text-gray-200">Name</label>
+          <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-plum-800">Name</label>
           <input
             id="name" name="name" type="text" autoComplete="name" placeholder="Your name"
             value={values.name}
@@ -139,10 +139,10 @@ function ContactFormInner({ onReset }: { onReset: () => void }) {
             aria-describedby={errors.name ? "name-error" : undefined}
             className={fieldClass("name")}
           />
-          {errors.name && <p id="name-error" className="mt-1.5 text-xs text-red-600 dark:text-red-400">{errors.name}</p>}
+          {errors.name && <p id="name-error" className="mt-1.5 text-xs text-red-600">{errors.name}</p>}
         </div>
         <div>
-          <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-plum-800 dark:text-gray-200">Phone</label>
+          <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-plum-800">Phone</label>
           <input
             id="phone" name="phone" type="tel" autoComplete="tel" placeholder="04xx xxx xxx"
             value={values.phone}
@@ -152,10 +152,10 @@ function ContactFormInner({ onReset }: { onReset: () => void }) {
             aria-describedby={errors.phone ? "phone-error" : undefined}
             className={fieldClass("phone")}
           />
-          {errors.phone && <p id="phone-error" className="mt-1.5 text-xs text-red-600 dark:text-red-400">{errors.phone}</p>}
+          {errors.phone && <p id="phone-error" className="mt-1.5 text-xs text-red-600">{errors.phone}</p>}
         </div>
         <div className="sm:col-span-2">
-          <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-plum-800 dark:text-gray-200">Email</label>
+          <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-plum-800">Email</label>
           <input
             id="email" name="email" type="email" autoComplete="email" placeholder="you@example.com"
             value={values.email}
@@ -165,10 +165,10 @@ function ContactFormInner({ onReset }: { onReset: () => void }) {
             aria-describedby={errors.email ? "email-error" : undefined}
             className={fieldClass("email")}
           />
-          {errors.email && <p id="email-error" className="mt-1.5 text-xs text-red-600 dark:text-red-400">{errors.email}</p>}
+          {errors.email && <p id="email-error" className="mt-1.5 text-xs text-red-600">{errors.email}</p>}
         </div>
         <div className="sm:col-span-2">
-          <label htmlFor="subject" className="mb-1.5 block text-sm font-medium text-plum-800 dark:text-gray-200">Subject</label>
+          <label htmlFor="subject" className="mb-1.5 block text-sm font-medium text-plum-800">Subject</label>
           <select id="subject" name="subject" className="field" defaultValue={subjects[0]}>
             {subjects.map((s) => (
               <option key={s}>{s}</option>
@@ -176,7 +176,7 @@ function ContactFormInner({ onReset }: { onReset: () => void }) {
           </select>
         </div>
         <div className="sm:col-span-2">
-          <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-plum-800 dark:text-gray-200">
+          <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-plum-800">
             Message <span className="font-normal text-gray-400">(optional)</span>
           </label>
           <textarea id="message" name="message" rows={4} placeholder="Preferred day or time, or anything we should know…" className="field" />
@@ -184,7 +184,7 @@ function ContactFormInner({ onReset }: { onReset: () => void }) {
       </div>
 
       {state.status === "error" && state.message && (
-        <p className="mt-4 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-800 dark:bg-red-950/40 dark:text-red-200" role="alert">
+        <p className="mt-4 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">
           {state.message}
         </p>
       )}
@@ -192,7 +192,7 @@ function ContactFormInner({ onReset }: { onReset: () => void }) {
       <button type="submit" disabled={pending} className="btn-primary mt-6 w-full disabled:cursor-not-allowed disabled:opacity-70">
         <Send className="h-5 w-5" /> {pending ? "Sending…" : "Send Message"}
       </button>
-      <p className="mt-3 text-center text-xs text-plum-500 dark:text-gray-400">We&apos;ll get back to you as soon as we can.</p>
+      <p className="mt-3 text-center text-xs text-plum-500">We&apos;ll get back to you as soon as we can.</p>
     </form>
   );
 }

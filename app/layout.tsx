@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { varelaRound } from "./fonts";
 
@@ -17,16 +17,16 @@ export const metadata: Metadata = {
   },
 };
 
-// Set theme before paint to avoid a flash of the wrong mode
-const themeScript = `(function(){try{var m=localStorage.getItem('theme')||'auto';var d=m==='dark'||(m==='auto'&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d);}catch(e){}})();`;
+// The site is light-mode only. Declaring it stops browsers from auto-darkening
+// form controls and scrollbars for visitors whose OS is set to dark.
+export const viewport: Viewport = {
+  colorScheme: "light",
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={varelaRound.variable} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
-      <body className="bg-white font-sans text-plum-900 antialiased dark:bg-gray-900 dark:text-gray-200">
+    <html lang="en" className={varelaRound.variable}>
+      <body className="bg-white font-sans text-plum-900 antialiased">
         {children}
       </body>
     </html>

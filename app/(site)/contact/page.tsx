@@ -14,20 +14,20 @@ export default function ContactPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-white dark:bg-neutral-900">
+      <section className="bg-white">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 md:py-20 lg:px-8">
-          <nav className="hero-anim text-sm text-plum-500 dark:text-plum-300" aria-label="Breadcrumb">
+          <nav className="hero-anim text-sm text-plum-500" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2">
-              <li><Link href="/home" className="hover:text-plum-700 dark:hover:text-white">Home</Link></li>
+              <li><Link href="/home" className="hover:text-plum-700">Home</Link></li>
               <li aria-hidden="true">/</li>
-              <li className="font-medium text-plum-700 dark:text-plum-200" aria-current="page">Contact</li>
+              <li className="font-medium text-plum-700" aria-current="page">Contact</li>
             </ol>
           </nav>
           <div className="mt-6 max-w-2xl">
-            <h1 className="hero-anim d1 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl dark:text-white">
+            <h1 className="hero-anim d1 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl">
               Get in Touch
             </h1>
-            <p className="hero-anim d1 mt-5 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
+            <p className="hero-anim d1 mt-5 text-lg leading-relaxed text-plum-700/90">
               Call us for the quickest response — especially to book a treatment — send a message below, or simply drop by. Walk-ins are welcome whenever we have space, and we'd love to help you unwind.
             </p>
             <div className="hero-anim d2 mt-8 flex flex-col gap-3 sm:flex-row">
@@ -39,47 +39,47 @@ export default function ContactPage() {
       </section>
 
       {/* QUICK CONTACT METHODS */}
-      <section className="bg-plum-50 py-16 dark:bg-neutral-800 md:py-20">
+      <section className="bg-plum-50 py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <a href={`tel:${site.phoneTel}`} className="group reveal card flex flex-col gap-3 p-6 hover:-translate-y-0.5 hover:shadow-md">
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-plum-100 text-plum-700 transition-transform duration-200 ease-out group-hover:scale-110 group-hover:-rotate-6 dark:bg-white/10 dark:text-plum-200"><Phone className="h-5 w-5" /></span>
-              <span className="font-heading font-bold text-plum-800 dark:text-white">Call us</span>
-              <span className="text-sm text-plum-700/90 dark:text-gray-300">{site.phoneDisplay}</span>
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-plum-100 text-plum-700 transition-transform duration-200 ease-out group-hover:scale-110 group-hover:-rotate-6"><Phone className="h-5 w-5" /></span>
+              <span className="font-heading font-bold text-plum-800">Call us</span>
+              <span className="text-sm text-plum-700/90">{site.phoneDisplay}</span>
             </a>
             <a href={`mailto:${site.email}`} className="group reveal card flex flex-col gap-3 p-6 hover:-translate-y-0.5 hover:shadow-md">
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-plum-100 text-plum-700 transition-transform duration-200 ease-out group-hover:scale-110 group-hover:-rotate-6 dark:bg-white/10 dark:text-plum-200"><Mail className="h-5 w-5" /></span>
-              <span className="font-heading font-bold text-plum-800 dark:text-white">Email us</span>
-              <span className="break-all text-sm text-plum-700/90 dark:text-gray-300">{site.email}</span>
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-plum-100 text-plum-700 transition-transform duration-200 ease-out group-hover:scale-110 group-hover:-rotate-6"><Mail className="h-5 w-5" /></span>
+              <span className="font-heading font-bold text-plum-800">Email us</span>
+              <span className="break-all text-sm text-plum-700/90">{site.email}</span>
             </a>
             <a href={site.messenger} target="_blank" rel="noopener" className="group reveal card flex flex-col gap-3 p-6 hover:-translate-y-0.5 hover:shadow-md">
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-plum-100 text-plum-700 transition-transform duration-200 ease-out group-hover:scale-110 group-hover:-rotate-6 dark:bg-white/10 dark:text-plum-200"><MessageCircle className="h-5 w-5" /></span>
-              <span className="font-heading font-bold text-plum-800 dark:text-white">Message us</span>
-              <span className="text-sm text-plum-700/90 dark:text-gray-300">Chat on Messenger</span>
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-plum-100 text-plum-700 transition-transform duration-200 ease-out group-hover:scale-110 group-hover:-rotate-6"><MessageCircle className="h-5 w-5" /></span>
+              <span className="font-heading font-bold text-plum-800">Message us</span>
+              <span className="text-sm text-plum-700/90">Chat on Messenger</span>
             </a>
             <a href={site.maps} target="_blank" rel="noopener" className="group reveal card flex flex-col gap-3 p-6 hover:-translate-y-0.5 hover:shadow-md">
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-plum-100 text-plum-700 transition-transform duration-200 ease-out group-hover:scale-110 group-hover:-rotate-6 dark:bg-white/10 dark:text-plum-200"><MapPin className="h-5 w-5" /></span>
-              <span className="font-heading font-bold text-plum-800 dark:text-white">Visit us</span>
-              <span className="text-sm text-plum-700/90 dark:text-gray-300">3/459 Nepean Hwy, Frankston</span>
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-plum-100 text-plum-700 transition-transform duration-200 ease-out group-hover:scale-110 group-hover:-rotate-6"><MapPin className="h-5 w-5" /></span>
+              <span className="font-heading font-bold text-plum-800">Visit us</span>
+              <span className="text-sm text-plum-700/90">3/459 Nepean Hwy, Frankston</span>
             </a>
           </div>
         </div>
       </section>
 
       {/* BOOKING FORM + INFO */}
-      <section id="booking" className="bg-white py-20 dark:bg-neutral-900 md:py-24">
+      <section id="booking" className="bg-white py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Send a message</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Send Us a Message</h2>
-            <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">Have a question or want to know more? Send us a message and we'll get back to you as soon as we can.</p>
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Send a message</span>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Send Us a Message</h2>
+            <p className="mt-4 text-lg leading-relaxed text-plum-700/90">Have a question or want to know more? Send us a message and we'll get back to you as soon as we can.</p>
           </div>
           <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:gap-10">
             <div className="lg:col-span-7">
               <ContactForm />
             </div>
             <aside className="reveal lg:col-span-5">
-              <div className="flex h-full flex-col gap-6 rounded-2xl bg-plum-800 p-7 text-plum-100 shadow-sm dark:bg-gray-800 sm:p-8">
+              <div className="flex h-full flex-col gap-6 rounded-2xl bg-plum-800 p-7 text-plum-100 shadow-sm sm:p-8">
                 <h3 className="font-heading text-xl font-bold text-white">Visit Layan</h3>
                 <ul className="flex flex-col gap-5 text-sm">
                   <li className="flex items-start gap-3">
@@ -110,14 +110,14 @@ export default function ContactPage() {
       </section>
 
       {/* MAP */}
-      <section id="map" className="bg-plum-50 py-20 dark:bg-neutral-800 md:py-24">
+      <section id="map" className="bg-plum-50 py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Find us</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">On Nepean Highway</h2>
-            <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">Easy to reach on the Mornington Peninsula, with lots of parking close by.</p>
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Find us</span>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">On Nepean Highway</h2>
+            <p className="mt-4 text-lg leading-relaxed text-plum-700/90">Easy to reach on the Mornington Peninsula, with lots of parking close by.</p>
           </div>
-          <div className="reveal mt-10 overflow-hidden rounded-2xl shadow-sm ring-1 ring-plum-100 dark:ring-white/10">
+          <div className="reveal mt-10 overflow-hidden rounded-2xl shadow-sm ring-1 ring-plum-100">
             <iframe
               title="Map showing Layan Traditional Thai Massage, 3/459 Nepean Hwy, Frankston VIC 3199"
               src={site.mapEmbed}

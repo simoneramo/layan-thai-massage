@@ -15,16 +15,16 @@ export default function Home() {
     <>
       <StructuredData />
       {/* ===== HERO ===== */}
-      <section id="home" className="relative overflow-hidden bg-white dark:bg-neutral-900">
+      <section id="home" className="relative overflow-hidden bg-white">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-14 sm:px-6 md:py-20 lg:grid-cols-12 lg:gap-10 lg:px-8">
           <div className="lg:col-span-7">
-            <span className="hero-anim inline-flex items-center gap-2 text-sm font-medium text-plum-700 dark:text-plum-200">
+            <span className="hero-anim inline-flex items-center gap-2 text-sm font-medium text-plum-700">
               <MapPin className="h-4 w-4" /> Frankston, Melbourne 3199
             </span>
-            <h1 className="hero-anim d1 mt-6 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl dark:text-white">
+            <h1 className="hero-anim d1 mt-6 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl">
               Unwind, Restore, Breathe Again
             </h1>
-            <p className="hero-anim d1 mt-5 max-w-xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
+            <p className="hero-anim d1 mt-5 max-w-xl text-lg leading-relaxed text-plum-700/90">
               Authentic Thai massage in the heart of Frankston. Gentle hands, quiet rooms, and time set aside just for you — so tension melts and calm returns.
             </p>
             <div className="hero-anim d2 mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -36,12 +36,12 @@ export default function Home() {
               <span className="flex text-amber-400" aria-hidden="true">
                 <Star className="h-5 w-5 fill-current" /><Star className="h-5 w-5 fill-current" /><Star className="h-5 w-5 fill-current" /><Star className="h-5 w-5 fill-current" /><StarHalf className="h-5 w-5 fill-current" />
               </span>
-              <span className="text-sm text-plum-700 dark:text-gray-300"><span className="font-bold text-plum-900 dark:text-white">4.5</span> · 24 Google reviews</span>
+              <span className="text-sm text-plum-700"><span className="font-bold text-plum-900">4.5</span> · 24 Google reviews</span>
             </div>
-            <ul className="hero-anim d3 mt-9 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-plum-700 dark:text-gray-400">
-              <li className="flex items-center gap-2"><Leaf className="h-4 w-4 text-emerald-500 dark:text-emerald-400" /> Qualified therapists</li>
-              <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-amber-500 dark:text-amber-400" /> Open six days</li>
-              <li className="flex items-center gap-2"><HeartHandshake className="h-4 w-4 text-sky-500 dark:text-sky-400" /> Walk-ins welcome</li>
+            <ul className="hero-anim d3 mt-9 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-plum-700">
+              <li className="flex items-center gap-2"><Leaf className="h-4 w-4 text-emerald-500" /> Qualified therapists</li>
+              <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-amber-500" /> Open six days</li>
+              <li className="flex items-center gap-2"><HeartHandshake className="h-4 w-4 text-sky-500" /> Walk-ins welcome</li>
             </ul>
           </div>
           <div className="hero-anim d2 lg:col-span-5">
@@ -53,7 +53,7 @@ export default function Home() {
       </section>
 
       {/* ===== TRUST STRIP ===== */}
-      <section className="bg-plum-800 dark:bg-neutral-950">
+      <section className="bg-plum-800">
         <div className="mx-auto max-w-6xl px-5 py-12 sm:px-6 md:py-16 lg:px-8">
           <div className="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
             <div className="reveal">
@@ -77,17 +77,17 @@ export default function Home() {
       </section>
 
       {/* ===== SERVICES ===== */}
-      <section id="services" className="bg-white py-20 dark:bg-neutral-900 md:py-24">
+      <section id="services" className="bg-white py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Our treatments</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 dark:text-white sm:text-4xl">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Our treatments</span>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">
               Massage Therapies for Every Need
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
+            <p className="mt-4 text-lg leading-relaxed text-plum-700/90">
               Traditional techniques, unhurried and tailored to you. Choose a signature treatment below, or pick a focused session for a specific ache.
             </p>
-            <Link href="/services" className="mt-5 inline-flex items-center gap-1.5 font-semibold text-plum-700 underline decoration-plum-300 underline-offset-4 transition-colors hover:text-plum-900 focus:outline-none focus-visible:text-plum-900 dark:text-plum-200 dark:hover:text-white">
+            <Link href="/services" className="mt-5 inline-flex items-center gap-1.5 font-semibold text-plum-700 underline decoration-plum-300 underline-offset-4 transition-colors hover:text-plum-900 focus:outline-none focus-visible:text-plum-900">
               See all treatments &amp; pricing <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -103,11 +103,11 @@ export default function Home() {
                   <Image src={s.img} alt={s.alt} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="font-heading text-xl font-bold text-plum-800 dark:text-white">{s.title}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-plum-700/90 dark:text-gray-300">{s.desc}</p>
+                  <h3 className="font-heading text-xl font-bold text-plum-800">{s.title}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-plum-700/90">{s.desc}</p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {s.prices.map((p) => (
-                      <span key={p} className="rounded-full bg-plum-100 px-3 py-1 text-sm font-semibold text-plum-700 dark:bg-white/10 dark:text-plum-200">{p}</span>
+                      <span key={p} className="rounded-full bg-plum-100 px-3 py-1 text-sm font-semibold text-plum-700">{p}</span>
                     ))}
                   </div>
                 </div>
@@ -115,9 +115,9 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="reveal mt-10 rounded-2xl bg-cream p-7 ring-1 ring-[#ece1d0] dark:bg-gray-800 dark:ring-white/10 sm:p-9">
-            <h3 className="font-heading text-xl font-bold text-plum-800 dark:text-white">Focused &amp; express treatments</h3>
-            <dl className="mt-6 divide-y divide-plum-100 dark:divide-white/10">
+          <div className="reveal mt-10 rounded-2xl bg-cream p-7 ring-1 ring-[#ece1d0] sm:p-9">
+            <h3 className="font-heading text-xl font-bold text-plum-800">Focused &amp; express treatments</h3>
+            <dl className="mt-6 divide-y divide-plum-100">
               {[
                 ["Full Back Massage", "lower back & neck, incl. sciatica", "30 min · $45"],
                 ["Shoulder & Neck Massage", "ease stiffness & soreness", "30 min · $40"],
@@ -125,8 +125,8 @@ export default function Home() {
                 ["Head Massage", "head, neck & face pressure points", "15 min · $20"],
               ].map(([t, sub, price]) => (
                 <div key={t} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-3.5">
-                  <dt className="text-base font-semibold text-plum-800 dark:text-gray-100">{t} <span className="font-normal text-plum-500 dark:text-gray-400">— {sub}</span></dt>
-                  <dd className="text-sm font-semibold text-plum-700 dark:text-plum-200">{price}</dd>
+                  <dt className="text-base font-semibold text-plum-800">{t} <span className="font-normal text-plum-500">— {sub}</span></dt>
+                  <dd className="text-sm font-semibold text-plum-700">{price}</dd>
                 </div>
               ))}
             </dl>
@@ -135,7 +135,7 @@ export default function Home() {
       </section>
 
       {/* ===== ABOUT ===== */}
-      <section id="about" className="bg-plum-50 py-24 dark:bg-neutral-800">
+      <section id="about" className="bg-plum-50 py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-12 lg:gap-14 lg:px-8">
           <div className="reveal order-2 lg:order-1 lg:col-span-5">
             <div className="img-frame aspect-[4/5]">
@@ -143,19 +143,19 @@ export default function Home() {
             </div>
           </div>
           <div className="reveal order-1 lg:order-2 lg:col-span-7">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Our practice</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Our practice</span>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">
               Rooted in an Ancient Healing Art
             </h2>
-            <p className="mt-5 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
+            <p className="mt-5 text-lg leading-relaxed text-plum-700/90">
               Traditional Thai massage draws on yoga, Ayurvedic medicine and Buddhist practice — rhythmic pressure, gentle stretching and quiet breath that bring body, mind and spirit back into balance.
             </p>
-            <p className="mt-4 leading-relaxed text-plum-700/80 dark:text-gray-400">
+            <p className="mt-4 leading-relaxed text-plum-700/80">
               Every session begins with a moment of calm and care. There is never a suggestion of haste — one movement melts into the next, and time is set aside entirely for you.
             </p>
             <ul className="mt-7 grid gap-3">
               {["Qualified, caring therapists", "Quiet, private treatment rooms", "Natural oils & warm towels", "Tailored to your body, every time"].map((t) => (
-                <li key={t} className="flex items-start gap-3 text-plum-800 dark:text-gray-200"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500 dark:text-emerald-400" /> {t}</li>
+                <li key={t} className="flex items-start gap-3 text-plum-800"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" /> {t}</li>
               ))}
             </ul>
             <div className="mt-9">
@@ -166,14 +166,14 @@ export default function Home() {
       </section>
 
       {/* ===== BENEFITS ===== */}
-      <section className="bg-white py-20 dark:bg-neutral-900 md:py-24">
+      <section className="bg-white py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal mx-auto max-w-2xl text-center">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">The benefits</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">The benefits</span>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">
               How Thai Massage Helps You
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
+            <p className="mt-4 text-lg leading-relaxed text-plum-700/90">
               More than muscle relief — Thai massage works on circulation and energy lines to support how your whole body feels.
             </p>
           </div>
@@ -187,9 +187,9 @@ export default function Home() {
               { Icon: Sparkles, title: "Lifts Your Energy", desc: "Balancing the body's energy lines leaves you feeling relaxed yet invigorated, not drowsy." },
             ].map(({ Icon, title, desc }) => (
               <div key={title} className="reveal">
-                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-plum-100 text-plum-700 dark:bg-white/10 dark:text-plum-200"><Icon className="h-6 w-6" /></span>
-                <h3 className="mt-4 font-heading text-lg font-bold text-plum-800 dark:text-white">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-plum-700/90 dark:text-gray-400">{desc}</p>
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-plum-100 text-plum-700"><Icon className="h-6 w-6" /></span>
+                <h3 className="mt-4 font-heading text-lg font-bold text-plum-800">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-plum-700/90">{desc}</p>
               </div>
             ))}
           </div>
@@ -197,7 +197,7 @@ export default function Home() {
       </section>
 
       {/* ===== GALLERY ===== */}
-      <section id="gallery" className="bg-plum-900 py-24 dark:bg-neutral-950">
+      <section id="gallery" className="bg-plum-900 py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-300">Our space</span>
@@ -229,22 +229,22 @@ export default function Home() {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
-      <section id="reviews" className="bg-rose-50 py-20 dark:bg-neutral-900 md:py-24">
+      <section id="reviews" className="bg-rose-50 py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-xl">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Kind words</span>
-              <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Kind words</span>
+              <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">
                 Loved by Frankston Locals
               </h2>
             </div>
-            <div className="flex items-center gap-3 rounded-2xl bg-white px-5 py-3 shadow-sm ring-1 ring-plum-100 dark:bg-gray-800 dark:ring-white/10">
-              <span className="font-heading text-3xl font-extrabold text-plum-800 dark:text-white">4.5</span>
+            <div className="flex items-center gap-3 rounded-2xl bg-white px-5 py-3 shadow-sm ring-1 ring-plum-100">
+              <span className="font-heading text-3xl font-extrabold text-plum-800">4.5</span>
               <span className="leading-tight">
                 <span className="flex text-amber-400" aria-hidden="true">
                   <Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><StarHalf className="h-4 w-4 fill-current" />
                 </span>
-                <span className="text-sm text-plum-600 dark:text-gray-400">24 Google reviews</span>
+                <span className="text-sm text-plum-600">24 Google reviews</span>
               </span>
             </div>
           </div>
@@ -261,12 +261,12 @@ export default function Home() {
                 <span className="mb-4 flex text-amber-400" aria-label="Rated 5 out of 5 stars">
                   <Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" /><Star className="h-4 w-4 fill-current" />
                 </span>
-                <blockquote className="flex-1 leading-relaxed text-plum-800 dark:text-gray-200">{r.quote}</blockquote>
+                <blockquote className="flex-1 leading-relaxed text-plum-800">{r.quote}</blockquote>
                 <figcaption className="mt-5 flex items-center gap-3">
-                  <span className="grid h-11 w-11 place-items-center rounded-full bg-plum-700 text-sm font-bold text-white dark:bg-plum-600">{r.initials}</span>
+                  <span className="grid h-11 w-11 place-items-center rounded-full bg-plum-700 text-sm font-bold text-white">{r.initials}</span>
                   <span>
-                    <span className="block font-semibold text-plum-800 dark:text-white">{r.name}</span>
-                    <span className="block text-xs text-plum-500 dark:text-gray-400">{r.meta}</span>
+                    <span className="block font-semibold text-plum-800">{r.name}</span>
+                    <span className="block text-xs text-plum-500">{r.meta}</span>
                   </span>
                 </figcaption>
               </figure>
@@ -276,20 +276,20 @@ export default function Home() {
       </section>
 
       {/* ===== FAQ ===== */}
-      <section id="faq" className="bg-white py-20 dark:bg-neutral-900 md:py-24">
+      <section id="faq" className="bg-white py-20 md:py-24">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
           <div className="reveal lg:col-span-4">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Good to know</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Good to know</span>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">
               Your Questions, Answered
             </h2>
-            <p className="mt-4 leading-relaxed text-plum-700/90 dark:text-gray-300">
-              New to Thai massage? Here's what to expect. For anything else, just give us a call — or see the <Link href="/faq" className="font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900 dark:text-plum-200">full FAQ</Link>.
+            <p className="mt-4 leading-relaxed text-plum-700/90">
+              New to Thai massage? Here's what to expect. For anything else, just give us a call — or see the <Link href="/faq" className="font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900">full FAQ</Link>.
             </p>
           </div>
           <div className="flex flex-col gap-4 lg:col-span-8">
             <FaqItem question="Do I need to book, or can I walk in?" defaultOpen>
-              Walk-ins are warmly welcome when we have space, but a quick call to <a href={`tel:${site.phoneTel}`} className="font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900 dark:text-plum-200">{site.phoneDisplay}</a> is the surest way to reserve your preferred time.
+              Walk-ins are warmly welcome when we have space, but a quick call to <a href={`tel:${site.phoneTel}`} className="font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900">{site.phoneDisplay}</a> is the surest way to reserve your preferred time.
             </FaqItem>
             <FaqItem question="What should I wear, and is oil used?">
               Traditional Thai massage is done fully clothed with no oil — loose, comfortable clothing is ideal. Our Essential Oil and Foot treatments do use warm oils, and we'll have everything ready for you.
@@ -298,7 +298,7 @@ export default function Home() {
               It shouldn't be. Pressure is firm but always guided by your comfort — just let your therapist know, and they'll adjust. Most guests leave feeling deeply relaxed and refreshed.
             </FaqItem>
             <FaqItem question="How long are sessions, and what do they cost?">
-              Treatments run from a 15-minute head massage ($20) to a 90-minute traditional session ($115). Full pricing is on the <Link href="/services" className="font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900 dark:text-plum-200">treatments page</Link>.
+              Treatments run from a 15-minute head massage ($20) to a 90-minute traditional session ($115). Full pricing is on the <Link href="/services" className="font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900">treatments page</Link>.
             </FaqItem>
             <FaqItem question="Where are you, and when are you open?">
               You'll find us at 3/459 Nepean Hwy, Frankston VIC 3199. We're open Mon–Fri 9am–6:00pm and Sat 9am–5:00pm; closed Sundays.
@@ -308,20 +308,20 @@ export default function Home() {
       </section>
 
       {/* ===== CONTACT ===== */}
-      <section id="contact" className="bg-plum-50 py-20 dark:bg-neutral-800 md:py-24">
+      <section id="contact" className="bg-plum-50 py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Get in touch</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Get in touch</span>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">
               We&apos;d Love to Hear From You
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
+            <p className="mt-4 text-lg leading-relaxed text-plum-700/90">
               Send us a message with any questions and we&apos;ll get back to you soon. To book a treatment, just give us a call.
             </p>
           </div>
           <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:gap-10">
             <aside className="reveal lg:col-span-5">
-              <div className="flex h-full flex-col gap-6 rounded-2xl bg-plum-800 p-7 text-plum-100 shadow-sm dark:bg-gray-900 sm:p-8">
+              <div className="flex h-full flex-col gap-6 rounded-2xl bg-plum-800 p-7 text-plum-100 shadow-sm sm:p-8">
                 <h3 className="font-heading text-xl font-bold text-white">Visit Layan</h3>
                 <ul className="flex flex-col gap-5 text-sm">
                   <li className="flex items-start gap-3">

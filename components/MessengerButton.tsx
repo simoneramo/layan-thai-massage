@@ -7,7 +7,7 @@ export default function MessengerButton() {
       target="_blank"
       rel="noopener"
       aria-label="Chat with us on Messenger"
-      className="group fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#0084FF] text-white shadow-lg ring-1 ring-black/5 transition duration-200 ease-in-out hover:scale-105 hover:bg-[#0078e6] hover:shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[#0084FF]/50 dark:bg-[#0084FF] dark:hover:bg-[#0078e6] sm:bottom-6 sm:right-6"
+      className="group fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#0084FF] text-white shadow-lg ring-1 ring-black/5 transition duration-200 ease-in-out hover:scale-105 hover:bg-[#0078e6] hover:shadow-xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[#0084FF]/50 sm:bottom-6 sm:right-6"
     >
       <svg viewBox="0 0 24 24" className="h-7 w-7" aria-hidden="true">
         <path
@@ -19,7 +19,7 @@ export default function MessengerButton() {
           d="M5.96 14.54l2.94-4.66c.47-.74 1.47-.92 2.17-.4l2.34 1.75c.21.16.5.16.71 0l3.16-2.4c.42-.32.97.18.69.63l-2.94 4.66c-.47.74-1.47.92-2.17.4l-2.34-1.75a.59.59 0 0 0-.71 0l-3.16 2.4c-.42.32-.97-.18-.69-.63z"
         />
       </svg>
-      <span className="pointer-events-none absolute right-[4.25rem] hidden whitespace-nowrap rounded-xl bg-plum-800 px-3 py-1.5 text-sm font-medium text-white opacity-0 shadow-md transition-opacity duration-200 group-hover:opacity-100 dark:bg-gray-800 md:block">
+      <span className="pointer-events-none absolute right-[4.25rem] hidden whitespace-nowrap rounded-xl bg-plum-800 px-3 py-1.5 text-sm font-medium text-white opacity-0 shadow-md transition-opacity duration-200 group-hover:opacity-100 md:block">
         Message us
       </span>
     </a>

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import ThemeToggle from "./ThemeToggle";
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
@@ -23,7 +22,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-plum-900 text-plum-200 dark:bg-gray-950">
+    <footer className="bg-plum-900 text-plum-200">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
@@ -69,11 +68,6 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <Link href="/privacy" className="transition-colors hover:text-white">Privacy Policy</Link>
             <Link href="/terms" className="transition-colors hover:text-white">Terms &amp; Conditions</Link>
-            <span className="hidden sm:inline" aria-hidden="true">·</span>
-            <span className="flex items-center gap-2">
-              Theme
-              <ThemeToggle className="grid h-9 w-9 place-items-center rounded-lg border border-white/20 text-plum-200 transition hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40" />
-            </span>
           </div>
         </div>
       </div>

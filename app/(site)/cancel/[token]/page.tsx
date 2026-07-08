@@ -29,7 +29,7 @@ export default async function CancelPage({
   const booking = await findByToken(token);
 
   return (
-    <div className="sb bg-cream dark:bg-gray-900">
+    <div className="sb bg-cream">
       <div className="wrap">
         <div className="card">
           {!booking ? (

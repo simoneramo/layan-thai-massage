@@ -1,23 +1,26 @@
 @import "tailwindcss";
 
-/* Class-based dark mode (toggled on <html>) */
-@custom-variant dark (&:where(.dark, .dark *));
+/* legacy/ is the archived static site. It has its own input.css and still
+   carries dark: classes, which Tailwind would otherwise scan and emit into
+   this bundle as dead CSS. */
+@source not "../legacy";
 
 @theme {
   --font-sans: var(--font-varela), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-varela), ui-sans-serif, system-ui, sans-serif;
 
-  /* Brand red scale (vivid, true red) */
-  --color-plum-50: #fef2f2;
-  --color-plum-100: #fde0e0;
-  --color-plum-200: #fbc2c2;
-  --color-plum-300: #f79a9a;
-  --color-plum-400: #f06060;
-  --color-plum-500: #e62e2e;
-  --color-plum-600: #d61b1b;
-  --color-plum-700: #bb1414;
-  --color-plum-800: #9c1313;
-  --color-plum-900: #7d1414;
+  /* Brand plum scale, sampled from the Layan flyer.
+     700 is the deep band around the flyer edge, 200 the lilac field. */
+  --color-plum-50: #faf5f8;
+  --color-plum-100: #f3e7ef;
+  --color-plum-200: #e7cfe0;
+  --color-plum-300: #d4aac6;
+  --color-plum-400: #bd7fa8;
+  --color-plum-500: #a3568b;
+  --color-plum-600: #8b3f73;
+  --color-plum-700: #722e5f;
+  --color-plum-800: #5c2650;
+  --color-plum-900: #451d3c;
 
   /* Calming jade green — success / confirmation accent */
   --color-jade-50: #ecfdf5;
@@ -31,18 +34,18 @@
   --color-jade-800: #065f46;
   --color-jade-900: #064e3b;
 
-  /* Warm cream neutral */
-  --color-cream: #fdf7ef;
+  /* Warm off-white, matching the flyer's inner card */
+  --color-cream: #fbf7f5;
 }
 
 @layer components {
-  /* Primary CTA — red-800, visually dominant (reserved for Book Now only) */
+  /* Primary CTA — plum-700, visually dominant (reserved for Book Now only) */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-red-800
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-plum-700
            px-7 py-3.5 text-base font-semibold text-white shadow-md min-h-[44px]
            transition duration-200 ease-in-out
-           hover:bg-red-700 hover:brightness-105 hover:scale-[1.02]
-           focus:outline-none focus-visible:ring-4 focus-visible:ring-red-800/30;
+           hover:bg-plum-600 hover:brightness-105 hover:scale-[1.02]
+           focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-700/30;
   }
 
   /* Secondary CTA — ghost/outline, subordinate */
@@ -51,26 +54,22 @@
            border-plum-300 bg-transparent px-7 py-3.5 text-base font-medium
            text-plum-700 min-h-[44px] transition duration-200 ease-in-out
            hover:border-plum-400 hover:bg-plum-50
-           focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40
-           dark:border-plum-400/50 dark:text-plum-200 dark:hover:bg-white/5;
+           focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40;
   }
 
   /* Level 1 surface */
   .card {
     @apply rounded-2xl bg-white shadow-sm ring-1 ring-plum-100
-           transition duration-200 ease-in-out
-           dark:bg-gray-800 dark:ring-white/10;
+           transition duration-200 ease-in-out;
   }
 
   .nav-link {
     @apply text-sm font-medium text-plum-700 transition-colors duration-150
-           hover:text-plum-900 focus:outline-none focus-visible:text-plum-900
-           dark:text-gray-300 dark:hover:text-white;
+           hover:text-plum-900 focus:outline-none focus-visible:text-plum-900;
   }
 
   .img-frame {
-    @apply relative overflow-hidden rounded-2xl shadow-sm ring-1 ring-plum-100/70
-           dark:ring-white/10;
+    @apply relative overflow-hidden rounded-2xl shadow-sm ring-1 ring-plum-100/70;
   }
 
   /* Consistent subtle plum overlay on every image */
@@ -82,13 +81,13 @@
   /* Price pill */
   .pill {
     @apply inline-flex items-center gap-1.5 rounded-full bg-plum-100 px-3 py-1
-           text-sm font-semibold text-plum-700 dark:bg-white/10 dark:text-plum-200;
+           text-sm font-semibold text-plum-700;
   }
 
   /* Success pill — confirmed selections, jade accent */
   .pill-success {
     @apply inline-flex items-center gap-1.5 rounded-full bg-jade-100 px-3 py-1
-           text-sm font-semibold text-jade-700 dark:bg-jade-400/15 dark:text-jade-300;
+           text-sm font-semibold text-jade-700;
   }
 
   /* Status badge — smaller than a pill, for inline labels */
@@ -97,17 +96,16 @@
            text-xs font-semibold;
   }
   .badge-plum {
-    @apply bg-plum-100 text-plum-700 dark:bg-white/10 dark:text-plum-200;
+    @apply bg-plum-100 text-plum-700;
   }
   .badge-jade {
-    @apply bg-jade-100 text-jade-700 dark:bg-jade-400/15 dark:text-jade-300;
+    @apply bg-jade-100 text-jade-700;
   }
 
   /* Success notice / banner — jade accent */
   .notice-success {
     @apply flex items-start gap-3 rounded-2xl border border-jade-200 bg-jade-50
-           p-4 text-sm text-jade-800
-           dark:border-jade-400/20 dark:bg-jade-400/10 dark:text-jade-100;
+           p-4 text-sm text-jade-800;
   }
 
   /* Tertiary action — jade ghost, for positive secondary actions */
@@ -116,8 +114,7 @@
            border-jade-300 bg-transparent px-7 py-3.5 text-base font-medium
            text-jade-700 min-h-[44px] transition duration-200 ease-in-out
            hover:border-jade-400 hover:bg-jade-50
-           focus:outline-none focus-visible:ring-4 focus-visible:ring-jade-300/40
-           dark:border-jade-400/50 dark:text-jade-300 dark:hover:bg-jade-400/10;
+           focus:outline-none focus-visible:ring-4 focus-visible:ring-jade-300/40;
   }
 
   /* Jump-to chip (navigation, not a CTA) */
@@ -125,22 +122,21 @@
     @apply inline-flex items-center gap-1.5 rounded-full border border-plum-200 bg-white/70
            px-4 py-2 text-sm font-medium text-plum-700 transition duration-150
            hover:border-plum-400 hover:bg-plum-50 focus:outline-none focus-visible:ring-4
-           focus-visible:ring-plum-300/40 dark:border-white/15 dark:bg-white/5 dark:text-plum-200
-           dark:hover:bg-white/10;
+           focus-visible:ring-plum-300/40;
   }
 
   /* Form field */
   .field {
     @apply w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-plum-900
            transition placeholder:text-gray-400 focus:border-gray-500 focus:outline-none
-           focus:ring-4 focus:ring-gray-400/30 dark:border-white/15 dark:bg-gray-800
-           dark:text-gray-100 dark:placeholder:text-gray-500;
+           focus:ring-4 focus:ring-gray-400/30;
   }
 
-  /* Native select: hide the browser arrow and draw a consistent brand chevron */
+  /* Native select: hide the browser arrow and draw a consistent brand chevron.
+     The stroke colour must be kept in sync with --color-plum-700 above. */
   select.field {
     @apply appearance-none bg-no-repeat pr-11;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23bb1414' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23722e5f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
     background-position: right 1rem center;
     background-size: 1rem;
   }
@@ -148,7 +144,7 @@
   /* FAQ accordion */
   .faq-item {
     @apply overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-plum-100
-           transition duration-200 ease-in-out dark:bg-gray-800 dark:ring-white/10;
+           transition duration-200 ease-in-out;
   }
 
   .faq-btn {
@@ -157,16 +153,16 @@
   }
 
   .faq-q {
-    @apply font-heading font-semibold text-plum-800 dark:text-white;
+    @apply font-heading font-semibold text-plum-800;
   }
 
   .faq-a {
-    @apply px-5 pb-5 leading-relaxed text-plum-700/90 dark:text-gray-300;
+    @apply px-5 pb-5 leading-relaxed text-plum-700/90;
   }
 
   /* Long-form legal / policy text */
   .legal {
-    @apply text-plum-700/90 dark:text-gray-300;
+    @apply text-plum-700/90;
   }
   .legal p {
     @apply leading-relaxed;
@@ -175,7 +171,7 @@
     @apply mt-4;
   }
   .legal h2 {
-    @apply mt-10 font-heading text-xl font-bold tracking-tight text-plum-900 dark:text-white sm:text-2xl;
+    @apply mt-10 font-heading text-xl font-bold tracking-tight text-plum-900 sm:text-2xl;
   }
   .legal h2 + p,
   .legal h2 + ul {
@@ -185,11 +181,11 @@
     @apply mt-3 list-disc space-y-2 pl-6 marker:text-plum-400;
   }
   .legal strong {
-    @apply font-semibold text-plum-900 dark:text-white;
+    @apply font-semibold text-plum-900;
   }
   .legal a {
     @apply font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2
-           hover:text-plum-900 dark:text-plum-200 dark:hover:text-white;
+           hover:text-plum-900;
   }
 }
 

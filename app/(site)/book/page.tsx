@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function BookPage() {
   return (
-    <div className="sb bg-cream dark:bg-gray-900">
+    <div className="sb bg-cream">
       <div className="wrap">
         <div className="card">
           <h1>Book a time</h1>

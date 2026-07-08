@@ -13,7 +13,7 @@ export default function Header() {
   const isActive = (href: string) => href.startsWith("/") && !href.includes("#") && pathname === href;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-plum-100/70 bg-white/85 backdrop-blur-md dark:border-white/10 dark:bg-gray-900/85">
+    <header className="sticky top-0 z-40 border-b border-plum-100/70 bg-white/85 backdrop-blur-md">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8" aria-label="Primary">
         {/* Brand */}
         <Link href="/home" className="flex items-center rounded-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40" aria-label="Layan Traditional Thai Massage — home">
@@ -36,7 +36,7 @@ export default function Header() {
               aria-current={isActive(item.href) ? "page" : undefined}
               className={
                 isActive(item.href)
-                  ? "nav-link font-semibold text-plum-900 dark:text-white"
+                  ? "nav-link font-semibold text-plum-900"
                   : "nav-link"
               }
             >
@@ -49,7 +49,7 @@ export default function Header() {
         <div className="flex items-center gap-2 sm:gap-3">
           <a
             href={`tel:${site.phoneTel}`}
-            className="hidden items-center gap-2 text-sm font-semibold text-plum-700 transition-colors hover:text-plum-900 md:inline-flex dark:text-gray-200 dark:hover:text-white"
+            className="hidden items-center gap-2 text-sm font-semibold text-plum-700 transition-colors hover:text-plum-900 md:inline-flex"
           >
             <Phone className="h-4 w-4" /> {site.phoneDisplay}
           </a>
@@ -62,7 +62,7 @@ export default function Header() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label="Toggle menu"
-            className="grid h-10 w-10 place-items-center rounded-xl border border-plum-200 text-plum-700 transition hover:bg-plum-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40 lg:hidden dark:border-white/15 dark:text-gray-200 dark:hover:bg-white/5"
+            className="grid h-10 w-10 place-items-center rounded-xl border border-plum-200 text-plum-700 transition hover:bg-plum-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40 lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -71,7 +71,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div id="mobile-menu" className="border-t border-plum-100 bg-white px-5 pb-6 pt-2 lg:hidden dark:border-white/10 dark:bg-gray-900">
+        <div id="mobile-menu" className="border-t border-plum-100 bg-white px-5 pb-6 pt-2 lg:hidden">
           <div className="flex flex-col">
             {nav.map((item, i) => (
               <Link
@@ -79,11 +79,7 @@ export default function Header() {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 aria-current={isActive(item.href) ? "page" : undefined}
-                className={`py-3 ${i < nav.length - 1 ? "border-b border-plum-100/70 dark:border-white/10" : ""} ${
-                  isActive(item.href)
-                    ? "font-semibold text-plum-900 dark:text-white"
-                    : "text-plum-700 dark:text-gray-300"
-                }`}
+                className={`py-3 ${i < nav.length - 1 ? "border-b border-plum-100/70" : ""} ${ isActive(item.href) ? "font-semibold text-plum-900" : "text-plum-700" }`}
               >
                 {item.label}
               </Link>

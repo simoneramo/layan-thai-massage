@@ -14,27 +14,27 @@ export default function TermsPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-cream dark:bg-neutral-900">
+      <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 md:py-20 lg:px-8">
-          <nav className="hero-anim text-sm text-plum-500 dark:text-plum-300" aria-label="Breadcrumb">
+          <nav className="hero-anim text-sm text-plum-500" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2">
-              <li><Link href="/home" className="hover:text-plum-700 dark:hover:text-white">Home</Link></li>
+              <li><Link href="/home" className="hover:text-plum-700">Home</Link></li>
               <li aria-hidden="true">/</li>
-              <li className="font-medium text-plum-700 dark:text-plum-200" aria-current="page">Terms &amp; Conditions</li>
+              <li className="font-medium text-plum-700" aria-current="page">Terms &amp; Conditions</li>
             </ol>
           </nav>
-          <h1 className="hero-anim d1 mt-6 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl dark:text-white">
+          <h1 className="hero-anim d1 mt-6 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl">
             Terms &amp; Conditions
           </h1>
-          <p className="hero-anim d1 mt-5 max-w-2xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">
+          <p className="hero-anim d1 mt-5 max-w-2xl text-lg leading-relaxed text-plum-700/90">
             These terms apply to bookings made and treatments received at {site.name}. By booking with us or using this website, you agree to them.
           </p>
-          <p className="hero-anim d1 mt-3 text-sm text-plum-500 dark:text-plum-300">Last updated: {updated}</p>
+          <p className="hero-anim d1 mt-3 text-sm text-plum-500">Last updated: {updated}</p>
         </div>
       </section>
 
       {/* BODY */}
-      <section className="bg-white py-16 dark:bg-neutral-900 md:py-20">
+      <section className="bg-white py-16 md:py-20">
         <div className="legal mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
           <h2>Bookings &amp; appointments</h2>
           <p>
