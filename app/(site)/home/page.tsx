@@ -46,7 +46,7 @@ export default function Home() {
           </div>
           <div className="hero-anim d2 lg:col-span-5">
             <div className="img-frame aspect-[16/10] lg:aspect-[4/5]">
-              <Image src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=80" alt="A woman resting peacefully with eyes closed during a relaxing Thai massage" fill priority sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+              <Image src="/layan-thai-massage-room.jpg" alt="A treatment room at Layan: a massage table dressed in traditional Thai patterned fabric with folded towels, beside a window with potted plants and soft daylight" fill priority sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
             </div>
           </div>
         </div>
