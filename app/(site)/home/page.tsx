@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <StructuredData />
       {/* ===== HERO ===== */}
-      <section id="home" className="relative overflow-hidden bg-white dark:bg-gray-900">
+      <section id="home" className="relative overflow-hidden bg-white dark:bg-neutral-900">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-14 sm:px-6 md:py-20 lg:grid-cols-12 lg:gap-10 lg:px-8">
           <div className="lg:col-span-7">
             <span className="hero-anim inline-flex items-center gap-2 text-sm font-medium text-plum-700 dark:text-plum-200">
@@ -53,7 +53,7 @@ export default function Home() {
       </section>
 
       {/* ===== TRUST STRIP ===== */}
-      <section className="bg-plum-800 dark:bg-gray-950">
+      <section className="bg-plum-800 dark:bg-neutral-950">
         <div className="mx-auto max-w-6xl px-5 py-12 sm:px-6 md:py-16 lg:px-8">
           <div className="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
             <div className="reveal">
@@ -77,7 +77,7 @@ export default function Home() {
       </section>
 
       {/* ===== SERVICES ===== */}
-      <section id="services" className="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <section id="services" className="bg-white py-20 dark:bg-neutral-900 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Our treatments</span>
@@ -135,7 +135,7 @@ export default function Home() {
       </section>
 
       {/* ===== ABOUT ===== */}
-      <section id="about" className="bg-plum-50 py-24 dark:bg-gray-800">
+      <section id="about" className="bg-plum-50 py-24 dark:bg-neutral-800">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-12 lg:gap-14 lg:px-8">
           <div className="reveal order-2 lg:order-1 lg:col-span-5">
             <div className="img-frame aspect-[4/5]">
@@ -166,7 +166,7 @@ export default function Home() {
       </section>
 
       {/* ===== BENEFITS ===== */}
-      <section className="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <section className="bg-white py-20 dark:bg-neutral-900 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal mx-auto max-w-2xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">The benefits</span>
@@ -197,7 +197,7 @@ export default function Home() {
       </section>
 
       {/* ===== GALLERY ===== */}
-      <section id="gallery" className="bg-plum-900 py-24 dark:bg-gray-950">
+      <section id="gallery" className="bg-plum-900 py-24 dark:bg-neutral-950">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-300">Our space</span>
@@ -229,7 +229,7 @@ export default function Home() {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
-      <section id="reviews" className="bg-rose-50 py-20 dark:bg-gray-900 md:py-24">
+      <section id="reviews" className="bg-rose-50 py-20 dark:bg-neutral-900 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-xl">
@@ -276,7 +276,7 @@ export default function Home() {
       </section>
 
       {/* ===== FAQ ===== */}
-      <section id="faq" className="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <section id="faq" className="bg-white py-20 dark:bg-neutral-900 md:py-24">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
           <div className="reveal lg:col-span-4">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Good to know</span>
@@ -308,7 +308,7 @@ export default function Home() {
       </section>
 
       {/* ===== CONTACT ===== */}
-      <section id="contact" className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
+      <section id="contact" className="bg-plum-50 py-20 dark:bg-neutral-800 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Get in touch</span>

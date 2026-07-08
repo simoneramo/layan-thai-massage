@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-white dark:bg-neutral-900">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 md:py-20 lg:px-8">
           <nav className="hero-anim text-sm text-plum-500 dark:text-plum-300" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2">
@@ -39,7 +39,7 @@ export default function ContactPage() {
       </section>
 
       {/* QUICK CONTACT METHODS */}
-      <section className="bg-plum-50 py-16 dark:bg-gray-800 md:py-20">
+      <section className="bg-plum-50 py-16 dark:bg-neutral-800 md:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <a href={`tel:${site.phoneTel}`} className="group reveal card flex flex-col gap-3 p-6 hover:-translate-y-0.5 hover:shadow-md">
@@ -67,7 +67,7 @@ export default function ContactPage() {
       </section>
 
       {/* BOOKING FORM + INFO */}
-      <section id="booking" className="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <section id="booking" className="bg-white py-20 dark:bg-neutral-900 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Send a message</span>
@@ -110,7 +110,7 @@ export default function ContactPage() {
       </section>
 
       {/* MAP */}
-      <section id="map" className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
+      <section id="map" className="bg-plum-50 py-20 dark:bg-neutral-800 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Find us</span>

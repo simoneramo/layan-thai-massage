@@ -17,7 +17,7 @@ export default function AboutPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-white dark:bg-neutral-900">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 md:py-20 lg:px-8">
           <nav className="hero-anim text-sm text-plum-500 dark:text-plum-300" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2">
@@ -45,7 +45,7 @@ export default function AboutPage() {
       </section>
 
       {/* PHILOSOPHY */}
-      <section id="philosophy" className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
+      <section id="philosophy" className="bg-plum-50 py-20 dark:bg-neutral-800 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Our philosophy</span>
@@ -72,7 +72,7 @@ export default function AboutPage() {
       </section>
 
       {/* OUR ROOTS */}
-      <section id="story" className="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <section id="story" className="bg-white py-20 dark:bg-neutral-900 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
           <div className="reveal img-frame order-2 aspect-[4/5] lg:order-1">
             <Image src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80" alt="Smooth stones, soft towels and flowers arranged in a serene treatment room" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
@@ -91,7 +91,7 @@ export default function AboutPage() {
       </section>
 
       {/* HOW WE WORK */}
-      <section id="approach" className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
+      <section id="approach" className="bg-plum-50 py-20 dark:bg-neutral-800 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-12 lg:gap-14 lg:px-8">
           <div className="reveal lg:col-span-6">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">How we work</span>
@@ -129,7 +129,7 @@ export default function AboutPage() {
       </section>
 
       {/* VISIT US */}
-      <section id="visit" className="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <section id="visit" className="bg-white py-20 dark:bg-neutral-900 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-12 lg:gap-14 lg:px-8">
           <div className="reveal lg:col-span-7">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Find us</span>
@@ -158,7 +158,7 @@ export default function AboutPage() {
       </section>
 
       {/* BOOKING CTA */}
-      <section className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
+      <section className="bg-plum-50 py-20 dark:bg-neutral-800 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-6 lg:px-8">
           <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Come and See Us</h2>
           <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">Book a treatment and feel the difference an unhurried hour can make. Send a request, or call us directly.</p>

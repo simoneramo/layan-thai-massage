@@ -14,7 +14,7 @@ export default function FaqPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-white dark:bg-neutral-900">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 md:py-20 lg:px-8">
           <nav className="hero-anim text-sm text-plum-500 dark:text-plum-300" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2">
@@ -40,7 +40,7 @@ export default function FaqPage() {
       </section>
 
       {/* BOOKING & VISITING */}
-      <section id="booking-faqs" className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
+      <section id="booking-faqs" className="bg-plum-50 py-20 dark:bg-neutral-800 md:py-24">
         <div className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
           <div className="reveal flex items-center gap-3">
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-plum-700 text-white dark:bg-plum-600"><CalendarClock className="h-5 w-5" /></span>
@@ -64,7 +64,7 @@ export default function FaqPage() {
       </section>
 
       {/* YOUR TREATMENT */}
-      <section id="treatment-faqs" className="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <section id="treatment-faqs" className="bg-white py-20 dark:bg-neutral-900 md:py-24">
         <div className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
           <div className="reveal flex items-center gap-3">
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-plum-700 text-white dark:bg-plum-600"><HandHeart className="h-5 w-5" /></span>
@@ -91,7 +91,7 @@ export default function FaqPage() {
       </section>
 
       {/* PRICING */}
-      <section id="pricing-faqs" className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
+      <section id="pricing-faqs" className="bg-plum-50 py-20 dark:bg-neutral-800 md:py-24">
         <div className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
           <div className="reveal flex items-center gap-3">
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-plum-700 text-white dark:bg-plum-600"><Tag className="h-5 w-5" /></span>
@@ -109,7 +109,7 @@ export default function FaqPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <section className="bg-white py-20 dark:bg-neutral-900 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-6 lg:px-8">
           <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Still Have a Question?</h2>
           <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">We're happy to help you choose a treatment or find a time. Send a booking request, or give us a call — we'd love to hear from you.</p>

@@ -34,7 +34,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-white dark:bg-neutral-900">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 md:py-20 lg:px-8">
           <nav className="hero-anim text-sm text-plum-500 dark:text-plum-300" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2">
@@ -63,7 +63,7 @@ export default function ServicesPage() {
       </section>
 
       {/* TRADITIONAL THAI */}
-      <section id="traditional-thai" className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
+      <section id="traditional-thai" className="bg-plum-50 py-20 dark:bg-neutral-800 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
           <div className="reveal img-frame order-2 aspect-[4/3] lg:order-1">
             <Image src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=900&q=80" alt="Therapist guiding a clothed traditional Thai massage stretch" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
@@ -89,7 +89,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ESSENTIAL OIL */}
-      <section id="essential-oil" className="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <section id="essential-oil" className="bg-white py-20 dark:bg-neutral-900 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
           <div className="reveal">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Signature treatment</span>
@@ -112,7 +112,7 @@ export default function ServicesPage() {
       </section>
 
       {/* FOOT & REFLEXOLOGY */}
-      <section id="foot-reflexology" className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
+      <section id="foot-reflexology" className="bg-plum-50 py-20 dark:bg-neutral-800 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
           <div className="reveal img-frame order-2 aspect-[4/3] lg:order-1">
             <Image src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80" alt="Relaxing Thai foot massage and reflexology treatment" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
@@ -138,7 +138,7 @@ export default function ServicesPage() {
       </section>
 
       {/* TARGETED */}
-      <section id="targeted" className="bg-plum-900 py-20 dark:bg-gray-950 md:py-24">
+      <section id="targeted" className="bg-plum-900 py-20 dark:bg-neutral-950 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-300">Focused relief</span>
@@ -164,7 +164,7 @@ export default function ServicesPage() {
       </section>
 
       {/* HOW A SESSION FLOWS */}
-      <section className="bg-cream py-20 dark:bg-gray-900 md:py-24">
+      <section className="bg-cream py-20 dark:bg-neutral-900 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal mx-auto max-w-2xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">Your visit</span>
@@ -190,7 +190,7 @@ export default function ServicesPage() {
       </section>
 
       {/* PRICE LIST */}
-      <section id="pricing" className="bg-white py-20 dark:bg-gray-900 md:py-24">
+      <section id="pricing" className="bg-white py-20 dark:bg-neutral-900 md:py-24">
         <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500 dark:text-plum-300">At a glance</span>
@@ -222,7 +222,7 @@ export default function ServicesPage() {
       </section>
 
       {/* BOOKING CTA */}
-      <section className="bg-plum-50 py-20 dark:bg-gray-800 md:py-24">
+      <section className="bg-plum-50 py-20 dark:bg-neutral-800 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-6 lg:px-8">
           <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl dark:text-white">Ready When You Are</h2>
           <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-plum-700/90 dark:text-gray-300">Choose your treatment and we'll find a time that suits. Send a request and we'll confirm by phone, or call us directly.</p>

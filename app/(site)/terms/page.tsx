@@ -14,7 +14,7 @@ export default function TermsPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-cream dark:bg-gray-900">
+      <section className="bg-cream dark:bg-neutral-900">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 md:py-20 lg:px-8">
           <nav className="hero-anim text-sm text-plum-500 dark:text-plum-300" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2">
@@ -34,7 +34,7 @@ export default function TermsPage() {
       </section>
 
       {/* BODY */}
-      <section className="bg-white py-16 dark:bg-gray-900 md:py-20">
+      <section className="bg-white py-16 dark:bg-neutral-900 md:py-20">
         <div className="legal mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
           <h2>Bookings &amp; appointments</h2>
           <p>
