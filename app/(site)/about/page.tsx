@@ -75,7 +75,18 @@ export default function AboutPage() {
       <section id="story" className="bg-white py-20 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
           <div className="reveal img-frame order-2 aspect-[4/5] lg:order-1">
-            <Image src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=80" alt="Smooth stones, soft towels and flowers arranged in a serene treatment room" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+            <video
+              className="absolute inset-0 h-full w-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              poster="/layan-thai-massage-room.jpg"
+              aria-label="A short look inside a treatment room at Layan Traditional Thai Massage"
+            >
+              <source src="/layan-thai-massage-rooms.mp4" type="video/mp4" />
+            </video>
           </div>
           <div className="reveal order-1 lg:order-2">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Our roots</span>
