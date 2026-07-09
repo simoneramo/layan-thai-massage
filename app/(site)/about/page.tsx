@@ -162,7 +162,7 @@ export default function AboutPage() {
           </div>
           <div className="reveal lg:col-span-5">
             <div className="img-frame aspect-[4/3]">
-              <Image src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80" alt="Soft pillows and warm lighting in Layan's relaxing wellness space" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+              <Image src="/layan-thai-massage-location.png" alt="Street view of Layan Traditional Thai Massage at 3/459 Nepean Hwy, Frankston VIC 3199" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
             </div>
           </div>
         </div>
