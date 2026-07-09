@@ -29,7 +29,7 @@ export default function AboutPage() {
           <div className="mt-6 grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-7">
               <h1 className="hero-anim d1 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl">
-                Calm, Considered, Genuinely Thai
+                Calm, considered, genuinely Thai
               </h1>
               <p className="hero-anim d1 mt-5 max-w-2xl text-lg leading-relaxed text-plum-700/90">
                 Layan is a small, welcoming Thai massage studio in the heart of Frankston. We practise an ancient healing art with patience and care — quiet rooms, qualified therapists, and time set aside entirely for you.
@@ -49,7 +49,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Our philosophy</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Care That Begins Before the First Touch</h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Care that begins before the first touch</h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-700/90">
               Each session opens with a quiet moment of centering and connection — a chance to be mindful of breath and energy, and to give you our full, unhurried attention. It's guided by four simple intentions.
             </p>
@@ -90,7 +90,7 @@ export default function AboutPage() {
           </div>
           <div className="reveal order-1 lg:order-2">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Our roots</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">An Ancient Healing Art</h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">An ancient healing art</h2>
             <p className="mt-5 leading-relaxed text-plum-700/90">
               Traditional Thai massage has its roots in yoga, Ayurvedic medicine and Buddhist spiritual practice. It weaves together rhythmic massage, acupressure, gentle twisting, deep stretching and meditation to release tension, increase vitality, and bring a wholeness of mind, body and spirit.
             </p>
@@ -106,7 +106,7 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-12 lg:gap-14 lg:px-8">
           <div className="reveal lg:col-span-6">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">How we work</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Traditional Technique, Tailored to You</h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Traditional technique, tailored to you</h2>
             <p className="mt-5 leading-relaxed text-plum-700/90">
               Traditional Thai massage is an interactive therapy — passive stretching and gentle, firm pressure applied with the palms and thumbs along the body's energy lines. It works the skin, muscles, joints and deeper structures, encouraging blood and lymph circulation so you leave feeling relaxed and invigorated.
             </p>
@@ -144,7 +144,7 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-12 lg:gap-14 lg:px-8">
           <div className="reveal lg:col-span-7">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Find us</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">A Quiet Retreat in Frankston</h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">A quiet retreat in Frankston</h2>
             <p className="mt-5 leading-relaxed text-plum-700/90">
               You'll find us on Nepean Highway, an easy stop on the Mornington Peninsula. Pop in for a treatment between errands, after work, or whenever you need to slow down for an hour.
             </p>
@@ -171,7 +171,7 @@ export default function AboutPage() {
       {/* BOOKING CTA */}
       <section className="bg-plum-50 py-20 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-6 lg:px-8">
-          <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Come and See Us</h2>
+          <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Come and see us</h2>
           <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-plum-700/90">Book a treatment and feel the difference an unhurried hour can make. Send a request, or call us directly.</p>
           <div className="reveal mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Online</Link>

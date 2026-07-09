@@ -25,7 +25,7 @@ export default function ContactPage() {
           </nav>
           <div className="mt-6 max-w-2xl">
             <h1 className="hero-anim d1 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl">
-              Get in Touch
+              Get in touch
             </h1>
             <p className="hero-anim d1 mt-5 text-lg leading-relaxed text-plum-700/90">
               Call us for the quickest response — especially to book a treatment — send a message below, or simply drop by. Walk-ins are welcome whenever we have space, and we'd love to help you unwind.
@@ -71,7 +71,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Send a message</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Send Us a Message</h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Send us a message</h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-700/90">Have a question or want to know more? Send us a message and we'll get back to you as soon as we can.</p>
           </div>
           <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:gap-10">

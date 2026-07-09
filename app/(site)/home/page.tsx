@@ -22,7 +22,7 @@ export default function Home() {
               <MapPin className="h-4 w-4" /> Frankston, Melbourne 3199
             </span>
             <h1 className="hero-anim d1 mt-6 font-heading text-3xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-4xl">
-              Unwind, Restore, Breathe Again
+              Unwind, restore, breathe again
             </h1>
             <p className="hero-anim d1 mt-5 max-w-xl text-lg leading-relaxed text-plum-700/90">
               Authentic Thai massage in the heart of Frankston. Gentle hands, quiet rooms, and time set aside just for you — so tension melts and calm returns.
@@ -82,7 +82,7 @@ export default function Home() {
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Our treatments</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">
-              Massage Therapies for Every Need
+              Massage therapies for every need
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-700/90">
               Traditional techniques, unhurried and tailored to you — choose the treatment that best fits what your body needs today.
@@ -141,7 +141,7 @@ export default function Home() {
           <div className="reveal order-1 lg:order-2 lg:col-span-7">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Our practice</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">
-              Rooted in an Ancient Healing Art
+              Rooted in an ancient healing art
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-plum-700/90">
               Traditional Thai massage draws on yoga, Ayurvedic medicine and Buddhist practice — rhythmic pressure, gentle stretching and quiet breath that bring body, mind and spirit back into balance.
@@ -167,7 +167,7 @@ export default function Home() {
           <div className="reveal mx-auto max-w-2xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">The benefits</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">
-              How Thai Massage Helps You
+              How Thai massage helps you
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-700/90">
               More than muscle relief — Thai massage works on circulation and energy lines to support how your whole body feels.
@@ -198,7 +198,7 @@ export default function Home() {
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-300">Our space</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              A Calm, Quiet Retreat
+              A calm, quiet retreat
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-200/90">
               Soft light, warm towels and the gentle scent of essential oils — a small escape in the middle of Frankston.
@@ -231,7 +231,7 @@ export default function Home() {
             <div className="max-w-xl">
               <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Kind words</span>
               <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">
-                Loved by Frankston Locals
+                Loved by Frankston locals
               </h2>
             </div>
             <div className="flex items-center gap-3 rounded-2xl bg-white px-5 py-3 shadow-sm ring-1 ring-plum-100">
@@ -277,7 +277,7 @@ export default function Home() {
           <div className="reveal lg:col-span-4">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Good to know</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">
-              Your Questions, Answered
+              Your questions, answered
             </h2>
             <p className="mt-4 leading-relaxed text-plum-700/90">
               New to Thai massage? Here's what to expect. For anything else, just give us a call — or see the <Link href="/faq" className="font-semibold text-plum-700 underline decoration-plum-300 underline-offset-2 hover:text-plum-900">full FAQ</Link>.
@@ -309,7 +309,7 @@ export default function Home() {
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Get in touch</span>
             <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">
-              We&apos;d Love to Hear From You
+              We&apos;d love to hear from you
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-700/90">
               Send us a message with any questions and we&apos;ll get back to you soon. To book a treatment, just give us a call.

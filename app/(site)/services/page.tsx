@@ -45,7 +45,7 @@ export default function ServicesPage() {
           </nav>
           <div className="mt-6 max-w-3xl">
             <h1 className="hero-anim d1 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl">
-              Find Your Perfect Treatment
+              Find your perfect treatment
             </h1>
             <p className="hero-anim d1 mt-5 text-lg leading-relaxed text-plum-700/90">
               From a full traditional session to a quick neck-and-shoulder reset, every treatment is unhurried, tailored to you, and carried out by qualified therapists. Here's the full menu, with what to expect and clear pricing.
@@ -70,7 +70,7 @@ export default function ServicesPage() {
           </div>
           <div className="reveal order-1 lg:order-2">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Signature treatment</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Traditional Thai Massage</h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Traditional Thai massage</h2>
             <div className="mt-4 flex flex-wrap gap-2">
               <span className="pill"><Clock className="h-4 w-4" /> 60 min · $75</span>
               <span className="pill"><Clock className="h-4 w-4" /> 90 min · $115</span>
@@ -93,7 +93,7 @@ export default function ServicesPage() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
           <div className="reveal">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Signature treatment</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Essential Oil Massage</h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Essential oil massage</h2>
             <div className="mt-4 flex flex-wrap gap-2"><span className="pill"><Clock className="h-4 w-4" /> 60 min · $75</span></div>
             <p className="mt-5 leading-relaxed text-plum-700/90">
               An ancient Thai remedy that pairs the healing power of warm essential oils with flowing massage to stimulate blood flow. It relieves sore, tired muscles and leaves your whole body feeling calm and relaxed.
@@ -119,7 +119,7 @@ export default function ServicesPage() {
           </div>
           <div className="reveal order-1 lg:order-2">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Signature treatment</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Thai Foot Massage &amp; Reflexology</h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Thai foot massage &amp; reflexology</h2>
             <div className="mt-4 flex flex-wrap gap-2">
               <span className="pill"><Clock className="h-4 w-4" /> 30 min · $40</span>
               <span className="pill"><Clock className="h-4 w-4" /> 60 min · $65</span>
@@ -142,7 +142,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-300">Focused relief</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">Back, Neck, Shoulder &amp; Head</h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-white sm:text-4xl">Back, neck, shoulder &amp; head</h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-200/90">Short on time, or carrying tension in one spot? These focused sessions zero in on exactly where you need it.</p>
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -168,7 +168,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal mx-auto max-w-2xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">Your visit</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">How a Session Flows</h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">How a session flows</h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-700/90">First time with us? There's nothing to prepare — here's the gentle rhythm of a visit.</p>
           </div>
           <ol className="mt-14 grid gap-8 md:grid-cols-3">
@@ -194,7 +194,7 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
           <div className="reveal max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-plum-500">At a glance</span>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Full Price List</h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Full price list</h2>
           </div>
           <div className="reveal mt-10 overflow-hidden rounded-2xl ring-1 ring-plum-100">
             <table className="w-full text-left">
@@ -224,7 +224,7 @@ export default function ServicesPage() {
       {/* BOOKING CTA */}
       <section className="bg-plum-50 py-20 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-6 lg:px-8">
-          <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Ready When You Are</h2>
+          <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Ready when you are</h2>
           <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-plum-700/90">Choose your treatment and we'll find a time that suits. Send a request and we'll confirm by phone, or call us directly.</p>
           <div className="reveal mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Online</Link>

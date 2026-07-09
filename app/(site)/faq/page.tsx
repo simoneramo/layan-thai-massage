@@ -25,7 +25,7 @@ export default function FaqPage() {
           </nav>
           <div className="mt-6 max-w-3xl">
             <h1 className="hero-anim d1 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl">
-              Questions, Gently Answered
+              Questions, gently answered
             </h1>
             <p className="hero-anim d1 mt-5 text-lg leading-relaxed text-plum-700/90">
               New to Thai massage, or just planning your first visit to Layan? Here's everything you might be wondering — and if your question isn't here, we're only a phone call away.
@@ -44,7 +44,7 @@ export default function FaqPage() {
         <div className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
           <div className="reveal flex items-center gap-3">
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-plum-700 text-white"><CalendarClock className="h-5 w-5" /></span>
-            <h2 className="font-heading text-2xl font-bold tracking-tight text-plum-900 sm:text-3xl">Booking &amp; Visiting</h2>
+            <h2 className="font-heading text-2xl font-bold tracking-tight text-plum-900 sm:text-3xl">Booking &amp; visiting</h2>
           </div>
           <div className="mt-8 flex flex-col gap-4">
             <FaqItem question="Do I need to book, or can I walk in?" defaultOpen>
@@ -68,7 +68,7 @@ export default function FaqPage() {
         <div className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
           <div className="reveal flex items-center gap-3">
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-plum-700 text-white"><HandHeart className="h-5 w-5" /></span>
-            <h2 className="font-heading text-2xl font-bold tracking-tight text-plum-900 sm:text-3xl">Your Treatment</h2>
+            <h2 className="font-heading text-2xl font-bold tracking-tight text-plum-900 sm:text-3xl">Your treatment</h2>
           </div>
           <div className="mt-8 flex flex-col gap-4">
             <FaqItem question="I've never had Thai massage — what happens?" defaultOpen>
@@ -111,7 +111,7 @@ export default function FaqPage() {
       {/* CTA */}
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-6 lg:px-8">
-          <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Still Have a Question?</h2>
+          <h2 className="reveal font-heading text-3xl font-bold tracking-tight text-plum-900 sm:text-4xl">Still have a question?</h2>
           <p className="reveal mx-auto mt-4 max-w-xl text-lg leading-relaxed text-plum-700/90">We're happy to help you choose a treatment or find a time. Send a booking request, or give us a call — we'd love to hear from you.</p>
           <div className="reveal mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link href="/book" className="btn-primary w-full sm:w-auto"><CalendarPlus className="h-5 w-5" /> Book Online</Link>
