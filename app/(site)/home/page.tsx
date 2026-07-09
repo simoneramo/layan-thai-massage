@@ -225,7 +225,7 @@ export default function Home() {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
-      <section id="reviews" className="bg-rose-50 py-20 md:py-24">
+      <section id="reviews" className="bg-plum-50 py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <div className="reveal flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-xl">
