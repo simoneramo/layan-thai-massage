@@ -75,9 +75,6 @@ export default function ContactPage() {
             <p className="mt-4 text-lg leading-relaxed text-plum-700/90">Have a question or want to know more? Send us a message and we'll get back to you as soon as we can.</p>
           </div>
           <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:gap-10">
-            <div className="lg:col-span-7">
-              <ContactForm />
-            </div>
             <aside className="reveal lg:col-span-5">
               <div className="flex h-full flex-col gap-6 rounded-2xl bg-plum-800 p-7 text-plum-100 shadow-sm sm:p-8">
                 <h3 className="font-heading text-xl font-bold text-white">Visit Layan</h3>
@@ -94,7 +91,11 @@ export default function ContactPage() {
                   <li className="flex items-start gap-3">
                     <Clock className="mt-0.5 h-5 w-5 shrink-0 text-plum-300" />
                     <span className="space-y-0.5">
-                      <span className="flex justify-between gap-6"><span>Mon – Fri</span><span className="text-white">9am – 6:00pm</span></span>
+                      <span className="flex justify-between gap-6"><span>Mon</span><span className="text-white">9am – 6:00pm</span></span>
+                      <span className="flex justify-between gap-6"><span>Tue</span><span className="text-white">9am – 6:00pm</span></span>
+                      <span className="flex justify-between gap-6"><span>Wed</span><span className="text-white">9am – 6:00pm</span></span>
+                      <span className="flex justify-between gap-6"><span>Thurs</span><span className="text-white">9am – 6:00pm</span></span>
+                      <span className="flex justify-between gap-6"><span>Fri</span><span className="text-white">9am – 6:00pm</span></span>
                       <span className="flex justify-between gap-6"><span>Saturday</span><span className="text-white">9am – 5:00pm</span></span>
                       <span className="flex justify-between gap-6"><span>Sunday</span><span className="text-white">Closed</span></span>
                     </span>
@@ -105,6 +106,9 @@ export default function ContactPage() {
                 </div>
               </div>
             </aside>
+            <div className="lg:col-span-7">
+              <ContactForm />
+            </div>
           </div>
         </div>
       </section>
