@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
   MapPin, CalendarPlus, Phone, Leaf, Clock, HeartHandshake,
   CheckCircle2, Waves, HeartPulse, Move, Activity, MoonStar, Sparkles,
-  Star, StarHalf, ArrowRight, ArrowUpRight, Mail,
+  Star, StarHalf, ArrowRight, ArrowUpRight, Mail, Camera,
 } from "lucide-react";
 import { site } from "@/lib/site";
 import FaqItem from "@/components/FaqItem";
@@ -85,22 +85,29 @@ export default function Home() {
               Massage Therapies for Every Need
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-plum-700/90">
-              Traditional techniques, unhurried and tailored to you. Choose a signature treatment below, or pick a focused session for a specific ache.
+              Traditional techniques, unhurried and tailored to you — choose the treatment that best fits what your body needs today.
             </p>
-            <Link href="/services" className="mt-5 inline-flex items-center gap-1.5 font-semibold text-plum-700 underline decoration-plum-300 underline-offset-4 transition-colors hover:text-plum-900 focus:outline-none focus-visible:text-plum-900">
-              See all treatments &amp; pricing <ArrowRight className="h-4 w-4" />
-            </Link>
           </div>
 
           <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { title: "Traditional Thai Massage", img: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=800&q=80", alt: "Therapist performing a traditional clothed Thai massage stretch", desc: "Fully clothed, no oil. Firm palm-and-thumb pressure with assisted stretching to relax muscles, improve circulation and lift your energy. Ideal for sport or work-related pain.", prices: ["60 min · $75", "90 min · $115"], wide: false },
-              { title: "Essential Oil Massage", img: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80", alt: "Warm essential oils and a lit candle in a calm massage room", desc: "An ancient Thai remedy using the healing warmth of essential oils to stimulate blood flow, soothe sore and tired muscles, and leave the whole body calm and relaxed.", prices: ["60 min · $75"], wide: false },
-              { title: "Thai Foot Massage & Reflexology", img: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80", alt: "Relaxing foot massage and reflexology treatment", desc: "Gentle, precise pressure on points across the feet and lower legs to improve circulation and release the tension you carry with every step.", prices: ["30 min · $40", "60 min · $65"], wide: true },
+              { title: "Traditional Thai Massage", img: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=800&q=80", alt: "Therapist performing a traditional clothed Thai massage stretch", desc: "Fully clothed, no oil. Firm palm-and-thumb pressure with assisted stretching to relax muscles, improve circulation and lift your energy. Ideal for sport or work-related pain.", prices: ["60 min · $75", "90 min · $115"] },
+              { title: "Essential Oil Massage", img: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=800&q=80", alt: "Warm essential oils and a lit candle in a calm massage room", desc: "An ancient Thai remedy using the healing warmth of essential oils to stimulate blood flow, soothe sore and tired muscles, and leave the whole body calm and relaxed.", prices: ["60 min · $75"] },
+              { title: "Thai Foot Massage & Reflexology", img: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80", alt: "Relaxing foot massage and reflexology treatment", desc: "Gentle, precise pressure on points across the feet and lower legs to improve circulation and release the tension you carry with every step.", prices: ["30 min · $40", "60 min · $65"] },
+              { title: "Full Back Massage", img: null, alt: "Full back massage treatment", desc: "Focused relief for the lower back and neck, including sciatica — firm, targeted pressure right where you hold the most tension.", prices: ["30 min · $45"] },
+              { title: "Shoulder & Neck Massage", img: null, alt: "Shoulder and neck massage treatment", desc: "Targeted work to ease stiffness and soreness through the shoulders and neck — ideal for desk, screen and everyday tension.", prices: ["30 min · $40"] },
+              { title: "Head Massage", img: null, alt: "Head massage treatment", desc: "Gentle pressure-point work across the head, neck and face to relieve tension headaches and quiet a busy mind.", prices: ["15 min · $20"] },
             ].map((s) => (
-              <article key={s.title} className={`reveal card flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-lg ${s.wide ? "sm:col-span-2 lg:col-span-1" : ""}`}>
+              <article key={s.title} className="reveal card flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-lg">
                 <div className="img-frame aspect-[4/3] rounded-none rounded-t-2xl ring-0">
-                  <Image src={s.img} alt={s.alt} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
+                  {s.img ? (
+                    <Image src={s.img} alt={s.alt} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover" />
+                  ) : (
+                    <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-plum-50 text-plum-400">
+                      <Camera className="h-8 w-8" strokeWidth={1.5} />
+                      <span className="text-xs font-medium">Photo coming soon</span>
+                    </div>
+                  )}
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="font-heading text-xl font-bold text-plum-800">{s.title}</h3>
@@ -115,23 +122,10 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="reveal mt-10">
-            <h3 className="font-heading text-xl font-bold text-plum-800">Focused &amp; express treatments</h3>
-            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-plum-700/80">Short, targeted sessions for a specific ache — quick to fit in, with real relief.</p>
-            <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                ["Full Back Massage", "Lower back & neck, incl. sciatica", "30 min · $45"],
-                ["Shoulder & Neck Massage", "Ease stiffness & soreness", "30 min · $40"],
-                ["Shoulder, Neck & Head Massage", "Relieve tension headaches", "45 min · $55"],
-                ["Head Massage", "Head, neck & face pressure points", "15 min · $20"],
-              ].map(([t, sub, price]) => (
-                <article key={t} className="card flex flex-col p-6 hover:-translate-y-1 hover:shadow-lg">
-                  <h4 className="font-heading text-base font-bold text-plum-800">{t}</h4>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-plum-700/80">{sub}</p>
-                  <span className="mt-4 self-start rounded-full bg-plum-100 px-3 py-1 text-sm font-semibold text-plum-700">{price}</span>
-                </article>
-              ))}
-            </div>
+          <div className="reveal mt-10 flex justify-center">
+            <Link href="/services" className="inline-flex items-center gap-1.5 font-semibold text-plum-700 underline decoration-plum-300 underline-offset-4 transition-colors hover:text-plum-900 focus:outline-none focus-visible:text-plum-900">
+              See all treatments &amp; pricing <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
