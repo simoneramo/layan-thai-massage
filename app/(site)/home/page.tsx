@@ -21,7 +21,7 @@ export default function Home() {
             <span className="hero-anim inline-flex items-center gap-2 text-sm font-medium text-plum-700">
               <MapPin className="h-4 w-4" /> Frankston, Melbourne 3199
             </span>
-            <h1 className="hero-anim d1 mt-6 font-heading text-4xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-5xl">
+            <h1 className="hero-anim d1 mt-6 font-heading text-3xl font-extrabold leading-[1.1] tracking-tight text-plum-900 sm:text-4xl">
               Unwind, Restore, Breathe Again
             </h1>
             <p className="hero-anim d1 mt-5 max-w-xl text-lg leading-relaxed text-plum-700/90">
