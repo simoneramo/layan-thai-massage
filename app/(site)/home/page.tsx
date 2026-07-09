@@ -115,21 +115,23 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="reveal mt-10 rounded-2xl bg-cream p-7 ring-1 ring-[#ece1d0] sm:p-9">
+          <div className="reveal mt-10">
             <h3 className="font-heading text-xl font-bold text-plum-800">Focused &amp; express treatments</h3>
-            <dl className="mt-6 divide-y divide-plum-100">
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-plum-700/80">Short, targeted sessions for a specific ache — quick to fit in, with real relief.</p>
+            <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                ["Full Back Massage", "lower back & neck, incl. sciatica", "30 min · $45"],
-                ["Shoulder & Neck Massage", "ease stiffness & soreness", "30 min · $40"],
-                ["Shoulder, Neck & Head Massage", "relieve tension headaches", "45 min · $55"],
-                ["Head Massage", "head, neck & face pressure points", "15 min · $20"],
+                ["Full Back Massage", "Lower back & neck, incl. sciatica", "30 min · $45"],
+                ["Shoulder & Neck Massage", "Ease stiffness & soreness", "30 min · $40"],
+                ["Shoulder, Neck & Head Massage", "Relieve tension headaches", "45 min · $55"],
+                ["Head Massage", "Head, neck & face pressure points", "15 min · $20"],
               ].map(([t, sub, price]) => (
-                <div key={t} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-3.5">
-                  <dt className="text-base font-semibold text-plum-800">{t} <span className="font-normal text-plum-500">— {sub}</span></dt>
-                  <dd className="text-sm font-semibold text-plum-700">{price}</dd>
-                </div>
+                <article key={t} className="card flex flex-col p-6 hover:-translate-y-1 hover:shadow-lg">
+                  <h4 className="font-heading text-base font-bold text-plum-800">{t}</h4>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-plum-700/80">{sub}</p>
+                  <span className="mt-4 self-start rounded-full bg-plum-100 px-3 py-1 text-sm font-semibold text-plum-700">{price}</span>
+                </article>
               ))}
-            </dl>
+            </div>
           </div>
         </div>
       </section>
