@@ -331,7 +331,11 @@ export default function Home() {
                   <li className="flex items-start gap-3">
                     <Clock className="mt-0.5 h-5 w-5 shrink-0 text-plum-300" />
                     <span className="space-y-0.5">
-                      <span className="flex justify-between gap-6"><span>Mon – Fri</span><span className="text-white">9am – 6:00pm</span></span>
+                      <span className="flex justify-between gap-6"><span>Mon</span><span className="text-white">9am – 6:00pm</span></span>
+                      <span className="flex justify-between gap-6"><span>Tue</span><span className="text-white">9am – 6:00pm</span></span>
+                      <span className="flex justify-between gap-6"><span>Wed</span><span className="text-white">9am – 6:00pm</span></span>
+                      <span className="flex justify-between gap-6"><span>Thurs</span><span className="text-white">9am – 6:00pm</span></span>
+                      <span className="flex justify-between gap-6"><span>Fri</span><span className="text-white">9am – 6:00pm</span></span>
                       <span className="flex justify-between gap-6"><span>Saturday</span><span className="text-white">9am – 5:00pm</span></span>
                       <span className="flex justify-between gap-6"><span>Sunday</span><span className="text-white">Closed</span></span>
                     </span>
