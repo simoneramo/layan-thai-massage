@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Logo from "@/components/Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CalendarPlus, Phone, Menu, X } from "lucide-react";
@@ -16,15 +16,8 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-plum-100/70 bg-white/85 backdrop-blur-md">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8" aria-label="Primary">
         {/* Brand */}
-        <Link href="/home" className="flex items-center rounded-lg focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40" aria-label="Layan Traditional Thai Massage — home">
-          <Image
-            src="/layan-logo.jpg"
-            alt="Layan Traditional Thai Massage"
-            width={630}
-            height={320}
-            priority
-            className="h-12 w-auto rounded-lg bg-cream p-1.5"
-          />
+        <Link href="/home" className="flex items-center rounded-lg bg-white p-1.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40" aria-label="Layan Traditional Thai Massage — home">
+          <Logo className="h-12 text-plum-900" />
         </Link>
 
         {/* Desktop links */}

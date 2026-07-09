@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Logo from "@/components/Logo";
 import Link from "next/link";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
@@ -26,13 +26,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
-            <Image
-              src="/layan-logo.jpg"
-              alt="Layan Traditional Thai Massage"
-              width={630}
-              height={320}
-              className="h-16 w-auto rounded-xl bg-cream p-2"
-            />
+            <Logo className="h-16 bg-transparent text-white" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-plum-300">
               Authentic, unhurried Thai massage in Frankston — qualified therapists, quiet rooms, and time set aside just for you.
             </p>
