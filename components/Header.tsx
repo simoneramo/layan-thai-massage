@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Logo from "@/components/Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,56 +9,77 @@ import { nav, site } from "@/lib/site";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const isActive = (href: string) => href.startsWith("/") && !href.includes("#") && pathname === href;
 
+  // Shrink the logo and reveal the border/shadow once the page is scrolled.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-40 border-b border-plum-100/70 bg-white/85 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8" aria-label="Primary">
+    <header
+      className={`sticky top-0 z-40 border-b bg-white/85 backdrop-blur-md transition-all duration-300 ${
+        scrolled ? "border-plum-100/70 shadow-sm" : "border-transparent"
+      }`}
+    >
+      <nav
+        className={`mx-auto flex max-w-6xl items-center justify-between px-5 transition-all duration-300 sm:px-6 lg:px-8 ${
+          scrolled ? "py-2.5" : "py-5"
+        }`}
+        aria-label="Primary"
+      >
         {/* Brand */}
         <Link href="/home" className="flex items-center rounded-lg bg-white p-1.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40" aria-label="Layan Traditional Thai Massage — home">
-          <Logo className="h-12 text-plum-900" />
+          <Logo className={`text-plum-900 transition-all duration-300 ${scrolled ? "h-11 sm:h-12" : "h-16 sm:h-20"}`} />
         </Link>
 
-        {/* Desktop links */}
-        <div className="hidden items-center gap-8 lg:flex">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={isActive(item.href) ? "page" : undefined}
-              className={
-                isActive(item.href)
-                  ? "nav-link font-semibold text-plum-900"
-                  : "nav-link"
-              }
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
+        {/* Everything else: right-aligned, vertically centred */}
+        <div className="flex items-center gap-6 lg:gap-8">
+          {/* Desktop links */}
+          <div className="hidden items-center gap-8 lg:flex">
+            {nav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={isActive(item.href) ? "page" : undefined}
+                className={
+                  isActive(item.href)
+                    ? "nav-link font-semibold text-plum-900"
+                    : "nav-link"
+                }
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
 
-        {/* Right cluster */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          <a
-            href={`tel:${site.phoneTel}`}
-            className="hidden items-center gap-2 text-sm font-semibold text-plum-700 transition-colors hover:text-plum-900 md:inline-flex"
-          >
-            <Phone className="h-4 w-4" /> {site.phoneDisplay}
-          </a>
-          <Link href="/book" className="btn-primary hidden sm:inline-flex">
-            <CalendarPlus className="h-5 w-5" /> Book Online
-          </Link>
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label="Toggle menu"
-            className="grid h-10 w-10 place-items-center rounded-xl border border-plum-200 text-plum-700 transition hover:bg-plum-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40 lg:hidden"
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          {/* Actions */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            <a
+              href={`tel:${site.phoneTel}`}
+              className="hidden items-center gap-2 text-sm font-semibold text-plum-700 transition-colors hover:text-plum-900 md:inline-flex"
+            >
+              <Phone className="h-4 w-4" /> {site.phoneDisplay}
+            </a>
+            <Link href="/book" className="btn-primary hidden sm:inline-flex">
+              <CalendarPlus className="h-5 w-5" /> Book Online
+            </Link>
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              aria-label="Toggle menu"
+              className="grid h-10 w-10 place-items-center rounded-xl border border-plum-200 text-plum-700 transition hover:bg-plum-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-plum-300/40 lg:hidden"
+            >
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
       </nav>
 
